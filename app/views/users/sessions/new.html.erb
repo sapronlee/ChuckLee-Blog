@@ -1,0 +1,15 @@
+<% title("Login") %>
+<div class="container">
+  <h1 class="logo">
+    <a href="#" title="Login">ChuckBlog</a>
+  </h1>
+  <div class="content">
+    <div id="login">
+      <%= simple_form_for @user, :url => user_session_path do |f| -%>
+        <%= f.input :email %>
+        <%= f.input :password %>
+        <%= f.button :submit %>
+      <% end -%>
+    </div>
+  </div>
+</div>

@@ -10,6 +10,20 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-  <%= yield %>
+  <div id="container">
+    <div id="header">
+      <h1><a href="<%= admin_root_path %>"></a></h1>
+      <div id="navigation"></div>
+    </div>
+    <div id="main">
+      <table>
+        <tr>
+          <td></td>
+          <td><%= yield %></td>
+        </tr>
+      </table>
+    </div>
+    <div id="footer"></div>
+  </div>
 </body>
 </html>
