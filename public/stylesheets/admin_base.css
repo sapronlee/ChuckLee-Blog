@@ -1,0 +1,12 @@
+html, body {height:100%;}
+
+.position {position: relative;}
+#container, #header, #footer {width:100%;}
+#container {height:100%;background-color: #000;}
+#header {background-color:#bf0000;}
+#footer {height:30px;}
+
+#header h1 {float:left;margin:5px 10px;height:60px;}
+#header h1 a {text-decoration:none;}
+
+#navigation {background-color: #DDD;float:left;}

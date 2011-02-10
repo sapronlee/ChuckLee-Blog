@@ -3,7 +3,7 @@
 <head>
   <title><%= yield :title || "ChuckBlog" %></title>
   <meta charset="utf-8">
-  <%= stylesheet_link_tag "reset", "960", "application", :cache => "cached/application" %>
+  <%= stylesheet_link_tag "reset", "960", "admin_base", :cache => "cached/application" %>
   <%= yield :styles %>
   <%= javascript_include_tag :defaults, :cache => "cached/application" %>
   <%= yield :scripts %>
@@ -12,17 +12,18 @@
 <body>
   <div id="container">
     <div id="header">
-      <h1><a href="<%= admin_root_path %>"></a></h1>
-      <div id="navigation"></div>
+      <div class="container_16 clearfix">
+        <h1><a href="<%= admin_root_path %>">ChuckBlog</a></h1>
+        <div id="navigation">123</div>
+      </div>
     </div>
-    <div id="main">
-      <table>
-        <tr>
-          <td></td>
-          <td><%= yield %></td>
-        </tr>
-      </table>
-    </div>
+    <div id="main_container">
+      <div id="main">
+        <%= yield %>
+      </div>
+      <div id="sidebar">
+        <%= yield :sidebar %>
+      </div>
     <div id="footer"></div>
   </div>
 </body>
