@@ -1,0 +1,19 @@
+<% title("设置") %>
+<div id="admin_settings" class="simple_form">
+  <form accept-charset="UTF-8" action="" class="simple_form" method="post">
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+    <div class="input string site_name">
+      <label class="site_name" for="site_name">网站名称</label>
+      <input type="text" class="string site_name" id="site_name" name="settings[site_name]" value="<%= Setting.site_name %>">
+      <span class="hint">请添加网站名称</span>
+    </div>
+    <div class="input string page_size">
+      <label class="page_size" for="page_size">分页数</label>
+      <input type="text" class="string page_size mum" id="page_size" name="settings[page_size]" value="<%= Setting.page_size %>">
+      <span class="hint">请填写分页数，只能是数字</span>
+    </div>
+    <div class="actions pl83">
+      <button class="button submit">保存设置</button>
+    </div>
+  </form>
+</div>

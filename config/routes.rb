@@ -5,6 +5,7 @@ Chuckblog::Application.routes.draw do
   
   namespace :admin do
     root :to => 'home#index'
+    resources :settings
   end
 
   # The priority is based upon order of creation:

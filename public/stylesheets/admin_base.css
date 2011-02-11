@@ -1,12 +1,89 @@
-html, body {height:100%;}
+/* commom styles */
+html, body {height:100%;font-size:12px;}
+a:link, a:visited, a:active {color:#fff;text-decoration:none;}
+a:hover {color:#000;text-decoration:underline;}
+h1 {font-size:28px;}
+h2 {font-size:26px;}
+h3 {font-size:24px;}
+h4 {font-size:22px;}
+h5 {font-size:20px;}
+h6 {font-size:18px;}
+.relative {position:relative;}
+.pl83 {padding-left:83px;}
+.button {
+  -moz-border-radius:      3px;
+  -webkit-border-radius:   3px;
+  border-radius:           3px;
+  background:              #DDD; /* Image fallback */
+  background:             -moz-linear-gradient(0% 170% 90deg, #c4c4c4, white);
+  background:             -webkit-gradient(linear, 0% 0%, 0% 170%, from(white), to(#c4c4c4));
+  border:                  1px solid;
+  border-color:            #e0e0e0 #aaa #aaa #e0e0e0;  
+  color:                   #404040;
+  display:                 inline-block;
+  font-family:            "helvetica neue", helvetica, arial, freesans, "liberation sans", "numbus sans l", sans-serif;
+  font-size:               12px;
+  outline                  0;
+  padding:                 5px 13px 5px;
+  text-align:              center;
+  text-decoration:         none;
+  text-shadow:             1px 1px 0 rgba(255,255,255,60); 
+  white-space:             nowrap; 
+  cursor:pointer;  
+}
+input[type='submit'].button,
+button[type='submit'] { font-weight:bold;}
+.button.small { padding: 2px 10px 2px; font-weight:normal; }
 
-.position {position: relative;}
-#container, #header, #footer {width:100%;}
+#container, #header_container, #footer {width:100%;}
 #container {height:100%;background-color: #000;}
-#header {background-color:#bf0000;}
+#header_container {background-color:#bf0000;}
 #footer {height:30px;}
 
-#header h1 {float:left;margin:5px 10px;height:60px;}
-#header h1 a {text-decoration:none;}
+/* header styles */
+#header {height:70px;}
+#header h1 {position:absolute;top:5px;left:5px;height:60px;line-height:60px;}
+#header h1 a:link,
+#header h1 a:visited {text-decoration:none;text-shadow:0 1px 0 #000;font-family: helvetica;}
+#header h1 a:hover {color:#fff;}
 
-#navigation {background-color: #DDD;float:left;}
+/* navigation styles */
+#navigation {position:absolute;bottom:0px;left:170px;}
+#navigation ul {}
+#navigation ul li {display:inline;border:none;}
+#navigation ul li a:link, 
+#navigation ul li a:visited {float:left;background-color:#000;padding:6px 20px 5px;margin:0 2px;color:#fff;
+  -webkit-border-radius:4px 4px 0 0;border-radius:4px 4px 0 0;-moz-border-radius:4px 4px 0 0;font-size:13px;}
+#navigation ul li a:hover {background-color:#8e8e8e;text-decoration:none;color:#fff;}
+#navigation ul li a.current {color:#333;background-color:#fff;}
+
+/* users styles */
+#users {position:absolute;right:5px;top:5px;color:#ccc;}
+#users span.greeting {color:#ffc000;text-shadow:0 1px 0 #000;}
+#users span.name {color:#fff;text-shadow:0 1px 0 #000;}
+#users a.logout {-webkit-border-radius:4px;border-radius:4px;-moz-border-radius:4px;background-color:#ffaa56;
+  display:inline-block;padding:2px 10px 3px;margin-left:10px;text-decoration:none;}
+#users a.logout:hover {background-color:#fff;}
+  
+/* main styles */
+#main {background-color:#fff;-webkit-border-radius:0 0 4px 4px;border-radius:0 0 4px 4px;-moz-border-radius:0 0 4px 4px;
+  padding:10px;-webkit-box-shadow:0 1px 2px #f8eab6;-moz-box-shadow:0 1px 2px #f8eab6;-o-box-shadow:0 1px 2px #f8eab6;
+  box-shadow:0 1px 2px #f8eab6;}
+  
+/*form styles */
+form div.input {margin-bottom:10px;}
+form label {color:#333;display:inline-block;width:80px;}
+form input.string {border: 1px solid #DDD;border-left-color:#999;border-top-color:#999;padding:4px;}
+form .hint {display:block;color:#999;padding:3px 0 0 83px;}
+form .mum {width:20px;}
+form .lmum {width:80px;}
+form .mmum {width:40px;}
+form .long {width:700px;}
+form .medium {width:350px;}
+
+/* flash styles */
+.massage {padding:10px;margin:10px 0;border-style:solid;border-width:2px;text-align:center;
+  -webkit-border-radius:4px;border-radius:4px;-moz-border-radius:4px;font-size:14px;font-weight:bold;}
+.notice {border-color:#7af400;background-color:#d5fcae;color:#7af400;}
+.alert {border-color:#5fbf00;background-color:#ff9696;color:#5fbf00;}
+
