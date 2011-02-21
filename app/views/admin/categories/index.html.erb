@@ -1,5 +1,23 @@
 <% title("分类列表") %>
 <% render "base" %>
 <% content_for :sitemaps do -%>
-<span>列表</span>
+  <span>列表</span>
 <% end -%>
+<% content_for :styles do -%>
+  <%= stylesheet_link_tag "wice_grid", :cache => "cached/admin/categories" %>
+<% end -%>
+<% content_for :scripts do -%>
+  <%= javascript_include_tag "wice_grid", :cache => "cached/admin/categories" %>
+<% end -%>
+<%= grid(@categories, :show_filters => :no) do |g|
+  g.column :column_name => "ID", :attribute_name => "id", :td_html_attrs => { :class => "number tc" }
+  g.column :column_name => "名字", :attribute_name => "name", :td_html_attrs => { :class => "text tc" }
+  g.column :column_name => "描述", :attribute_name => "description", :allow_ordering => false, :td_html_attrs => { :class => "description" } do |c|
+    truncate(c.description, :length => 40) if c.description
+  end
+  g.column :column_name => "帖子数", :attribute_name => "posts_count", :td_html_attrs => { :class => "numeral tc" }
+  g.column :td_html_attrs => { :class => "actions tc" } do |c|
+    raw "#{link_to("修改", edit_admin_category_path(c))}#{link_to("删除", admin_category_path(c), :method => :delete, :confirm => "确定要删除吗?")}"    
+  end
+end -%>
+

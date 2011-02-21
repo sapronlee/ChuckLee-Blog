@@ -1,0 +1,7 @@
+<%= simple_form_for [:admin, @category] do |f| %>
+  <%= f.input :name, :input_html => { :class => "long" } %>
+  <%= f.input :description, :as => :text, :input_html => { :class => "tmedium" } %>
+  <div class="actions pl78">
+    <%= f.button :submit %>
+  </div>
+<% end -%>

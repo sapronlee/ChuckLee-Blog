@@ -1,4 +1,4 @@
-en:
+zh-CN:
   simple_form:
     "yes": 'Yes'
     "no": 'No'
@@ -18,7 +18,5 @@ en:
     #       email: 'E-mail para efetuar o sign in.'
     #     edit:
     #       email: 'E-mail.'
-    # hints:
-    #   username: 'User name to sign in.'
-    #   password: 'No special characters, please.'
+    hints:      
 
