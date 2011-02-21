@@ -87,3 +87,10 @@ form .medium {width:350px;}
 .notice {border-color:#7af400;background-color:#d5fcae;color:#7af400;}
 .alert {border-color:#5fbf00;background-color:#ff9696;color:#5fbf00;}
 
+/*sitemaps styles */
+#sitemaps {color:#555;margin-bottom:20px;}
+#sitemaps .prompt {padding-right:5px;}
+#sitemaps .space_mark {padding:0 3px 0 5px;}
+#sitemaps a {color:#BF0000;}
+#sitemaps a:hover {}
+

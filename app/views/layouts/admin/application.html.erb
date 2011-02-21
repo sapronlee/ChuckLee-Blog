@@ -16,8 +16,9 @@
         <h1><a href="<%= admin_root_path %>"><%= Setting.app_name %></a></h1>
         <div id="navigation">
           <ul class="clearfix">
-          <li><a href="<%= admin_root_path %>"<%= ' class=current' if params[:controller] == "admin/home" %>>首页</a></li>
-          <li><a href="<%= admin_settings_path %>"<%= ' class=current' if params[:controller] == "admin/settings" %>>设置</a></li>
+            <li><a href="<%= admin_root_path %>"<%= ' class=current' if params[:controller] == "admin/home" %>>首页</a></li>
+            <li><a href="<%= admin_settings_path %>"<%= ' class=current' if params[:controller] == "admin/settings" %>>设置</a></li>
+            <li><a href="<%= admin_categories_path %>"<%= ' class=current' if params[:controller] == "admin/categories" %>>分类</a></li>
           </ul>
         </div>
         <div id="users">
@@ -29,6 +30,13 @@
     </div>
     <div id="main_container" class="container_12">
       <div id="main">
+        <div id="sitemaps">
+          <span class="prompt">当前位置:</span>
+          <a href="<%= admin_root_path %>">后台管理</a>
+          <span class="space_mark">»</span>
+          <%= yield :base_sitemaps %>
+          <%= yield :sitemaps %>
+        </div>
         <% if !notice.blank? %>
           <div class="massage notice"><%= notice %></div>
         <% end -%>

@@ -1,4 +1,8 @@
 <% title("设置") %>
+<%= render "base" %>
+<% content_for :sitemaps do -%>
+  <span>全局设置</span>
+<% end -%>
 <div id="admin_settings" class="simple_form">
   <form accept-charset="UTF-8" action="" class="simple_form" method="post">
     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
