@@ -18,6 +18,7 @@
           <ul class="clearfix">
             <li><a href="<%= admin_root_path %>"<%= ' class=current' if params[:controller] == "admin/home" %>>首页</a></li>
             <li><a href="<%= admin_categories_path %>"<%= ' class=current' if params[:controller] == "admin/categories" %>>分类</a></li>
+            <li><a href="<%= admin_posts_path %>"<%= ' class=current' if params[:controller] == "admin/posts" %>>文章</a></li>
             <li><a href="<%= admin_settings_path %>"<%= ' class=current' if params[:controller] == "admin/settings" %>>设置</a></li>
           </ul>
         </div>

@@ -1,0 +1,7 @@
+<% title("创建文章") %>
+<%= render "base" %>
+<% content_for :sitemaps do -%>
+  <span>创建文章</span>
+<% end -%>
+<%= render "form" %>
+<%= include_tiny_mce_if_needed %>

@@ -1,0 +1,11 @@
+<% content_for :base_sitemaps do -%>
+  <a href="<%= admin_posts_path %>">文章</a>
+  <span class="space_mark">»</span>
+<% end -%>
+<% content_for :tools do -%>
+  <a href="<%= admin_posts_path %>" class="button group left<%= ' checked' if action_name == "index" %>">列表</a>
+  <% if ["edit", "update"].index(action_name) -%>
+    <a href="<%= edit_admin_post_path(@category) %>" class="button group checked">修改文章</a>
+  <% end -%>
+  <a href="<%= new_admin_post_path %>" class="button group right<%= ' checked' if ["new", "create"].index(action_name) %>">创建文章</a>
+<% end -%>

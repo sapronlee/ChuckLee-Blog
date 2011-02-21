@@ -7,5 +7,5 @@
   <% if ["edit", "update"].index(action_name) -%>
     <a href="<%= edit_admin_category_path(@category) %>" class="button group checked">修改分类</a>
   <% end -%>
-  <a href="<%= new_admin_category_path %>" class="button group right<%= ' checked' if ["new", "create"].index(action_name) %>">新增分类</a>
+  <a href="<%= new_admin_category_path %>" class="button group right<%= ' checked' if ["new", "create"].index(action_name) %>">创建分类</a>
 <% end -%>

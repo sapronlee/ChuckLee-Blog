@@ -168,10 +168,16 @@ zh-CN:
         record_invalid: "校验失败: %{errors}"
     models:
       category: "分类"
+      post: "文章"
     attributes:
       category:
         name: "名字"
         description: "描述"
+      post:
+        title: "标题"
+        body: "内容"
+        summary: "摘要"
+        category_id: "分类"
 
   activemodel:
     errors:
