@@ -1,5 +1,5 @@
 /* commom styles */
-html, body {height:100%;font-size:12px;}
+html, body {height:100%;font-size:12px;background:#000;}
 a:link, a:visited, a:active {color:#fff;text-decoration:none;}
 a:hover {color:#000;text-decoration:underline;}
 h1 {font-size:28px;}
@@ -10,6 +10,26 @@ h5 {font-size:20px;}
 h6 {font-size:18px;}
 .relative {position:relative;}
 .pl83 {padding-left:83px;}
+
+/* width */
+.w_short {}
+.w_xshort {}
+.w_xxshort {}
+.w_long {}
+.w_xlong {width:770px;}
+.w_xxlong {}
+.w_medium {}
+
+/* height */
+.h_short {}
+.h_xshort {}
+.h_xxshort {}
+.h_long {}
+.h_xlong {}
+.h_xxlong {}
+.h_medium {}
+
+
 
 .button {
   -moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
@@ -51,10 +71,9 @@ a.button {
 }
 
 
-#container, #header_container, #footer {width:100%;}
-#container {height:100%;background-color: #000;}
+#container, #header_container {width:100%;}
+#container {background-color:#000;}
 #header_container {background-color:#bf0000;}
-#footer {height:30px;}
 
 /* header styles */
 #header {height:70px;}
@@ -85,6 +104,9 @@ a.button {
 #main {background-color:#fff;-webkit-border-radius:0 0 4px 4px;border-radius:0 0 4px 4px;-moz-border-radius:0 0 4px 4px;
   padding:10px;-webkit-box-shadow:0 1px 2px #f8eab6;-moz-box-shadow:0 1px 2px #f8eab6;-o-box-shadow:0 1px 2px #f8eab6;
   box-shadow:0 1px 2px #f8eab6;}
+
+/* footer styles */
+#footer_container {margin:20px auto;color:#FFF;}
   
 /*form styles */
 form.simple_form {margin-top:10px;}
@@ -94,15 +116,18 @@ form label {color:#333;display:inline-block;width:80px;}
 form abbr {color:#BF0000;}
 form input.string {border: 1px solid #DDD;border-left-color:#999;border-top-color:#999;padding:4px;}
 form textarea.text {border: 1px solid #DDD;border-left-color:#999;border-top-color:#999;}
+form select.select {border: 1px solid #DDD;border-left-color:#999;border-top-color:#999;background:#FFF;margin:0;padding:2px;}
 form .hint {display:block;color:#999;padding:3px 0 0 83px;}
 form .error {display:block;color:#BF0000;padding:3px 0 0 83px;}
 form .mum {width:20px;}
 form .lmum {width:80px;}
 form .mmum {width:40px;}
-form .long {width:700px;}
+form .long {width:770px;}
 form .medium {width:350px;}
-form .tmedium {width:704px;height:150px;max-width:704px;max-height:150px;}
+form .tmedium {width:774px;height:150px;max-width:774px;max-height:150px;}
+form .high300 {height:300px;}
 form .pl78 {padding-left:78px;}
+form .mceEditor {display:inline-block;}
 
 /* flash styles */
 .massage {padding:10px;margin:10px 0;border-style:solid;border-width:2px;text-align:center;

@@ -1,6 +1,5 @@
 # coding : utf-8
-class Admin::PostsController < Admin::ApplicationController
-  uses_tiny_mce  
+class Admin::PostsController < Admin::ApplicationController  
   def index
     
   end
