@@ -106,7 +106,8 @@ a.button {
   box-shadow:0 1px 2px #f8eab6;}
 
 /* footer styles */
-#footer_container {margin:20px auto;color:#FFF;}
+#footer_container {color:#FFF;}
+#footer_container p {padding:20px 0;}
   
 /*form styles */
 form.simple_form {margin-top:10px;}
