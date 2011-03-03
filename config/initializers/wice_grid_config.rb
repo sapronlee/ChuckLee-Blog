@@ -9,7 +9,7 @@ if defined?(Wice::Defaults)
   Wice::Defaults::ERB_MODE = false
 
   # Default number of rows to show per page.
-  Wice::Defaults::PER_PAGE = 20
+  Wice::Defaults::PER_PAGE = 10
 
   # Default order direction
   Wice::Defaults::ORDER_DIRECTION = 'desc'
@@ -21,7 +21,7 @@ if defined?(Wice::Defaults)
 
   # If REUSE_LAST_COLUMN_FOR_FILTER_ICONS is true and the last column doesn't have any filter and column name, it will be used
   # for filter related icons (filter icon, reset icon, show/hide icon), otherwise an additional table column is added.
-  Wice::Defaults::REUSE_LAST_COLUMN_FOR_FILTER_ICONS = true
+  Wice::Defaults::REUSE_LAST_COLUMN_FOR_FILTER_ICONS = false
 
   Wice::Defaults::SHOW_HIDE_FILTER_ICON = '/images/icons/grid/page_white_find.png'
 
@@ -62,7 +62,7 @@ if defined?(Wice::Defaults)
   # * <tt>:when_filtered</tt> - when the table is the result of filtering
   # * <tt>:always</tt>        - show the filter always
   # * <tt>:no</tt>            - never show the filter
-  Wice::Defaults::SHOW_FILTER = :always
+  Wice::Defaults::SHOW_FILTER = :no
 
   # A boolean value specifying if a change in a filter triggers reloading of the grid.
   Wice::Defaults::AUTO_RELOAD = false

@@ -18,5 +18,10 @@ zh-CN:
     #       email: 'E-mail para efetuar o sign in.'
     #     edit:
     #       email: 'E-mail.'
-    hints:      
+    hints:
+      category:
+        name: "输入分类的名字，20个字以内。"
+    placeholders:
+      post:
+        title: "在此输入标题"
 

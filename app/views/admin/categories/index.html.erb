@@ -4,20 +4,41 @@
   <span>列表</span>
 <% end -%>
 <% content_for :styles do -%>
-  <%= stylesheet_link_tag "wice_grid", :cache => "cached/admin/categories" %>
+  <%= stylesheet_link_tag "wice_grid" %>
 <% end -%>
 <% content_for :scripts do -%>
-  <%= javascript_include_tag "wice_grid", :cache => "cached/admin/categories" %>
+  <%= javascript_include_tag "wice_grid" %>
 <% end -%>
-<%= grid(@categories, :show_filters => :no) do |g|
-  g.column :column_name => "ID", :attribute_name => "id", :td_html_attrs => { :class => "number tc" }
-  g.column :column_name => "名字", :attribute_name => "name", :td_html_attrs => { :class => "text tc" }
-  g.column :column_name => "描述", :attribute_name => "description", :allow_ordering => false, :td_html_attrs => { :class => "description" } do |c|
-    truncate(c.description, :length => 40) if c.description
-  end
-  g.column :column_name => "帖子数", :attribute_name => "posts_count", :td_html_attrs => { :class => "numeral tc" }
-  g.column :td_html_attrs => { :class => "actions tc" } do |c|
-    raw "#{link_to("修改", edit_admin_category_path(c))}#{link_to("删除", admin_category_path(c), :method => :delete, :confirm => "确定要删除吗?")}"    
-  end
-end -%>
+<div id="categories_lists" class="clearfix">
+  <table class="wice_grid">
+    <thead>
+      <tr class="wice_grid_title_row">
+        <th class="sel"><input type="checkbox"></th>
+        <th class="tl">名称</th>
+        <th class="tl">别名</th>
+        <th>文章</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if !@categories.blank? -%>
+        <% @categories.each_with_index do |c, i| -%>
+          <tr class="<%= i % 2 == 0 ? "odd" : "even" %>">  
+           <td class="sel"><%= check_box_tag "grid[selected][#{c.id}]", c.id %></td>
+           <td class="name"><%= c.name %></td>
+           <td class="name"><%= c.alias %></td>
+           <td class="mun"><%= c.posts_count %></td>
+           <td class="actions"><%= raw "#{link_to("编辑", edit_admin_category_path(c))} | #{link_to("删除", admin_category_path(c), :method => :delete, :confirm => "你确定删除吗？")}" %></td>
+          </tr>
+        <% end -%>
+      <% else -%>
+        <tr>
+          <td colspan="5" class="empty">暂无分类</td>
+        </tr>
+      <% end -%>
+    </tbody>
+  </table>
+  <%= will_paginate @categories %>
+</div>
+
 

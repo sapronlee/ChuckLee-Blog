@@ -3,16 +3,58 @@
 .wice_grid {
   border: 1px solid #ddd;
   border-collapse: collapse;
-  border-spacing: 0px
+  border-spacing: 0px;
+  width: 100%;
 }
 
 .wice_grid .clickable{
   cursor: pointer;
 }
+.wice_grid .clickable img {
+  margin-bottom:-4px;
+}
+
+.wice_grid th.sel, .wice_grid td.sel {
+  width:10px;
+  text-align: center;
+  position: relative;
+}
+.wice_grid th.mun, .wice_grid td.mun {
+  width:20px;
+  text-align: center;
+}
+.wice_grid th.name, .wice_grid td.name {
+  width:150px;
+  text-align: left;
+}
+.wice_grid th.actions, .wice_grid td.actions {
+  width: 40px;
+  text-align: center;
+  color:#ccc;
+}
+.wice_grid td.desc {
+  
+}
+.wice_grid tr.nobb td {
+  border-bottom: none;
+}
+.wice_grid td.empty {
+  text-align: center;
+}
+.wice_grid td.actions a {
+  color:#BF0000;
+}
+.wice_grid th.tl {
+  text-align: left;
+}
+.wice_grid th.sel input, .wice_grid td.sel input {
+  margin: 0;
+  position: absolute;
+}
 
 .wice_grid th {    
-  padding: 6px;
-  font-weight:normal;
+  padding: 8px 6px;
+  color:#666;
 }
 .wice_grid th a { 
   color: #666;
@@ -20,7 +62,6 @@
 .wice_grid th a:hover { 
   color: #333; 
 }
-
 .wice_grid tr.wice_grid_filter_row th{
   background-color: #FFF;  
 }
@@ -55,7 +96,8 @@
 
 .wice_grid td {
   border-bottom: 1px solid #eee;  
-  padding: 6px;
+  padding: 8px 6px;
+  color:#666;
 }
 
 .wice_grid tr:hover td { background:#f2f7ff; cursor:default;}

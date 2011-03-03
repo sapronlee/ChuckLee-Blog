@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110221021448) do
+ActiveRecord::Schema.define(:version => 20110303063412) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",        :limit => 50,                :null => false
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20110221021448) do
     t.integer  "posts_count",               :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "alias",       :limit => 50
   end
 
   create_table "posts", :force => true do |t|

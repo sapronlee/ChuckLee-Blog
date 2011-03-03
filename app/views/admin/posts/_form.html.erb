@@ -1,5 +1,5 @@
 <%= simple_form_for [:admin, @post] do |f| %>
-  <%= f.input :title, :input_html => { :class => "long" } %>
+  <%= f.input :title, :label => false, :input_html => { :class => "long" } %>
   <%= f.association :category, :label => "分类", :collection => Category.find(:all), :prompt => "选择分类" %>
   <%= f.input :summary, :as => :text, :input_html => { :class => "tmedium" } %>
   <%= f.input :body, :input_html => { :class => "tmedium" } %>

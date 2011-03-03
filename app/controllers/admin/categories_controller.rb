@@ -1,9 +1,7 @@
 # coding : utf-8
 class Admin::CategoriesController < Admin::ApplicationController
-  def index
-    @categories = initialize_grid(Category,
-    
-                                  :per_page => Setting.page_size)
+  def index    
+    @categories = Category.paginate :page => params[:page], :per_page => Setting.page_size
   end
   
   def new
@@ -39,5 +37,13 @@ class Admin::CategoriesController < Admin::ApplicationController
     else
       redirect_to(admin_categories_path, :notice => "分类删除失败！")
     end
+  end
+  
+  def search
+    @categories = initialize_grid(Category,
+    :conditions => ["ucase(`name`) like concat('%',ucase(?),'%')", params[:name]],
+    :per_page => Setting.page_size)
+    
+    render :index
   end
 end

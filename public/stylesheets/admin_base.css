@@ -1,15 +1,37 @@
 /* commom styles */
-html, body {height:100%;font-size:12px;background:#000;}
-a:link, a:visited, a:active {color:#fff;text-decoration:none;}
-a:hover {color:#000;text-decoration:underline;}
-h1 {font-size:28px;}
-h2 {font-size:26px;}
-h3 {font-size:24px;}
-h4 {font-size:22px;}
-h5 {font-size:20px;}
-h6 {font-size:18px;}
-.relative {position:relative;}
-.pl83 {padding-left:83px;}
+html, body {
+  height:100%;font-size:12px;background:#000;
+}
+a:link, a:visited, a:active {
+  color:#333;text-decoration:none;
+}
+a:hover {
+  color:#CCC;text-decoration:underline;
+}
+h1 {
+  font-size:28px;
+}
+h2 {
+  font-size:26px;
+}
+h3 {
+  font-size:24px;
+}
+h4 {
+  font-size:22px;
+}
+h5 {
+  font-size:20px;
+}
+h6 {
+  font-size:18px;
+}
+.relative {
+  position:relative;
+}
+.pl83 {
+  padding-left:83px;
+}
 
 /* width */
 .w_short {}
@@ -29,13 +51,10 @@ h6 {font-size:18px;}
 .h_xxlong {}
 .h_medium {}
 
-
-
+/* button styles */
 .button {
-  -moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
-  background:#DDD;border:1px solid;border-color:#e0e0e0 #aaa #aaa #e0e0e0;
-  background:-moz-linear-gradient(0% 170% 90deg, #c4c4c4, white);
-  background:-webkit-gradient(linear, 0% 0%, 0% 170%, from(white), to(#c4c4c4)); 
+  -moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;background:#DDD;border:1px solid;border-color:#e0e0e0 #aaa #aaa #e0e0e0;
+  background:-moz-linear-gradient(0% 170% 90deg, #c4c4c4, white);background:-webkit-gradient(linear, 0% 0%, 0% 170%, from(white), to(#c4c4c4)); 
   color:#404040;display:inline-block;font-size:12px;padding:5px 13px 5px;text-align:center;text-decoration:none;  
   font-family:"helvetica neue", helvetica, arial, freesans, "liberation sans", "numbus sans l", sans-serif;
   text-shadow:1px 1px 0 rgba(255,255,255,60); outline:0;white-space:nowrap;cursor:pointer; 
@@ -70,17 +89,12 @@ a.button {
   background: -moz-linear-gradient(top,  #666,  #999);
 }
 
-
-#container, #header_container {width:100%;}
-#container {background-color:#000;}
-#header_container {background-color:#bf0000;}
-
 /* header styles */
+#header_container {background-color:#bf0000;}
 #header {height:70px;}
 #header h1 {position:absolute;top:5px;left:5px;height:60px;line-height:60px;}
 #header h1 a:link,
-#header h1 a:visited {text-decoration:none;text-shadow:0 1px 0 #000;font-family: helvetica;}
-#header h1 a:hover {color:#fff;}
+#header h1 a:visited {text-decoration:none;text-shadow:0 1px 0 #000;font-family:helvetica;color:#FFF;}
 
 /* navigation styles */
 #navigation {position:absolute;bottom:0px;left:170px;}

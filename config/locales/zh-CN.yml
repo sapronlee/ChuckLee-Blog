@@ -171,8 +171,9 @@ zh-CN:
       post: "文章"
     attributes:
       category:
-        name: "名字"
+        name: "名称"
         description: "描述"
+        alias: "别名"
       post:
         title: "标题"
         body: "内容"

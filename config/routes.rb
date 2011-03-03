@@ -6,7 +6,11 @@ Chuckblog::Application.routes.draw do
   namespace :admin do
     root :to => 'home#index'
     resources :settings
-    resources :categories
+    resources :categories do |c|
+      collection do
+        post :search
+      end
+    end
     resources :posts
   end
 
