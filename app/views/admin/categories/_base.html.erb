@@ -2,6 +2,9 @@
   <a href="<%= admin_categories_path %>">分类</a>
   <span class="space_mark">»</span>
 <% end -%>
+<% content_for :styles do -%>
+  <%= stylesheet_link_tag "wice_grid", "admin/categories" %>
+<% end -%>
 <% content_for :tools do -%>
   <div class="menu">
     <%= spaceless do -%>

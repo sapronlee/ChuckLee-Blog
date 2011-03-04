@@ -210,6 +210,9 @@ a.button {
 .simple_form label abbr {
   color:#BF0000;
 }
+.simple_form textarea {
+  margin:0;
+}
 .simple_form input.string {
   border: 1px solid #DDD;
   border-left-color:#999;
@@ -228,9 +231,9 @@ a.button {
   min-width:928px;
 }
 .simple_form textarea.long {
-  width:930px
-  max-width:930px;
-  min-width:930px;
+  width:934px
+  max-width:934px;
+  min-width:934px;
 }
 .simple_form span.error, .simple_form span.hint {
   color:#BF0000;

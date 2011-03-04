@@ -1,0 +1,16 @@
+#main .simple_form {
+  width:940px;
+  overflow: hidden;
+}
+#main .col2 {
+  width:950px;
+  overflow: hidden;
+}
+#main .col2 .input {
+  width:465px;
+  float:left;
+  margin-right:10px;
+}
+#main .col2 div.input input {
+  width:455px;
+}
