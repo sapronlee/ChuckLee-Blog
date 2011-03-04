@@ -40,9 +40,10 @@ class Admin::CategoriesController < Admin::ApplicationController
   end
   
   def search
-    @categories = initialize_grid(Category,
+    @categories = Category.paginate(
     :conditions => ["ucase(`name`) like concat('%',ucase(?),'%')", params[:name]],
-    :per_page => Setting.page_size)
+    :per_page => Setting.page_size,
+    :page => params[:page])
     
     render :index
   end
