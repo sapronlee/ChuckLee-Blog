@@ -225,6 +225,14 @@ a.button {
 .simple_form textarea {
   margin:0;
 }
+.simple_form select {
+  border: 1px solid #DDD;
+  border-left-color:#999;
+  border-top-color:#999;
+  background:#FFF;
+  margin:0;
+  padding:2px;
+}
 .simple_form input.string {
   border: 1px solid #DDD;
   border-left-color:#999;
@@ -261,3 +269,13 @@ a.button {
   -webkit-border-radius:4px;border-radius:4px;-moz-border-radius:4px;font-size:13px;}
 .notice {border-color:#1FDF00;background-color:#BBFFB6;}
 .alert {border-color:#FBB;background-color:#FDD;}
+
+/* dialog styles */
+#dialog p span.ui-icon {
+  float:left;
+  margin-top:2px;
+}
+#dialog p span.text {
+  padding-left: 5px;
+  line-height:160%;
+}

@@ -27,48 +27,48 @@
   <form id="categories_form" action="" method="post">
     <input type="hidden" name="_method" value="delete" />
     <%= auth_token %>
-  <table class="wice_grid">
-    <thead>
-      <tr class="wice_grid_title_row">
-        <th class="sel"><input type="checkbox" id="select_all"></th>
-        <th class="tl">名称</th>
-        <th class="tl">别名</th>
-        <th>文章</th>
-        <th>操作</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% if !@categories.blank? -%>
-        <% @categories.each_with_index do |c, i| -%>
-          <tr class="<%= i % 2 == 0 ? "odd" : "even" %>">  
-           <td class="sel"><%= check_box_tag "grid[selected][]", c.id %></td>
-           <td class="name"><%= c.name %></td>
-           <td class="name"><%= c.alias %></td>
-           <td class="mun"><%= c.posts_count %></td>
-           <td class="actions"><%= record_action_link(c, :ns => :admin) %></td>
-          </tr>
-        <% end -%>
-      <% else -%>
-        <tr>
-          <td colspan="5" class="empty">暂无分类</td>
+    <table class="wice_grid">
+      <thead>
+        <tr class="wice_grid_title_row">
+          <th class="sel"><input type="checkbox" id="select_all"></th>
+          <th class="tl">名称</th>
+          <th class="tl">别名</th>
+          <th>文章</th>
+          <th>操作</th>
         </tr>
-      <% end -%>
-    </tbody>
-  </table>
-  <div id="footer_actions" class="clearfix">
-    <div class="actions">
-      <input type="button" value="删除" class="button" onclick="delete_all();">
-      <script type="text/javascript">
-        function delete_all() {
-          if($("#categories_lists table input[id='grid_selected_']:checked").length > 0) {
-            $("#categories_form").attr("action", "<%= destroy_selected_admin_categories_path %>").submit();
-          }
-          return false;
-        }        
-      </script>
+      </thead>
+      <tbody>
+        <% if !@categories.blank? -%>
+        <% @categories.each_with_index do |c, i| -%>
+        <tr class="<%= i % 2 == 0 ? "odd" : "even" %>">  
+          <td class="sel"><%= check_box_tag "grid[selected][]", c.id %></td>
+            <td><%= c.name %></td>
+            <td><%= c.alias %></td>
+            <td class="mun"><%= c.posts_count %></td>
+            <td class="actions"><%= record_action_link(c, :ns => :admin) %></td>
+          </tr>
+          <% end -%>
+          <% else -%>
+          <tr>
+          <td colspan="5" class="empty">无任何数据</td>
+        </tr>
+        <% end -%>
+      </tbody>
+    </table>
+    <div id="footer_actions" class="clearfix">
+      <div class="actions">
+        <input type="button" value="删除" class="button" onclick="delete_all();">
+        <script type="text/javascript">
+          function delete_all() {
+            if($("#categories_lists table input[id='grid_selected_']:checked").length > 0) {
+              $("#categories_form").attr("action", "<%= destroy_selected_admin_categories_path %>").submit();
+            }
+            return false;
+          }        
+        </script>
+      </div>
+      <%= will_paginate @categories %>
     </div>
-    <%= will_paginate @categories %>
-  </div>
   </form>  
   <div id="dialog" title="提示信息">
     <p>
@@ -86,8 +86,9 @@
       draggable : false,
       buttons : {
         "确定" : function() {
-          if($("#categories_form").attr("action"))
+          if($("#categories_form").attr("action")) {
             $("#categories_form").submit();
+          }
           $(this).dialog("close");
         },
         "取消" : function() {

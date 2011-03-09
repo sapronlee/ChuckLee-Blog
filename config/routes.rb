@@ -12,7 +12,12 @@ Chuckblog::Application.routes.draw do
         delete :destroy_selected
       end
     end
-    resources :posts
+    resources :posts do |p|
+      collection do
+        post :search
+        delete :destroy_selected
+      end
+    end
   end
 
   # The priority is based upon order of creation:

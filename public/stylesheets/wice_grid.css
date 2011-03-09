@@ -15,11 +15,11 @@
 }
 
 .wice_grid th.sel, .wice_grid td.sel {
-  width:10px;
+  width:20px;
   text-align: center;  
 }
 .wice_grid th.mun, .wice_grid td.mun {
-  width:20px;
+  width:40px;
   text-align: center;
 }
 .wice_grid th.name, .wice_grid td.name {
@@ -27,7 +27,7 @@
   text-align: left;
 }
 .wice_grid th.actions, .wice_grid td.actions {
-  width: 40px;
+  width: 70px;
   text-align: center;
   color:#ccc;
 }
