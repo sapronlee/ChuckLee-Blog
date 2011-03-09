@@ -18,9 +18,13 @@ zh-CN:
     #       email: 'E-mail para efetuar o sign in.'
     #     edit:
     #       email: 'E-mail.'
+    labels:
+      user:
+      category:
     hints:
       category:
-        name: "输入分类的名字，20个字以内。"
+        name: "20个字以内。"
+        alias: "只能包含英文字母，数字，下滑线“_”和横杠“-”，且只能以字母开头。20个字符以内。"
     placeholders:
       post:
         title: "在此输入标题"

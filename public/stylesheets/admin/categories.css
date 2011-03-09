@@ -12,5 +12,18 @@
   margin-right:10px;
 }
 #main .col2 div.input input {
-  width:455px;
+  width:400px;
+}
+
+
+#dialog p {
+  font-size: 14px;
+}
+#dialog p span.ui-icon {
+  float:left;
+  margin-top:4px;
+}
+#dialog p span.text {
+  padding-left: 5px;
+  line-height:160%;
 }

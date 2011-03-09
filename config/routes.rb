@@ -9,6 +9,7 @@ Chuckblog::Application.routes.draw do
     resources :categories do |c|
       collection do
         post :search
+        delete :destroy_selected
       end
     end
     resources :posts

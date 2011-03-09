@@ -47,4 +47,11 @@ class Admin::CategoriesController < Admin::ApplicationController
     
     render :index
   end
+  
+  def destroy_selected
+    if !params[:grid].blank?
+      Category.destroy_all(:id => params[:grid][:selected])
+      redirect_to(admin_categories_path, :notice => "操作成功！")      
+    end   
+  end
 end

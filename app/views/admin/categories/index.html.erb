@@ -1,13 +1,36 @@
 <% title("分类列表") %>
 <% render "base" %>
-<% content_for :sitemaps do -%>
+<%= content_for :sitemaps do -%>
   <span>列表</span>
 <% end -%>
+<%= content_for :scripts do -%>
+<script type="text/javascript">  
+  $(function() {
+    /*删除确认*/
+    $("a.delete").click(function() {
+      $("#categories_form").attr("action", $(this).attr("href"));
+      $("#dialog").dialog("open");
+      return false;
+    });
+    /*全选反选*/
+    $("#select_all").click(function() {
+      if(this.checked) {
+        $("#categories_lists table input[id='grid_selected_']").each(function() {$(this).attr("checked", true)});
+      } else {
+        $("#categories_lists table input[id='grid_selected_']").each(function() {$(this).attr("checked", false)});
+      }
+    });
+  });
+</script>
+<% end -%>
 <div id="categories_lists" class="clearfix">
+  <form id="categories_form" action="" method="post">
+    <input type="hidden" name="_method" value="delete" />
+    <%= auth_token %>
   <table class="wice_grid">
     <thead>
       <tr class="wice_grid_title_row">
-        <th class="sel"><input type="checkbox"></th>
+        <th class="sel"><input type="checkbox" id="select_all"></th>
         <th class="tl">名称</th>
         <th class="tl">别名</th>
         <th>文章</th>
@@ -18,11 +41,11 @@
       <% if !@categories.blank? -%>
         <% @categories.each_with_index do |c, i| -%>
           <tr class="<%= i % 2 == 0 ? "odd" : "even" %>">  
-           <td class="sel"><%= check_box_tag "grid[selected][#{c.id}]", c.id %></td>
+           <td class="sel"><%= check_box_tag "grid[selected][]", c.id %></td>
            <td class="name"><%= c.name %></td>
            <td class="name"><%= c.alias %></td>
            <td class="mun"><%= c.posts_count %></td>
-           <td class="actions"><%= raw "#{link_to("编辑", edit_admin_category_path(c))} | #{link_to("删除", admin_category_path(c), :method => :delete, :confirm => "你确定删除吗？")}" %></td>
+           <td class="actions"><%= record_action_link(c, :ns => :admin) %></td>
           </tr>
         <% end -%>
       <% else -%>
@@ -32,7 +55,48 @@
       <% end -%>
     </tbody>
   </table>
-  <%= will_paginate @categories %>
+  <div id="footer_actions" class="clearfix">
+    <div class="actions">
+      <input type="button" value="删除" class="button" onclick="delete_all();">
+      <script type="text/javascript">
+        function delete_all() {
+          if($("#categories_lists table input[id='grid_selected_']:checked").length > 0) {
+            $("#categories_form").attr("action", "<%= destroy_selected_admin_categories_path %>").submit();
+          }
+          return false;
+        }        
+      </script>
+    </div>
+    <%= will_paginate @categories %>
+  </div>
+  </form>  
+  <div id="dialog" title="提示信息">
+    <p>
+      <span class="ui-icon ui-icon-alert"></span>
+      <span class="text">你确定要删除该条数据吗？数据删除后不可恢复！</span>
+    </p>
+  </div>
+  <script type="text/javascript">
+    $("#dialog:ui-dialog").dialog("destroy");
+    $("#dialog").dialog({
+      autoOpen : false,
+      modal : true,
+      closeText : "关闭",
+      resizable : false,
+      draggable : false,
+      buttons : {
+        "确定" : function() {
+          if($("#categories_form").attr("action"))
+            $("#categories_form").submit();
+          $(this).dialog("close");
+        },
+        "取消" : function() {
+          $("#categories_form").attr("action", "");
+          $(this).dialog("close");
+        }
+      }
+    });
+  </script>
 </div>
 
 

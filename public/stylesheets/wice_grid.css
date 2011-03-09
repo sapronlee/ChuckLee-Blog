@@ -16,8 +16,7 @@
 
 .wice_grid th.sel, .wice_grid td.sel {
   width:10px;
-  text-align: center;
-  position: relative;
+  text-align: center;  
 }
 .wice_grid th.mun, .wice_grid td.mun {
   width:20px;
@@ -49,7 +48,7 @@
 }
 .wice_grid th.sel input, .wice_grid td.sel input {
   margin: 0;
-  position: absolute;
+  vertical-align: -2px;
 }
 
 .wice_grid th {    

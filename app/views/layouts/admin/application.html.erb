@@ -4,7 +4,7 @@
   <title><%= yield :title || Setting.site_name %></title>
   <meta charset="utf-8">
   <link href="http://fonts.googleapis.com/css?family=Fontdiner+Swanky:regular" rel="stylesheet" type="text/css" >
-  <%= stylesheet_link_tag "reset", "admin/common", :cache => "cached/admin/application" %>
+  <%= stylesheet_link_tag "reset", "jquery-ui", "admin/common", :cache => "cached/admin/application" %>
   <%= yield :styles %>
   <%= javascript_include_tag :defaults, "tiny_mce/jquery.tinymce", "tiny_mce/tiny_mce", :cache => "cached/admin/application" %>
   <%= yield :scripts %>
@@ -43,10 +43,10 @@
           <%= yield :tools %>          
         </div>
         <% if !notice.blank? %>
-          <div class="massage notice"><%= notice %></div>
+          <div class="massage ui-state-highlight ui-corner-all"><%= notice %></div>
         <% end -%>
         <% if !alert.blank? %>
-          <div class="massage alert"><%= alert %></div>
+          <div class="massage ui-state-error ui-corner-all"><%= alert %></div>
         <% end -%>
         <%= yield %>
       </div>
