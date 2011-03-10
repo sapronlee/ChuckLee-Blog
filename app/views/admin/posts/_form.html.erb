@@ -1,11 +1,29 @@
 <%= simple_form_for [:admin, @post] do |f| %>
   <%= f.input :title, :label => false, :input_html => { :class => "long" } %>
-  <%= f.association :category, :label => "分类", :hint => false, :collection => Category.find(:all), :prompt => "选择分类" %>
-  <%= f.input :summary, :as => :text, :input_html => { :class => "long", :style => "height:80px" } %>
+  <div class="col2 clearfix">
+    <%= f.association :category, :label => "分类", :hint => false, :collection => Category.find(:all), :prompt => "选择分类" %>
+    <div class="select upload">      
+      <a href="#" class="button" rel="nofollow">上传图片</a>
+      <div id="dialog" title="文件上传">
+        <iframe id="upload_iframe" src="<%= new_admin_post_image_path %>"></iframe>
+      </div>
+    </div>
+  </div>
   <%= f.input :body, :input_html => { :class => "long" } %>
+  <%= f.input :summary, :as => :text, :input_html => { :class => "long", :style => "height:80px" } %>
   <div class="actions">
     <%= f.button :submit %>
   </div>
+<% end -%>
+<%= content_for :scripts do -%>
+  <script type="text/javascript">
+  $(function() {
+    $("div.upload a").click(function() {
+      $("#dialog").dialog("open");
+      return false;
+    });
+  });
+  </script>
 <% end -%>
 <script type="text/javascript">
   $("#post_body").tinymce({    
@@ -21,4 +39,21 @@
     height : 500,
     language : "zh-cn"
   });
+  $("#dialog:ui-dialog").dialog("destroy");
+    $("#dialog").dialog({
+      autoOpen : false,
+      modal : true,
+      width : 500,
+      height : 400,
+      closeText : "关闭",
+      resizable : false,
+      draggable : false,
+      buttons : {
+        "插入" : function() {
+        },
+        "取消" : function() {
+          $(this).dialog("close");
+        }
+      }
+    });
 </script>

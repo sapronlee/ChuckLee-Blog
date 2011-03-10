@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <%= yield :styles %>
+  <%= yield :scripts %>
+  <script type="text/javascript">
+  // 禁止在iframe外打开
+  if (top.location == self.location) {
+    location.href = "/";
+  }
+  </script>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <%= yield %>        
+</body>
+</html>
