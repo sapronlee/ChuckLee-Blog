@@ -99,6 +99,7 @@ PLATFORMS
 DEPENDENCIES
   devise
   jquery-rails!
+  mime-types
   mongrel (~> 1.2.0.pre)
   mysql2
   paperclip (~> 2.3)

@@ -18,7 +18,7 @@ Chuckblog::Application.routes.draw do
         delete :destroy_selected
       end
     end
-    resources :post_images
+    resources :post_files
   end
 
   # The priority is based upon order of creation:

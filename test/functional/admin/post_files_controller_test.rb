@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PostImageTest < ActiveSupport::TestCase
+class Admin::PostFilesControllerTest < ActionController::TestCase
   # Replace this with your real tests.
   test "the truth" do
     assert true

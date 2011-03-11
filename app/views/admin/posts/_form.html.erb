@@ -4,9 +4,7 @@
     <%= f.association :category, :label => "分类", :hint => false, :collection => Category.find(:all), :prompt => "选择分类" %>
     <div class="select upload">      
       <a href="#" class="button" rel="nofollow">上传图片</a>
-      <div id="dialog" title="文件上传">
-        <iframe id="upload_iframe" src="<%= new_admin_post_image_path %>"></iframe>
-      </div>
+      <div id="dialog" title="文件上传"></div>
     </div>
   </div>
   <%= f.input :body, :input_html => { :class => "long" } %>
@@ -19,7 +17,7 @@
   <script type="text/javascript">
   $(function() {
     $("div.upload a").click(function() {
-      $("#dialog").dialog("open");
+      $("#dialog").empty().append("<iframe id=\"upload_iframe\" src=\"<%= new_admin_post_file_path %>\"></iframe>").dialog("open");
       return false;
     });
   });
@@ -43,17 +41,10 @@
     $("#dialog").dialog({
       autoOpen : false,
       modal : true,
-      width : 500,
-      height : 400,
+      width : 800,
+      height: 800,
       closeText : "关闭",
       resizable : false,
-      draggable : false,
-      buttons : {
-        "插入" : function() {
-        },
-        "取消" : function() {
-          $(this).dialog("close");
-        }
-      }
+      draggable : false
     });
 </script>

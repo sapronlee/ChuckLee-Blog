@@ -10,4 +10,5 @@ gem 'wice_grid', '3.0.0.pre2'
 gem 'paperclip', '~> 2.3'
 gem 'jquery-rails', :git => 'git://github.com/benmoss/jquery-rails.git'
 gem 'rails-settings-cached', :require => 'rails-settings'
+gem 'mime-types'
 

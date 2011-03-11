@@ -1,8 +1,0 @@
-<%= simple_form_for([:admin, @image], :html => { :multipart => true }) do |f| %>
-  <%= f.input :image, :as => :file %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <div class="action">
-    <%= f.button :submit %>
-  </div>
-<% end -%>

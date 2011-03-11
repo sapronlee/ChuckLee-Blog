@@ -169,6 +169,7 @@ zh-CN:
     models:
       category: "分类"
       post: "文章"
+      post_file: "附件"
     attributes:
       category:
         name: "名称"
@@ -179,6 +180,10 @@ zh-CN:
         body: "内容"
         summary: "摘要"
         category_id: "分类"
+      post_file:
+        name: "名称"
+        file: "附件"
+        description: "描述"
 
   activemodel:
     errors:
@@ -218,3 +223,5 @@ zh-CN:
       create: "新增%{model}"
       update: "更新%{model}"
       submit: "储存%{model}"
+      post_file:
+        create: "上传"

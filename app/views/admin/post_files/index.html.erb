@@ -1,0 +1,42 @@
+<%= content_for :scripts do -%>
+  <%= javascript_include_tag "jquery/jquery", "swfupload/swfupload", "swfupload/upload" %>
+  <script type="text/javascript">
+    var swfu;
+    $(function() {
+      var settings = {
+        upload_url : "<%= admin_post_files_path %>",
+        flash_url : "/javascripts/swfupload/swfupload.swf",
+        post_params: {authenticity_token : "<%= form_authenticity_token-%>"},
+        file_size_limit : "4mb",
+        button_placeholder_id : "browse",
+        button_width : 61,
+      	button_height : 22,
+        file_types : "*.jpg",
+        file_types_description : "JPG Image Files",
+        file_queued_handler : Upload.file_queued,
+				file_dialog_complete_handler : Upload.file_dialog_complete,
+				upload_start_handler : Upload.upload_start,
+				upload_progress_handler : Upload.upload_progress,
+				upload_error_handler : Upload.upload_error,
+				upload_success_handler : Upload.upload_success,
+        upload_complete_handler : Upload.upload_complete,
+				debug: true
+      };
+      swfu = new SWFUpload(settings);
+      
+      $('#upload').addClass('disabled').attr('disabled', 'true');
+      
+      $("#browse").click(function() {
+        swfu.selectFiles();
+      });
+      
+      $("#upload").click(function() {
+        swfu.startUpload();
+      });
+    });
+  </script>
+<% end -%>
+<div>
+	<button id="browse" class="browse">Browse</button>
+	<button id="upload" class="upload">Upload 0 Files</button>
+</div>
