@@ -11,4 +11,5 @@ gem 'paperclip', '~> 2.3'
 gem 'jquery-rails', :git => 'git://github.com/benmoss/jquery-rails.git'
 gem 'rails-settings-cached', :require => 'rails-settings'
 gem 'mime-types'
+gem 'dynamic_form'
 

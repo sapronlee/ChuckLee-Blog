@@ -3,8 +3,8 @@
   <div class="col2 clearfix">
     <%= f.association :category, :label => "分类", :hint => false, :collection => Category.find(:all), :prompt => "选择分类" %>
     <div class="select upload">      
-      <a href="#" class="button" rel="nofollow">上传图片</a>
-      <div id="dialog" title="文件上传"></div>
+      <a href="#" class="button" onclick="dialog('上传图片');">上传图片</a>
+      <div id="dialog" title=""></div>
     </div>
   </div>
   <%= f.input :body, :input_html => { :class => "long" } %>
@@ -12,16 +12,6 @@
   <div class="actions">
     <%= f.button :submit %>
   </div>
-<% end -%>
-<%= content_for :scripts do -%>
-  <script type="text/javascript">
-  $(function() {
-    $("div.upload a").click(function() {
-      $("#dialog").empty().append("<iframe id=\"upload_iframe\" src=\"<%= new_admin_post_file_path %>\"></iframe>").dialog("open");
-      return false;
-    });
-  });
-  </script>
 <% end -%>
 <script type="text/javascript">
   $("#post_body").tinymce({    
@@ -37,14 +27,25 @@
     height : 500,
     language : "zh-cn"
   });
-  $("#dialog:ui-dialog").dialog("destroy");
+    
+  function dialog(title) {
+    $("#dialog:ui-dialog").dialog("destroy");
+    $("#dialog").attr("title", title);
     $("#dialog").dialog({
       autoOpen : false,
       modal : true,
-      width : 800,
-      height: 800,
+      width : 600,
+      height: 600,
       closeText : "关闭",
       resizable : false,
       draggable : false
     });
+    $("#dialog").empty().append("<iframe id=\"upload_iframe\" src=\"<%= new_admin_post_file_path %>\"></iframe>").dialog("open");
+    return false;
+  }
+  
+  function addContentFormTextArea(content) {
+    $("#dialog").dialog("close");
+    $("#post_body").tinymce().execCommand("mceInsertContent", false, content);
+  }
 </script>

@@ -1,42 +1,26 @@
-<%= content_for :scripts do -%>
-  <%= javascript_include_tag "jquery/jquery", "swfupload/swfupload", "swfupload/upload" %>
-  <script type="text/javascript">
-    var swfu;
-    $(function() {
-      var settings = {
-        upload_url : "<%= admin_post_files_path %>",
-        flash_url : "/javascripts/swfupload/swfupload.swf",
-        post_params: {authenticity_token : "<%= form_authenticity_token-%>"},
-        file_size_limit : "4mb",
-        button_placeholder_id : "browse",
-        button_width : 61,
-      	button_height : 22,
-        file_types : "*.jpg",
-        file_types_description : "JPG Image Files",
-        file_queued_handler : Upload.file_queued,
-				file_dialog_complete_handler : Upload.file_dialog_complete,
-				upload_start_handler : Upload.upload_start,
-				upload_progress_handler : Upload.upload_progress,
-				upload_error_handler : Upload.upload_error,
-				upload_success_handler : Upload.upload_success,
-        upload_complete_handler : Upload.upload_complete,
-				debug: true
-      };
-      swfu = new SWFUpload(settings);
-      
-      $('#upload').addClass('disabled').attr('disabled', 'true');
-      
-      $("#browse").click(function() {
-        swfu.selectFiles();
-      });
-      
-      $("#upload").click(function() {
-        swfu.startUpload();
-      });
-    });
-  </script>
-<% end -%>
-<div>
-	<button id="browse" class="browse">Browse</button>
-	<button id="upload" class="upload">Upload 0 Files</button>
+<%= render "base" %>
+<h2>点击图片插入到编辑框。</h2>
+<div id="file_list">
+  <% if !@files.blank? %>
+    <ul class="clearfix">
+      <% @files.each do |f| -%>
+      <li class="item">
+        <script type="text/javascript">
+          var content_<%= f.id %> = "<img src=\"<%= f.file.url %>\" alt=\"<%= f.description %>\" />";
+        </script>
+        <a href="#" title="点击图片插入" class="add" onclick="parent.addContentFormTextArea(content_<%= f.id %>);">
+          <%= image_tag(f.file.url(:thumb), :alt => f.description ) %>
+        </a>
+        <ul>
+          <li><span>大小：</span><%= number_to_human_size(f.file_file_size) %></li>
+          <li><span>上传日期：</span><%= l(f.file_updated_at.to_date, :format => :long) %></li>
+          <li class="delete"><%= link_to("删除", admin_post_file_path(f), :method => :delete) %></li>
+        </ul>
+      </li>
+      <% end -%>
+    </ul>
+  <% else -%>
+  <p>你还没有上传任何附件,<a href="<%= new_admin_post_file_path %>">点击上传</a></p>
+  <% end -%>
+  <%= will_paginate @files %>
 </div>

@@ -1,3 +1,9 @@
 <%= content_for :styles do -%>
-  <%= stylesheet_link_tag "admin/common", "admin/post_files" %>
+  <%= stylesheet_link_tag "admin/post_files" %>
 <% end -%>
+<div id="file_menu">
+  <%= spaceless do -%>
+    <a href="<%= new_admin_post_file_path %>" class="button group left<%= ' checked' if ["new", "create"].index(action_name) %>">上传附件</a>
+    <a href="<%= admin_post_files_path %>" class="button group right<%= ' checked' if action_name == "index" %>">浏览附件</a>
+  <% end -%>
+</div>

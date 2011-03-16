@@ -255,6 +255,10 @@ a.button {
   max-width:934px;
   min-width:934px;
 }
+.simple_form textarea.h60 {
+  height:60px;
+  margin-left:2px;
+}
 .simple_form span.error, .simple_form span.hint {
   color:#BF0000;
   display:block;
@@ -278,4 +282,54 @@ a.button {
 #dialog p span.text {
   padding-left: 5px;
   line-height:160%;
+}
+
+/* from error messages */
+.errorExplanation {
+  border: 1px solid #BF0000;
+  padding:10px;
+  background:#ffeaea;
+  margin-bottom:10px;
+}
+.errorExplanation h2 {
+  font-size: 16px;
+  color:#BF0000;
+  padding-bottom:10px;
+}
+.errorExplanation p {
+  margin:0;
+  padding:0;
+  padding-left:2px;
+  padding-bottom:10px;
+  font-weight: bold;
+}
+.errorExplanation ul {
+  
+}
+.errorExplanation ul li {
+  
+  padding:3px 5px;
+  list-style: disc inside;
+}
+
+/* prompt frame styles */
+.prompt_frame {
+  margin-top:20px; 
+  border:1px solid #f7eac5; 
+  color:#b77635; 
+  padding:10px; 
+  background:#fffdf7;
+}
+.prompt_frame h3 {
+  font-size:14px;
+  margin-bottom:8px;
+}
+.prompt_frame p {
+  line-height:160%;
+}
+.prompt_frame ul {
+  list-style-position: inside;
+}
+.prompt_frame li {
+  
 }

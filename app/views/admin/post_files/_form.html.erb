@@ -1,7 +1,15 @@
 <%= simple_form_for([:admin, @file], :html => { :multipart => true }) do |f| %>
-  <%= f.input :file %>
-  <%= f.input :name %>
+  <%= f.error_messages %>
+  <%= f.input :file, :required => true, :error => false %>
+  <%= f.input :description %>
   <div class="actions">
     <%= f.button :submit %>
   </div>
 <% end -%>
+<script type="text/javascript">
+  $("#post_file_file").change(function() {
+    var full_file_name = $(this).val().substr($(this).val().lastIndexOf("\\") + 1);
+    var suffix_name = full_file_name.substr(full_file_name.lastIndexOf(".") + 1);
+    $("#post_file_description").val(full_file_name.replace("." + suffix_name, ""));    
+  });
+</script>

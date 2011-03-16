@@ -2,3 +2,68 @@ html, body {
   background:#FFF;
   height:99%;
 }
+
+#file_menu {
+  margin:10px 0 0 0;
+}
+h2 {
+  color:#b77635;
+  padding:10px 0;
+  font-size: 16px;
+}
+
+/* files list styles */
+#file_list {}
+#file_list li.item{
+  float:left;
+  width:150px;
+  margin:10px 18px 10px 18px;
+  display:inline;
+  overflow:hidden;
+  white-space:nowrap;
+}
+#file_list li.item a.add {
+  display:block;
+  width:140px;
+  height:140px;
+  padding:4px;
+  border:1px solid #666;
+  background:#ccc;
+}
+#file_list li.item a.add:hover {
+  background:#FFF;
+  border-color:#333;
+}
+#file_list li.item img {
+  width:140px;
+  height:140px;
+}
+#file_list li.item ul {
+  margin-top:7px;
+}
+#file_list li.item ul li {
+  padding:2px 0;
+  color:#666;
+}
+#file_list li.item ul li.delete a {
+  color:#BF0000;
+}
+#file_list p {
+  line-height:160%;
+  color:#666;
+  padding:5px 2px;
+}
+#file_list p a {
+  color: #BF0000;
+}
+
+/* overwrite pagination styles */
+.pagination {
+  padding-right:20px;
+}
+
+.prompt_frame {
+  margin:0 auto;
+  margin-top:10px;
+  width:500px;
+}

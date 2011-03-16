@@ -1,0 +1,16 @@
+<%= render "base" %>
+<div id="show_file">
+  <%= image_tag @file.file.url(:thumb) %>
+  <ul>
+    <li><span>大小：</span><span><%= @file.file_file_size %></span></li>
+    <li><span>上传日期：</span><span><%= @file.created_at %></span></li>
+    <li><span>更新日期：</span><span><%= @file.file_updated_at %></span></li>
+  </ul>
+  <%= simple_form_for([:admin, @file]) do |f| -%>
+    <%= f.input :file_file_name %>
+    <%= f.input :description %>
+    <div class="actions">
+      <%= f.button :submit %>
+    </div>
+  <% end -%>
+</div>

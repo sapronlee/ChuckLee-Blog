@@ -180,10 +180,12 @@ zh-CN:
         body: "内容"
         summary: "摘要"
         category_id: "分类"
-      post_file:
-        name: "名称"
+      post_file:        
         file: "附件"
         description: "描述"
+        file_file_name: "附件"
+        file_content_type: "附件类型"
+        file_file_size: "附件大小"
 
   activemodel:
     errors:
@@ -194,6 +196,11 @@ zh-CN:
         body: "如下字段出现错误："
 
   errors:
+    template:
+      header:
+        one: "有 1 个错误发生导致「%{model}」无法被保存。"
+        other: "有 %{count} 个错误发生导致「%{model}」无法被保存。"
+      body: "如下字段出现错误："
     format: "%{attribute} %{message}"
     messages:
       inclusion: "不包含于列表中"
