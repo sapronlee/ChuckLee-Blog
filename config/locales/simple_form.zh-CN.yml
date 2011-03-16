@@ -27,6 +27,9 @@ zh-CN:
         alias: "只能包含英文字母，数字，下滑线“_”和横杠“-”，且只能以字母开头。20个字符以内。"
       post_file:
         file: "只能上传png,jpg,gif等图片格式的附件。附件小于2M。"
+      post:
+        tag_list: "每个标签之间用‘,’分割。"
+        summary: "200字以内。"
     placeholders:
       post:
         title: "在此输入标题"

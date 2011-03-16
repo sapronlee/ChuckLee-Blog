@@ -2,7 +2,7 @@ class Admin::PostFilesController < Admin::ApplicationController
   layout "window"  
   
   def index
-     @files = PostFile.paginate :page => params[:page], :per_page => Setting.page_size
+     @files = PostFile.paginate :page => params[:page], :per_page => 6
   end
   
   def new

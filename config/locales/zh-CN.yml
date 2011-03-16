@@ -180,6 +180,7 @@ zh-CN:
         body: "内容"
         summary: "摘要"
         category_id: "分类"
+        tag_list: "标签"
       post_file:        
         file: "附件"
         description: "描述"
