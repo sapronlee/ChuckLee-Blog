@@ -1,25 +1,36 @@
 Chuckblog::Application.routes.draw do
+  
+  # 管理用户
   devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register' }
   
-  root :to => 'home#index'
+  # 首页
+  root :to => 'posts#index'
   
+  # 后台
   namespace :admin do
+    
     root :to => 'home#index'
+    
     resources :settings
+    resources :post_files
+    
     resources :categories do |c|
       collection do
         post :search
         delete :destroy_selected
       end
     end
+    
     resources :posts do |p|
       collection do
         post :search
         delete :destroy_selected
       end
-    end
-    resources :post_files
+    end    
   end
+  
+  resources :posts, :except => :show
+  match "/:year/:month/:day/:id-:slug" => "posts#show", :as => :post, :constraints => { :year => /\d{4}/, :month => /\d{2}/, :day => /\d{2}/, :slug => /[a-z0-9\-]+/ }
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

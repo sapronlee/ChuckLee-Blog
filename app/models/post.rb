@@ -6,5 +6,5 @@ class Post < ActiveRecord::Base
   
   validates_presence_of :title, :body
   validates_presence_of :category_id, :message => "必须选择分类"
-  validates_length_of :title, :in => 1..100
+  validates_length_of :title, :in => 1..100  
 end
