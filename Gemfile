@@ -13,4 +13,5 @@ gem 'rails-settings-cached', :require => 'rails-settings'
 gem 'mime-types'
 gem 'dynamic_form'
 gem 'acts-as-taggable-on'
+gem 'themes_for_rails'
 

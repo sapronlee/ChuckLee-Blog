@@ -1,11 +1,16 @@
 /* commom styles */
-body {background: #212121 url(/images/themes/vulcan/body.png);font-family: Arial, verdana, Tahoma, Century gothic, sans-serif;font-size: 12px;}
+body {background: #212121 url(/images/themes/vulcan/body.png);font-family: Arial, verdana, Tahoma, Century gothic, sans-serif;}
 
 /* commom link styles */
 a {color: #5384BF;text-decoration: none;outline: none;}
 p {line-height:130%;}
 a:visited {color: #5384BF;}
 a:hover, a:active {color: #214974;text-decoration: none;}h1,h2, h3, h4, h5, h6 {line-height: 125%;font-weight: bold;}
+h1 {font-size: 2em; }
+h2 {font-size: 1.5em;}
+h3 {font-size: 1.17em;}
+h5 {font-size: 0.83em;}
+h6 {font-size: 0.67em;}
 
 /* twitter styles */
 p.twitter-message {color: #555;font-size: 12px;padding: 10px;border-bottom: 1px solid #eee;}
@@ -16,6 +21,7 @@ a.twitter-link, a.twitter-user {color: #DF4400;}
 #nav_container {height: 50px;margin: 0px auto;font: 11px verdana, Arial, Tahoma, Century gothic, sans-serif;font-weight: normal;text-transform: uppercase;background: #0f1114;}
 #blogname_container {height: 102px;margin: auto;position: relative;background: url(/images/themes/vulcan/top.png) top center no-repeat;}
 #top_container {height: 66px;}
+.other { font-size: 12px; }
 .innerbox {width: 900px;margin: 0px auto;}
 #top_container .innerbox {width: 300px;height: 66px;float: left;margin: 0;}
 
@@ -38,7 +44,7 @@ a.twitter-link, a.twitter-user {color: #DF4400;}
 /* search styles */
 #search {width: 300px;float: right;height: 66px;background: url(/images/themes/vulcan/searchbg.png);display: inline;}
 #search p {font-size: 85%;}#search input.name {width: 180px;background: #5b0a08;margin: 20px 0px 0px 20px;padding: 6px 5px;height: 15px;border: 1px solid #9d110f;font: normal 100% "Tahoma", Arial, Helvetica, sans-serif;
-  color: #fff;float: left;display: inline;}
+  color: #fff;float: left;display: inline; font-size: 12px;}
 #search input.submit {background: #24272e;border: 1px solid #90100e;color: #fff;display: block;margin: 20px 0px 0px 10px;padding: 5px;float: left;cursor: pointer;}   
 
 
@@ -91,7 +97,7 @@ a.twitter-link, a.twitter-user {color: #DF4400;}
 #categories h3 {color: #FFF; font-size: 16px; padding: 8px; font-weight: normal; background: #24272E; }
 #categories ul {padding-bottom: 5px;}
 #categories ul li {line-height: 18px;}
-#categories ul li a:link, .tabox ul li a:visited {color: #6F6F6F; border-bottom: 1px dotted #DDD; padding: 5px 0 5px 10px; display: block;}
+#categories ul li a:link, .tabox ul li a:visited {color: #6F6F6F; border-bottom: 1px dotted #DDD; padding: 5px 0 5px 10px; display: block; font-size: 12px;}
 #categories ul li a:hover {color: #DF4400;}
 
 /* index posts styles */
@@ -99,24 +105,52 @@ a.twitter-link, a.twitter-user {color: #DF4400;}
 #posts .post .cover {float: left;margin: 0 11px 0 15px;}
 #posts .post .cover a {display: block; padding: 7px 7px 27px 7px; background: #DDD url(/images/themes/vulcan/postim.png) bottom no-repeat;}
 #posts .post .cover img {width: 180px; height: 160px;}
-#posts .post .title h2 {padding: 5px 5px 10px 0;text-shadow: 1px 1px 0 #DDD; font: 26px Arial,georgia,century gothic,verdana, sans-serif;}
-#posts .post .title h2 a, #posts .post .title h2 a:link, .post .title h2 a:visited {color: #414855; background-color: transparent;line-height: 24px; font-weight: bold;}
-#posts .post .title h2 a:hover {color: #000;}
-#posts .post .meta {display: inline-block;width: 380px;}
-#posts .post .meta .metabox {color: #333; width: 125px; text-align: center; height: 30px; line-height: 30px; float: right;text-indent: 15px;}
-#posts .post .meta .comment {color: #FFF; text-shadow: 1px 1px 0 #5F0200; font-size: 10px; text-transform: uppercase; background: #90100d url(/images/themes/vulcan/comm.png) no-repeat;}
-#posts .post .meta .time {color: #FFF; text-shadow: 1px 1px 0 #AF3E00; font-size: 10px; text-transform: uppercase; background: #e25a10 url(/images/themes/vulcan/date.png) no-repeat;}
-#posts .post .meta .author {color: #FFF; text-shadow: 1px 1px 0 #BF7500; font-size: 10px; text-transform: uppercase; background: #fdaa24 url(/images/themes/vulcan/auth.png) no-repeat;}
-#posts .post .meta .comment a:link, #posts .post .meta .comment a:visited {color: #FFF;}
-#posts .post .meta .comment a:hover {color: #FF726F;}
 #posts .post .body {line-height: 24px; padding: 10px;font-size: 14px;}
 #posts .post .read_more {width: 600px; height: 34px; display: inline-block;}
 #posts .post .read_more span {float: right;width: 137px;height: 34px; font-size: 14px;line-height: 34px; text-align: center; font-weight: bold; text-shadow: 1px 1px 0 #899f09;
   background: url(/images/themes/vulcan/rmore.png); text-transform: uppercase;text-indent: 15px;}
 #posts .post .read_more span a:link, #posts .post .read_more span a:visited {color: #FFF;}
 #posts .post .read_more span a:hover {color: #000;}
+  
+/* show post styles */
+#post { height: 100%; color: #454B58; padding: 10px 0; margin: 0 0 10px 15px;}
 
-/* footer styles */.fcred{text-align: center;margin: 10px;line-height: 16px;}
+.title h2 { padding: 5px 5px 10px 0; font: 26px Arial, georgia, century gothic, verdana, sans-serif; overflow: hidden; text-shadow: 1px 1px 0px #ddd; }
+.title h2 a, .title h2 a:link, .title h2 a:visited { color: #414855; background-color: transparent; line-height: 24px; font-weight: bold;}
+.title h2 a:hover { color: #000; }
+.meta { display: inline-block; }
+.meta .metabox { color: #333333; width: 195px; text-align: center; height: 30px; line-height: 30px; text-transform: uppercase; font-size: 10px; float: right; text-indent: 15px; }
+.meta .comment { color: #fff; text-shadow: 1px 1px 0px #5F0200; font-size: 10px; text-transform: uppercase; background: #90100d url(/images/themes/vulcan/comm.png) no-repeat; }
+.meta .time { color: #fff; text-shadow: 1px 1px 0px #AF3E00; font-size: 10px; text-transform: uppercase; background: #e25a10 url(/images/themes/vulcan/date.png) no-repeat; }
+.meta .author { color: #fff; text-shadow: 1px 1px 0px #BF7500; font-size: 10px; text-transform: uppercase; background: #fdaa24 url(/images/themes/vulcan/auth.png) no-repeat; }
+.meta .comment a:link, .meta .comment a:visited {color: #FFF;}
+.meta .comment a:hover {color: #FF726F;}
+
+#post .meta { width: 585px; }
+#post .metabox { width: 195px; }
+#posts .meta { width: 380px; }
+#posts .metabox { width: 125px; }
+#post .title h2 { font-weight:bold; }
+.body { padding: 10px 10px 5px 0; color:#000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px;}
+.body p { margin: 5px 0px; padding: 5px 0px; line-height:24px; }
+.body a:link, .body a:visited { color: #1D81B6; background-color: transparent;}
+.body a:hover { color:#00488F; background-color: transparent; text-decoration: underline; }
+.body blockquote { font-style: italic; color: #555; padding:10px; }
+.body blockquote blockquote { color: #777; }
+.body blockquote em { font-style: normal; }
+.body pre { padding: 9px; background: #f9f9f9; border: 1px solid #ccc; }
+.body code { padding: 0 3px; background: #eee; }
+.body pre code { background: transparent; }
+.body ul { list-style-type: disc; }
+.body ol { list-style-type: decimal; }
+.body ul, .body ol { margin: 0.4em 0 1em; line-height: 150%;}
+.body ul li, .body ol li { list-style-position:outside; margin-left: 3em; }
+
+
+
+
+/* footer styles */
+#footer { font-size: 12px; }.fcred{text-align: center;margin: 10px;line-height: 16px;}
 .bottom {background: #210b01 url(/images/themes/vulcan/foot.jpg) center top no-repeat;}
 .bor-5 {border-top: 5px solid #fdaa24;}
 .botwid {float: left;width: 200px;padding-bottom: 30px;font-size: 12px;margin: 20px 0px 0px 20px;color: #ddd;}

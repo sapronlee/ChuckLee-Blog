@@ -1,29 +1,24 @@
 <% title("home") %>
 <div id="posts">
-  <div class="post clearfix">
-    <div class="cover">
-      <a href="#"><%= image_tag "default/timthumb.jpg" %></a>
-    </div>
-    <div class="body">
-      <div class="title">
-        <h2>
-          <a href="#">Nunc ornare dui at metus mattis pulvinar</a>
-        </h2>
-        <div class="meta">
-          <div class="metabox comment">
-            <a href="#">0 Comments</a>
+  <% if !@posts.blank? -%>
+    <% @posts.each do |p| -%>
+      <div class="post clearfix">
+        <div class="cover"><a href="<%= slug_post_path(p) %>" title="<%= p.title %>"><%= image_tag "default/timthumb.jpg", :alt => p.title %></a></div>
+        <div class="important">
+          <div class="title">
+            <h2><a href="<%= slug_post_path(p) %>" title="<%= p.title %>"><%= p.title %></a></h2>
+            <div class="meta">
+              <div class="metabox comment"><a href="#" title="0 Comments">0 Comments</a></div>
+              <div class="metabox time"><%= l(p.created_at.to_date, :format => :long) %></div>
+              <div class="metabox author">SapronLee</div>
+            </div>
           </div>
-          <div class="metabox time">2011年03月22日</div>
-          <div class="metabox author">SapronLee</div>
+          <div class="body"><%= raw(p.body) %></div>
+        </div>
+        <div class="read_more">
+          <span><a href="<%= slug_post_path(p) %>" title="阅读">Continue</a></span>
         </div>
       </div>
-      <p>
-        Nunc ornare dui at metus mattis pulvinar. Nullam tincidunt justo nec libero malesuada eget dapibus lorem facilisis. Nam eu metus auctor augue ornare faucibus. Fusce egestas dui eu est mattis aliquam ornare ipsum malesuada. Morbi pretium quam quis lacus eleifend ultricies. Donec fermentum, massa ut molestie gravida, ipsum metus pretium eros, sodales condimentum dui risus at lectus. Suspendisse potenti. Fusce congue est nec ante eleifend dictum. Praesent in felis at
-        <a href="#"> [ Read Move ]</a>
-      </p>
-    </div>
-    <div class="read_more">
-      <span><a href="#">Continue</a></span>
-    </div>
-  </div>
+    <% end -%>
+  <% end -%>
 </div>
