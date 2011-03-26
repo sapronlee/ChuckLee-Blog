@@ -30,6 +30,7 @@ zh-CN:
       post:
         tag_list: "每个标签之间用‘,’分割。"
         summary: "200字以内。"
+        slug: "友好的url别名，只能包含英文字母，数字，和横杠“-”，且只能以字母开头。"
     placeholders:
       post:
         title: "在此输入标题"

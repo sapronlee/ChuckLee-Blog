@@ -210,7 +210,9 @@ a.button {
 }
 
 /* simple form styles */
-.simple_form {}
+.simple_form {
+  font-size: 12px; 
+}
 .simple_form div.input {
   margin-bottom:10px;
 }
@@ -242,13 +244,13 @@ a.button {
 .simple_form textarea.text {
   border: 1px solid #DDD;
   border-left-color:#999;
-  border-top-color:#999;  
+  border-top-color:#999;
 }
 
 .simple_form input.long {
-  width:928px;
-  max-width:928px;
-  min-width:928px;
+  width:930px;
+  max-width:930px;
+  min-width:930px;
 }
 .simple_form textarea.long {
   width:934px
@@ -266,6 +268,23 @@ a.button {
 }
 .simple_form span.hint {
   color:#777;
+}
+.simple_form .actions {
+  margin-top: 10px;
+}
+#ad_options { padding: 7px; display: block; color: #FFF; -webkit-border-radius: 4px 4px 0 0;border-radius: 4px 4px 0 0;-moz-border-radius: 4px 4px 0 0; background: #BF0000;}
+#ad_options span.fh { padding-right: 5px;}
+#ad_options:hover { color: #333; text-decoration: none;}
+#ad_options_wapper {display: none; padding: 10px; border: 1px solid #BF0000; background: #fff9f9;}
+#ad_options_wapper input.long {
+  width:908px;
+  max-width:908px;
+  min-width:908px;
+}
+#ad_options_wapper textarea.long {
+  width:912px
+  max-width:912px;
+  min-width:912px;
 }
 
 /* flash styles */

@@ -26,9 +26,39 @@ a:hover { color: #0066CC; text-decoration: underline; }
 #sidebar .box a:link, #sidebar .box a:visited { color: #555;}
 #sidebar .box a:hover { color: #0066cc;}
 #sidebar .box h3 { text-transform: uppercase; color: #4C5A0F; border-bottom: 1px solid #ccc; padding-bottom: 2px; font-weight: bold;}
-#sidebar .box li { margin: 2px 5px; background: url(/themes/default/images/ul.gif) no-repeat left 8px; padding-left: 8px; }
+#sidebar .box li { margin: 2px 5px; background: url(/themes/default/images/ul.gif) no-repeat left 7px; padding-left: 8px; }
 #sidebar .imgbox { text-align: center;}
 #footer .content { height: 60px; width: 928px; margin: auto; padding: 40px 10px 0; color: #000; background: url(/themes/default/images/footer_bg.gif) no-repeat top center; text-shadow: 0 1px 0 #E9E9E9;}
 #footer .left { float: left; }
 #footer .right {float: right; }
+
+/* post styles */
+.post { padding-bottom: 30px;}
+.post a:link, .post a:visited { color: #678E04; text-decoration: none;}
+.post a:hover { color: #0066cc;}
+.post h2 { font-size: 16px; border-bottom: 1px solid #D6D6D6; padding: 3px 0; word-wrap: break-word; line-height: 18px; font-weight: bold; }
+.post h2 a:link, .post h2 a:visited { color: #4C5A0F;}
+.post .post_info { margin: 3px 0;}
+.post .post_meta { padding: 1px 0; margin: 6px 0 25px;}
+.post .post_date, .post .post_comments, .post .post_categories, .post .post_tags { background: url(/themes/default/images/icons.gif) no-repeat;
+  margin-right: 12px; padding-left: 18px; height: 16px; line-height: 16px; display: block; font-size: 11px;}
+.post .post_date { float: left;}
+.post .post_comments { float: right; background-position: 0 -48px;}
+.post .post_categories { float: left; background-position: 0 -16px;}
+.post .post_tags { float: left; background-position: 0 -64px;}
+
+.post .post_body { margin-top: 5px; overflow: hidden;}
+.post .post_body p { margin-bottom: 0.5em;}
+.post .post_body ol { padding: 0 0 0 35px;}
+.post .post_body ul {}
+.post .post_body ul li{ list-style-position: inside; background:url(/themes/default/images/ul.gif) no-repeat left 7px; margin-left: 10px; padding-left: 8px;}
+.post .post_body img { border:1px solid #ccc; padding: 2px; max-width: 570px; height: auto; margin: 3px;}
+.post .post_body .wp-smiley{ border: 0px;}
+.post .post_body input{ border: 1px solid #ccc; margin: 2px 0; padding: 3px;}
+.post .post_body blockquote { margin: 5px; padding: 5px; background: #EAEAEA;}
+.post .post_body table { border: 1px solid #777;}
+.post .post_body table tr th{ padding: 1px 10px; background: #999;}
+.post .post_body table tr td{ padding: 2px 10px; background: #ddd;}
+
+
 

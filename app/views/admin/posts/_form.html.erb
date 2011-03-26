@@ -8,8 +8,12 @@
     </div>
   </div>
   <%= f.input :body, :input_html => { :class => "long" } %>
-  <%= f.input :summary, :as => :text, :input_html => { :class => "long", :style => "height:80px" } %>
-  <%= f.input :tag_list, :input_html => { :class => "long" } %>
+  <%= f.input :slug, :input_html => { :class => "long" } %>
+  <a id="ad_options" href="#" onclick="return advanced_options();"><span class="fh">+</span><span class="wz">显示</span>高级选项</a>
+  <div id="ad_options_wapper">
+    <%= f.input :summary, :as => :text, :input_html => { :class => "long", :style => "height:80px" } %>
+    <%= f.input :tag_list, :input_html => { :class => "long" } %>
+  </div>
   <div class="actions">
     <%= f.button :submit %>
   </div>
@@ -48,5 +52,19 @@
   function addContentFormTextArea(content) {
     $("#dialog").dialog("close");
     $("#post_body").tinymce().execCommand("mceInsertContent", false, content);
+  }
+  
+  function advanced_options() {    
+    if($("#ad_options_wapper").css("display") == "none") {
+      $("#ad_options_wapper").show();
+      $("#ad_options span.wz").text("隐藏");
+      $("#ad_options span.fh").text("-");
+      $("#ad_options").blur();
+    } else {
+      $("#ad_options_wapper").hide();
+      $("#ad_options span.wz").text("显示");
+      $("#ad_options span.fh").text("+");
+    }
+    return false;
   }
 </script>

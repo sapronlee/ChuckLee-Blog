@@ -13,16 +13,16 @@
       <li><a href="#">主人~~，快出来冒个泡！</a></li>
     </ul>
   </div>
+  <% if !@categories.blank? -%>
   <div class="box">
     <h3>CATEGORIES</h3>
     <ul>
-      <li><a href="#">Category 1</a></li>
-      <li><a href="#">Category 2</a></li>
-      <li><a href="#">Category 3</a></li>
-      <li><a href="#">Category 4</a></li>
-      <li><a href="#">Category 5</a></li>
+      <% @categories.each do |c| -%>
+        <li><a href="#"><%= c.name %></a></li>
+      <% end -%>
     </ul>
   </div>
+  <% end -%>
   <div class="box">
     <h3>RECENT POSTS</h3>
     <ul>

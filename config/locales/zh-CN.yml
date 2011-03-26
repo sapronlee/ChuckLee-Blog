@@ -181,6 +181,7 @@ zh-CN:
         summary: "摘要"
         category_id: "分类"
         tag_list: "标签"
+        slug: "别名"
       post_file:        
         file: "附件"
         description: "描述"
