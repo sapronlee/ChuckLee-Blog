@@ -21,6 +21,10 @@ a:hover { color: #0066CC; text-decoration: underline; }
 #main .top_corner {background-position: left top;}
 #main .bottom_corner {background-position: left bottom;}
 #content .content { padding: 5px 30px; background: url(/themes/default/images/content_m.png) repeat-y; }
+#content .box {}
+#content .box h3 { font-size: 13px; font-weight: bold;}
+#content .box ul { }
+#content .box li { list-style-position: inside; background:url(/themes/default/images/ul.gif) no-repeat left 7px; margin-left:10px; padding-left:8px; }
 #sidebar .content { padding: 3px 10px; background: url(/themes/default/images/sidebar_m.png) repeat-y; }
 #sidebar .box { padding: 10px;}
 #sidebar .box a:link, #sidebar .box a:visited { color: #555;}
@@ -34,6 +38,7 @@ a:hover { color: #0066CC; text-decoration: underline; }
 
 /* post styles */
 .post { padding-bottom: 30px;}
+#posts_show .post { padding-bottom: 10px;}
 .post a:link, .post a:visited { color: #678E04; text-decoration: none;}
 .post a:hover { color: #0066cc;}
 .post h2 { font-size: 16px; border-bottom: 1px solid #D6D6D6; padding: 3px 0; word-wrap: break-word; line-height: 18px; font-weight: bold; }

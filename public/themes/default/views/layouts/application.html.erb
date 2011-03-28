@@ -11,7 +11,7 @@
   <%= yield :scripts %>
   <%= csrf_meta_tag %>
 </head>
-<body>
+<body id="<%= "#{controller_name}_#{action_name}" %>">
   <div id="wrapper">
     <div id="wrapper_2">
       <div id="header" class="clearfix">
