@@ -12,7 +12,7 @@ a:hover { color: #0066CC; text-decoration: underline; }
 #nav ul li { float: left; display: inline;}
 #nav ul li a { display: block; color: #404a10; padding: 0 1.2em 0; line-height: 80px; text-shadow: 0 1px 0 #DFDFDF; }
 #nav ul li a:hover { text-decoration: none; color: #0066cc; }
-#main { width: 950px; margin: 0 auto; height: 600px;}
+#main { width: 950px; margin: 0 auto; }
 #footer { height: 100px; background:url(/themes/default/images/footer.gif) repeat-x; }
 #content { width: 650px; float: left; overflow: hidden;}
 #sidebar { width: 280px; float: right; overflow: hidden; margin-top: 30px; color: #555;}
@@ -46,13 +46,29 @@ a:hover { color: #0066CC; text-decoration: underline; }
 .post .post_comments { float: right; background-position: 0 -48px;}
 .post .post_categories { float: left; background-position: 0 -16px;}
 .post .post_tags { float: left; background-position: 0 -64px;}
+.post .post_tags a { }
 
 .post .post_body { margin-top: 5px; overflow: hidden;}
 .post .post_body p { margin-bottom: 0.5em;}
-.post .post_body ol { padding: 0 0 0 35px;}
-.post .post_body ul {}
-.post .post_body ul li{ list-style-position: inside; background:url(/themes/default/images/ul.gif) no-repeat left 7px; margin-left: 10px; padding-left: 8px;}
-.post .post_body img { border:1px solid #ccc; padding: 2px; max-width: 570px; height: auto; margin: 3px;}
+.post .post_body ol, .post .post_body ul { margin: 12px 0; padding-left: 40px; }
+.post .post_body ol { list-style: decimal;}
+.post .post_body ul { list-style: disc; }
+.post .post_body ul li{ }
+.post .post_body img { max-width: 590px; height: auto; }
+.post .post_body strong, .post .post_body b { font-weight: bold;}
+.post .post_body i, .post .post_body cite, .post .post_body em, .post .post_body var, .post .post_body address {
+  font-style: italic;}
+.post .post_body pre {margin: 8px;}
+.post .post_body h1, .post .post_body h2, .post .post_body h3, .post .post_body h4, .post .post_body h5, .post .post_body h6 {
+  font-weight: bold;}
+.post .post_body h1 {font-size: 1.7em; margin: 13px 0;}
+.post .post_body h2 {font-size: 1.3em; margin: 12px 0; border: none;}
+.post .post_body h3 {font-size: 1.17em; margin: 12px 0; }
+.post .post_body h4 {font-size: 1em; margin: 15px 0; }
+.post .post_body h5 {font-size: .83em; margin: 20px 0; }
+.post .post_body h6 {font-size: .75em; margin: 27px 0; }
+.post .post_body sup { vertical-align: super; font-size: smaller;}
+.post .post_body sub { vertical-align: sub; font-size: smaller;}
 .post .post_body .wp-smiley{ border: 0px;}
 .post .post_body input{ border: 1px solid #ccc; margin: 2px 0; padding: 3px;}
 .post .post_body blockquote { margin: 5px; padding: 5px; background: #EAEAEA;}

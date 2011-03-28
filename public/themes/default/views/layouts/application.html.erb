@@ -28,7 +28,9 @@
       </div>
       <div id="main" class="clearfix">
         <div id="content">
-          <%= yield %>
+          <div class="top_corner"></div>
+          <div class="content"><%= yield %></div>
+          <div class="bottom_corner"></div>
         </div>
         <div id="sidebar">
           <%= render "/shared/sidebar" %>

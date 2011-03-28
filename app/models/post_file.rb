@@ -4,7 +4,7 @@ class PostFile < ActiveRecord::Base
     :styles => {
       :thumb => "140x140#",
       :small => "400>",
-      :normal => "600>" },
+      :normal => "590>" },
     :default_style => :normal,
     :url => "/upload/:attachment/:date_path/:style_:hash_name.:extension",
     :path => ":rails_root/public/upload/:attachment/:date_path/:style_:hash_name.:extension",
