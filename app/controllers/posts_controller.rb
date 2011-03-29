@@ -6,5 +6,6 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find(params[:id], :include => [:category])
+    @comment = @post.comments.new
   end
 end

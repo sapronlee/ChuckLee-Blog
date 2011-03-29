@@ -14,4 +14,5 @@ gem 'mime-types'
 gem 'dynamic_form'
 gem 'acts-as-taggable-on'
 gem 'themes_for_rails'
+gem 'acts_as_commentable'
 

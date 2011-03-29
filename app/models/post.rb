@@ -1,7 +1,9 @@
 # coding : utf-8
 class Post < ActiveRecord::Base
   # 添加tags
-  acts_as_taggable 
+  acts_as_taggable
+  # 添加comments
+  acts_as_commentable
   belongs_to :category, :counter_cache => true
   
   before_save :format_post

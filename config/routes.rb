@@ -29,13 +29,15 @@ Chuckblog::Application.routes.draw do
         post :search
         delete :destroy_selected
       end
-    end    
+    end
   end
   
   # posts
   # show post: /2011/03/22/1-description
-  resources :posts, :except => :show
+  resources :posts, :except => :show do |post|
+    # 评论
+    resources :comments
+  end
   match "/:year/:month/:day/:id-:slug" => "posts#show", :as => :post, 
     :constraints => { :year => /\d{4}/, :month => /\d{2}/, :day => /\d{2}/, :slug => /[a-z0-9\-]+/ }
-
 end

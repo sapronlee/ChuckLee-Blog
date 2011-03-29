@@ -82,5 +82,13 @@ a:hover { color: #0066CC; text-decoration: underline; }
 .post .post_body table tr th{ padding: 1px 10px; background: #999;}
 .post .post_body table tr td{ padding: 2px 10px; background: #ddd;}
 
-
-
+/* comments styles */
+#posts_show .comments ul li { background: none; margin: 0; padding: 15px 0;}
+.comment .avatar { padding: 2px; border: 1px solid #DDD; height: 38px; width: 38px; float: left; }
+.comment .comment_content { margin-left: 60px; background: #F7F7F7; border-top: 1px solid #CCC; padding: 5px;}
+.comment .comment_info { height: 18px; }
+.comment .comment_meta { float: left; }
+.comment .comment_meta cite { font-style: italic; }
+.comment .comment_meta span { padding: 0 4px; }
+.comment .comment_date { float: right; font-size: 11px; font-style: italic; color: #BBB; text-align: right;}
+.comment .comment_body { padding: 2px 0; color: #282C2F;}
