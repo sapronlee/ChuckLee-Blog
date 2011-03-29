@@ -51,6 +51,7 @@ a:hover { color: #0066CC; text-decoration: underline; }
 .post .post_comments { float: right; background-position: 0 -48px;}
 .post .post_categories { float: left; background-position: 0 -16px;}
 .post .post_tags { float: left; background-position: 0 -64px;}
+.post .post_tags span { padding: 0 3px;}
 .post .post_tags a { }
 
 .post .post_body { margin-top: 5px; overflow: hidden;}

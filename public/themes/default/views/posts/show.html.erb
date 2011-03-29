@@ -15,11 +15,9 @@
   </div>
   <div class="post_meta clearfix">
     <span class="post_categories"><a href="#" title="<%= @post.category.name %>"><%= @post.category.name %></a></span>
-    <% if !@post.tag_list.blank? -%>
+    <% if !@post.cached_tag_list.blank? -%>
       <span class="post_tags">
-        <% @post.tag_list.each_with_index do |t, i| -%>
-          <a href="#" title="<%= t %>"><%= t %></a><%= "," if i != @post.tag_list.length - 1 -%>
-        <% end -%>
+        <%= tags_link(@post) %>
       </span>
     <% end -%>
   </div>

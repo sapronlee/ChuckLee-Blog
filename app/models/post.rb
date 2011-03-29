@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
   belongs_to :category, :counter_cache => true
   
   before_save :format_post
+  # after_save :save_cached_tag_list
   
   validates_presence_of :title, :body, :slug
   validates_presence_of :category_id, :message => "必须选择分类"
