@@ -1,0 +1,11 @@
+<%= simple_form_for comment do |f| -%>
+  <%= f.input :commentable_id, :as => :hidden %>
+  <%= f.input :commentable_type, :as => :hidden %>
+  <%= f.input :name, :input_html => { :size => 24 } %>
+  <%= f.input :email, :input_html => { :size => 24 } %>
+  <%= f.input :page, :input_html => { :size => 24 } %>
+  <%= f.input :comment, :label => false %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end -%>

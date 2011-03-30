@@ -23,49 +23,14 @@
   </div>
 </div>
 <div class="comments box">
-  <h3>22 Responses to “<%= @post.title %>”</h3>
-  <ul>
-    <li class="comment clearfix">
-      <%= image_tag "default/avatar/avatar_38.png", :class => "avatar" %>
-      <div class="comment_content">
-        <div class="comment_info clearfix">
-          <div class="comment_meta">
-            <cite><a href="#">sapronlee</a></cite><span>says:</span>
-          </div>
-          <div class="comment_date">2011年3月09日 17:17</div>
-        </div>
-        <div class="comment_body">
-          <p>赶紧放出来撒，羡慕~</p>
-          <p>赶紧放出来撒，羡慕~</p>
-        </div>   
-      </div>
-    </li>
-    <li class="comment clearfix">
-      <%= image_tag "default/avatar/avatar_38.png", :class => "avatar" %>
-      <div class="comment_content">
-        <div class="comment_info clearfix">
-          <div class="comment_meta">
-            <cite><a href="#">sapronlee</a></cite><span>says:</span>
-          </div>
-          <div class="comment_date">2011年3月09日 17:17</div>
-        </div>
-        <div class="comment_body">
-          <p>赶紧放出来撒，羡慕~</p>
-          <p>赶紧放出来撒，羡慕~</p>
-        </div>   
-      </div>
-    </li>
-  </ul>
-</div>
-<div class="comment_relay box">
-  <h3>Leave a Reply</h3>
-  <%= simple_form_for [@post, @comment] do |f| -%>
-    <%= f.input :name %>
-    <%= f.input :email %>
-    <%= f.input :page %>
-    <%= f.input :comment %>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-  <% end -%>
+  <div class="comment_list">
+    <h3>22 Responses to “<%= @post.title %>”</h3>
+    <ul>
+      <%= render @post.comments %>
+    </ul>
+  </div>
+  <div class="comment_form">
+    <h3>Leave a Reply</h3>
+    <%= render "comments/form", :comment => @post.comments.new %>
+  </div>  
 </div>

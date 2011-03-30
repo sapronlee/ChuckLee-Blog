@@ -1,0 +1,21 @@
+<li class="comment clearfix">
+  <%= image_tag "default/avatar/avatar_38.png", :class => "avatar" %>
+  <div class="comment_content">
+    <div class="comment_info clearfix">
+      <div class="comment_meta">
+        <cite>
+          <% if !comment.page.blank? -%>
+            <a href="http://<%= comment.page %>"><%= comment.name %></a>
+          <% else -%>
+            <%= comment.name %>
+          <% end -%>
+        </cite>
+        <span>says:</span>
+      </div>
+      <div class="comment_date"><%= l(comment.created_at, :format => :long) %></div>
+    </div>
+    <div class="comment_body">
+      <%= comment.comment %>  
+    </div>   
+  </div>
+</li>
