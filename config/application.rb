@@ -31,7 +31,9 @@ module Chuckblog
     config.i18n.default_locale = "zh-CN"
 
     # JavaScript files you want as :defaults (application.js is always included).
-    config.action_view.javascript_expansions[:defaults] = %w(jquery/jquery jquery/jquery.rails jquery/jquery-ui.min jquery/jquery.ui.zh-cn)
+    config.action_view.javascript_expansions[:defaults] = %w(jquery/jquery jquery/jquery.rails jquery/jquery-ui.min)    
+    
+    config.action_view.stylesheet_expansions[:defaults] = %w(reset jquery-ui application)    
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"

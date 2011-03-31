@@ -96,4 +96,14 @@ a:hover { color: #0066CC; text-decoration: underline; }
 .comment_form input.string { border: 1px solid #CCC; margin: 3px 0; padding: 3px;}
 .comment_form textarea.text { border: 1px solid #ccc; margin: 3px 0; width: 90%; height: 150px;}
 .comment_form div.input {position: relative;}
-.comment_form label { position: absolute; left: 190px; top: 4px;}
+.comment_form label { position: absolute; left: 190px; top: 5px; color: #777;}
+.comment_form .actions input { border: 1px solid #CCC; margin: 3px 0; padding: 3px 5px;}
+
+#posts_show #messages { padding: 5px; border: 1px solid #bf0000; display: none;margin: 5px 0; background: #fff4f4;}
+#posts_show #messages h4 {color: #bf0000; font-weight: bold;}
+#posts_show #messages ul { list-style: disc; }
+#posts_show #messages li {padding: 0; padding-left: 5px;}
+#posts_show #messages.success { border-color: #678E04; color: #678E04; background: #faffed;}
+#posts_show #messages p { padding: 10px 5px;}
+
+.backtotop { text-align: right;}

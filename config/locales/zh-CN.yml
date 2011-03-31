@@ -188,6 +188,11 @@ zh-CN:
         file_file_name: "附件"
         file_content_type: "附件类型"
         file_file_size: "附件大小"
+      comment:
+        name: "名字"
+        email: "邮箱"
+        page: "主页"
+        comment: "内容"
 
   activemodel:
     errors:
@@ -234,3 +239,5 @@ zh-CN:
       submit: "储存%{model}"
       post_file:
         create: "上传"
+      comment:
+        create: "submit"

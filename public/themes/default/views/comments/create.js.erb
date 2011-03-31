@@ -1,1 +1,13 @@
-$(".comment_notice").html("<%= escape_javascript(flash[:notice]) %>");
+$("#messages").empty();
+<% if @comment.errors.any? %>
+  var errors = $("<ul />");
+  <% @comment.errors.full_messages.each do |error| %>
+    errors.append("<li><%= escape_javascript(error) %></li>");
+  <% end %>
+  $("#messages").html("<h4>错误信息</h4>").find("h4").after(errors).end().removeClass("success").show();
+<% else %>
+  $("#messages").html("<p><%= escape_javascript(flash[:notice]) %></p>").addClass("success").show();
+  $(".comment_list ul").append("<%= escape_javascript(render(@comment)) %>");  
+  $("#new_comment div.input input, #new_comment div.input textarea").val("");
+<% end %>
+

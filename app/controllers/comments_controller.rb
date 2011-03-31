@@ -1,14 +1,9 @@
+# encoding : utf-8
 class CommentsController < ApplicationController
+  respond_to :html, :js
   def create
     @comment = Comment.new(params[:comment])
-    if @comment.save
-      flash[:notice] = "success!"
-    else
-      flash[:notice] = "error!"
-    end
-    respond_to do |format|
-      format.html { redirect_to posts_path }
-      format.js
-    end
+    flash[:notice] = "感谢你的评论!" if @comment.save
+    respond_with @comment, :layout => !request.xhr?
   end
 end

@@ -1,10 +1,10 @@
-<%= simple_form_for comment do |f| -%>
+<%= simple_form_for comment, :remote => true do |f| -%>
   <%= f.input :commentable_id, :as => :hidden %>
   <%= f.input :commentable_type, :as => :hidden %>
-  <%= f.input :name, :input_html => { :size => 24 } %>
-  <%= f.input :email, :input_html => { :size => 24 } %>
-  <%= f.input :page, :input_html => { :size => 24 } %>
-  <%= f.input :comment, :label => false %>
+  <%= f.input :name, :required => false, :label => "Name (required)", :input_html => { :size => 24 } %>
+  <%= f.input :email, :label => "Mail (will not be published) (required)", :input_html => { :size => 24 } %>
+  <%= f.input :page, :label => "Website", :input_html => { :size => 24 } %>
+  <%= f.input :comment, :required => false, :label => false %>
   <div class="actions">
     <%= f.submit %>
   </div>
