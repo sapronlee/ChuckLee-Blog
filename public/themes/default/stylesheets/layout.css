@@ -93,12 +93,12 @@ a:hover { color: #0066CC; text-decoration: underline; }
 .comment .comment_date { float: right; font-size: 11px; font-style: italic; color: #BBB; text-align: right;}
 .comment .comment_body { padding: 2px 0; color: #282C2F;}
 
-.comment_form input.string { border: 1px solid #CCC; margin: 3px 0; padding: 3px;}
-.comment_form textarea.text { border: 1px solid #ccc; margin: 3px 0; width: 90%; height: 150px;}
+.comment_form input.string { border: 1px solid #CCC; margin: 3px 0; padding: 3px; width: 170px;}
+.comment_form textarea.text { border: 1px solid #ccc; margin: 3px 0; width: 90%; height: 150px; font-size: 12px;}
 .comment_form div.input {position: relative;}
 .comment_form label { position: absolute; left: 190px; top: 5px; color: #777;}
 .comment_form .actions {position: relative; }
-.comment_form .actions input { border: 1px solid #CCC; margin: 3px 0; padding: 3px 5px;}
+.comment_form .actions input { border: 1px solid #CCC; margin: 3px 0; padding: 3px 5px; background: #DDD;}
 .comment_form .actions .ajaxloading { position: absolute; width: 16px; height: 16px; top: 7px; left: 57px; display: none;}
 
 #posts_show #messages { padding: 5px; border: 1px solid #bf0000; display: none;margin: 5px 0; background: #fff4f4;}
