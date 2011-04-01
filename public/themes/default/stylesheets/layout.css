@@ -85,7 +85,7 @@ a:hover { color: #0066CC; text-decoration: underline; }
 /* comments styles */
 #posts_show .comments ul li { background: none; margin: 0; padding: 15px 0;}
 .comment .avatar { padding: 2px; border: 1px solid #DDD; height: 38px; width: 38px; float: left; }
-.comment .comment_content { margin-left: 60px; background: #F7F7F7; border-top: 1px solid #CCC; padding: 5px;}
+.comment .comment_content { margin-left: 60px; background: #F7F7F7; border-top: 1px solid #CCC; padding: 5px; min-height: 50px;}
 .comment .comment_info { height: 18px; }
 .comment .comment_meta { float: left; }
 .comment .comment_meta cite { font-style: italic; }

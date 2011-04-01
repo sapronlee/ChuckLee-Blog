@@ -8,7 +8,7 @@
     <h3>RECENT COMMENTS</h3>
     <ul>
       <% @recent_comments.each do |c| -%>
-        <li><a href="<%= "#{slug_post_path(c.commentable)}#comment_#{c.id}" %>"><%= c.comment %></a></li>
+        <li><a href="<%= "#{slug_post_path(c.commentable)}#comment_#{c.id}" %>" title="<%= c.comment %>"><%= c.comment %></a></li>
       <% end -%>
     </ul>
   </div>
@@ -19,7 +19,7 @@
     <h3>CATEGORIES</h3>
     <ul>
       <% @categories.each do |c| -%>
-        <li><a href="#"><%= c.name %></a></li>
+        <li><a href="#" title="<%= c.name %>"><%= c.name %></a></li>
       <% end -%>
     </ul>
   </div>
@@ -30,7 +30,7 @@
     <h3>RECENT POSTS</h3>
     <ul>
       <% @recent_posts.each do |p| -%>
-        <li><a href="<%= slug_post_path(p) %>"><%= p.title %></a></li>
+        <li><a href="<%= slug_post_path(p) %>" title="<%= p.title %>"><%= p.title %></a></li>
       <% end -%>
     </ul>
   </div>
