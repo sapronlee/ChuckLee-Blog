@@ -39,6 +39,7 @@ a:hover { color: #0066CC; text-decoration: underline; }
 /* post styles */
 .post { padding-bottom: 30px;}
 #posts_show .post { padding-bottom: 10px;}
+#posts_show .post_meta { margin-bottom: 0px;}
 .post a:link, .post a:visited { color: #678E04; text-decoration: none;}
 .post a:hover { color: #0066cc;}
 .post h2 { font-size: 16px; border-bottom: 1px solid #D6D6D6; padding: 3px 0; word-wrap: break-word; line-height: 18px; font-weight: bold; }
