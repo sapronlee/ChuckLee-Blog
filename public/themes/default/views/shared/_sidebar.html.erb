@@ -35,5 +35,13 @@
     </ul>
   </div>
   <% end -%>
+  
+  <% if !@tags.blank? -%>
+  <div class="box">
+    <% tag_cloud(@tags, %w(css1 css2)) do |tag, css_class| %>
+      <a href="#" class="<%= css_class %>"><%= tag.name %></a>
+    <% end -%>
+  </div>
+  <% end -%>
 </div>
 <div class="bottom_corner"></div>
