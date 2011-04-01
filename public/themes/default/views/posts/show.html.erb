@@ -27,7 +27,7 @@
 </div>
 <div class="comments box">
   <div class="comment_list">
-    <h3>22 Responses to “<%= @post.title %>”</h3>
+    <h3><span><%= @post.comments_count %></span> Responses to “<%= @post.title %>”</h3>
     <ul>
       <%= render @post.comments %>
     </ul>

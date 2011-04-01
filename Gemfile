@@ -15,4 +15,5 @@ gem 'dynamic_form'
 gem 'acts-as-taggable-on'
 gem 'themes_for_rails'
 gem 'acts_as_commentable'
+gem 'gravatar_image_tag'
 

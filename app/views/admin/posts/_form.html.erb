@@ -1,4 +1,4 @@
-<%= simple_form_for [:admin, @post] do |f| %>
+<%= simple_form_for([:admin, @post], :html => { :novalidate => true }) do |f| %>
   <%= f.input :title, :label => false, :input_html => { :class => "long" } %>
   <div class="col2 clearfix">
     <%= f.association :category, :label => "分类", :hint => false, :collection => Category.find(:all), :prompt => "选择分类" %>
@@ -19,7 +19,7 @@
   </div>
 <% end -%>
 <script type="text/javascript">
-  $("#post_body").tinymce({    
+$("#post_body").tinymce({    
     theme : "advanced",    
     theme_advanced_toolbar_location : "top",
     theme_advanced_toolbar_align : "left",

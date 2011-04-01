@@ -1,5 +1,5 @@
-<li class="comment clearfix">
-  <%= image_tag "default/avatar/avatar_38.png", :class => "avatar" %>
+<li id="comment_<%= comment.id %>" class="comment clearfix">
+  <%= gravatar_image_tag(comment.email, :alt => comment.name, :class => "avatar") %>
   <div class="comment_content">
     <div class="comment_info clearfix">
       <div class="comment_meta">
@@ -15,7 +15,7 @@
       <div class="comment_date"><%= l(comment.created_at, :format => :long) %></div>
     </div>
     <div class="comment_body">
-      <%= comment.comment %>  
+      <%= simple_format comment.comment %>  
     </div>   
   </div>
 </li>

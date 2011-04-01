@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110329040205) do
+ActiveRecord::Schema.define(:version => 20110401062332) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",        :limit => 50,                :null => false
@@ -46,14 +46,15 @@ ActiveRecord::Schema.define(:version => 20110329040205) do
   end
 
   create_table "posts", :force => true do |t|
-    t.integer  "category_id",                    :null => false
-    t.string   "title",           :limit => 100, :null => false
-    t.string   "slug",                           :null => false
-    t.text     "body",                           :null => false
+    t.integer  "category_id",                                   :null => false
+    t.string   "title",           :limit => 100,                :null => false
+    t.string   "slug",                                          :null => false
+    t.text     "body",                                          :null => false
     t.string   "summary",         :limit => 250
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "cached_tag_list"
+    t.integer  "comments_count",                 :default => 0
   end
 
   create_table "settings", :force => true do |t|

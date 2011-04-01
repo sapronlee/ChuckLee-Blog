@@ -5,9 +5,9 @@ class Post < ActiveRecord::Base
   # 添加comments
   acts_as_commentable
   belongs_to :category, :counter_cache => true
+  scope :recent, :order => "id desc"
   
-  before_save :format_post
-  # after_save :save_cached_tag_list
+  before_save :format_post  
   
   validates_presence_of :title, :body, :slug
   validates_presence_of :category_id, :message => "必须选择分类"
