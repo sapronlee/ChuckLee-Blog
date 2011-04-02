@@ -10,7 +10,7 @@
         <%= raw p.summary %>
       </div>
       <div class="post_meta clearfix">
-        <span class="post_categories"><a href="#" title="<%= p.category.name %>"><%= p.category.name %></a></span>
+        <span class="post_categories"><a href="<%= category_path(p.category.alias) %>" title="<%= p.category.name %>"><%= p.category.name %></a></span>
         <% if !p.cached_tag_list.blank? -%>
         <span class="post_tags">
           <%= tags_link(p) %>
