@@ -10,7 +10,7 @@ module PostsHelper
     result = ""
     tags = post.cached_tag_list.split(",")
     tags.each_with_index do |t, i|
-      result += "<a href=\"#\" title=\"#{t.strip}\">#{t.strip}</a>"
+      result += "<a href=\"#{tag_path(t.strip)}\" title=\"#{t.strip}\">#{t.strip}</a>"
       result += "<span>,</span>" if i != tags.length - 1
     end
     return raw result

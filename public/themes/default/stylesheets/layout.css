@@ -112,10 +112,14 @@ a:hover { color: #0066CC; text-decoration: underline; }
 .backtotop { text-align: right;}
 
 /* tags styles */
-#sidebar #tags { padding: 5px 2px;}
-#sidebar #tags a { background: #678E04; color: #FFF; padding: 2px; display: inline-block; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;min-width: 30px;
+#sidebar #tags, #content #tags { padding: 10px 2px;}
+#sidebar #tags a, #content #tags a { background: #678E04; color: #FFF; padding: 2px; display: inline-block; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;min-width: 30px;
   text-align: center;}
-#sidebar #tags a:hover { background: #0066CC; text-decoration: none;}
+#content #tags a {margin-right: 7px;}
+#sidebar #tags a:hover, #content #tags a:hover { background: #0066CC; text-decoration: none;}
+#sidebar #tags a.more { -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; background: none; color: #678E04; display: block; text-align: right;}
+#sidebar #tags a.more:hover { color: #0066CC; text-decoration: underline; } 
+.tags h2 { font-size: 16px; border-bottom: 1px solid #D6D6D6; padding: 3px 0; word-wrap: break-word; line-height: 18px; font-weight: bold; color: #4C5A0F; }
 #tags .tc1 {}
 #tags .tc2 {}
 #tags .tc3 {}

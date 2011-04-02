@@ -19,7 +19,7 @@
     <h3>CATEGORIES</h3>
     <ul>
       <% @categories.each do |c| -%>
-        <li><a href="#" title="<%= c.name %>"><%= c.name %></a></li>
+        <li><a href="<%= category_path(c.alias) %>" title="<%= c.name %>"><%= c.name %></a></li>
       <% end -%>
     </ul>
   </div>
@@ -41,8 +41,9 @@
     <h3>TAGS</h3>
     <div id="tags">
       <% tag_cloud(@tags, %w(tc1 tc2 tc3 tc4 tc5)) do |tag, css_class| %>
-        <a href="#" title="<%= tag.name %>" class="<%= css_class %>"><%= tag.name %></a>
+        <a href="<%= tag_path(tag.name) %>" title="<%= tag.name %>" class="<%= css_class %>"><%= tag.name %></a>
       <% end -%>
+      <a href="<%= tags_path %>" class="more">move »</a>
     </div>
   </div>
   <% end -%>
