@@ -36,11 +36,14 @@
   </div>
   <% end -%>
   
-  <% if !@tags.blank? -%>
+  <% if @tags.length > 0 -%>
   <div class="box">
-    <% tag_cloud(@tags, %w(css1 css2)) do |tag, css_class| %>
-      <a href="#" class="<%= css_class %>"><%= tag.name %></a>
-    <% end -%>
+    <h3>TAGS</h3>
+    <div id="tags">
+      <% tag_cloud(@tags, %w(tc1 tc2 tc3 tc4 tc5)) do |tag, css_class| %>
+        <a href="#" title="<%= tag.name %>" class="<%= css_class %>"><%= tag.name %></a>
+      <% end -%>
+    </div>
   </div>
   <% end -%>
 </div>
