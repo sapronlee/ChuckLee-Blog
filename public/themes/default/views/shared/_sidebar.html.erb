@@ -3,49 +3,53 @@
   <div class="imgbox">
     <a href="#"><%= theme_image_tag("myworks.gif") %></a>
   </div>
-  <% if !@recent_comments.blank? -%>
+  
   <div class="box">
     <h3>RECENT COMMENTS</h3>
     <ul>
-      <% @recent_comments.each do |c| -%>
-        <li><a href="<%= "#{slug_post_path(c.commentable)}#comment_#{c.id}" %>" title="<%= c.comment %>"><%= c.comment %></a></li>
+      <% cache "sidebar_cecent_comment.default" do -%>
+        <% @recent_comments.each do |c| -%>
+          <li><a href="<%= "#{slug_post_path(c.commentable)}#comment_#{c.id}" %>" title="<%= c.comment %>"><%= c.comment %></a></li>
+        <% end -%>
       <% end -%>
     </ul>
   </div>
-  <% end -%>
-  
-  <% if !@categories.blank? -%>
+
   <div class="box">
     <h3>CATEGORIES</h3>
     <ul>
-      <% @categories.each do |c| -%>
-        <li><a href="<%= category_path(c.alias) %>" title="<%= c.name %>"><%= c.name %></a></li>
+      <% cache "sidebar_categories.default" do -%>
+        <% @categories.each do |c| -%>
+          <li><a href="<%= category_path(c.alias) %>" title="<%= c.name %>"><%= c.name %></a></li>
+        <% end -%>
       <% end -%>
     </ul>
   </div>
-  <% end -%>
-  
-  <% if !@recent_posts.blank? -%>
+
   <div class="box">
     <h3>RECENT POSTS</h3>
     <ul>
-      <% @recent_posts.each do |p| -%>
-        <li><a href="<%= slug_post_path(p) %>" title="<%= p.title %>"><%= p.title %></a></li>
+      <% cache "sidebar_cecent_posts.default" do -%>
+        <% @recent_posts.each do |p| -%>
+          <li><a href="<%= slug_post_path(p) %>" title="<%= p.title %>"><%= p.title %></a></li>
+        <% end -%>
       <% end -%>
     </ul>
   </div>
-  <% end -%>
-  
-  <% if @tags.length > 0 -%>
+
   <div class="box">
     <h3>TAGS</h3>
     <div id="tags">
-      <% tag_cloud(@tags, %w(tc1 tc2 tc3 tc4 tc5)) do |tag, css_class| %>
-        <a href="<%= tag_path(tag.name) %>" title="<%= tag.name %>" class="<%= css_class %>"><%= tag.name %></a>
+      <% cache "sidebar_tags.default" do -%>
+        <% tag_cloud(@tags, %w(tc1 tc2 tc3 tc4 tc5)) do |tag, css_class| %>
+          <a href="<%= tag_path(tag.name) %>" title="<%= tag.name %>" class="<%= css_class %>">
+            <%= tag.name %>
+          </a>
+        <% end -%>
       <% end -%>
       <a href="<%= tags_path %>" class="more">move »</a>
     </div>
   </div>
-  <% end -%>
+
 </div>
 <div class="bottom_corner"></div>
