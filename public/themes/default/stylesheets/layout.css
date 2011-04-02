@@ -125,3 +125,10 @@ a:hover { color: #0066CC; text-decoration: underline; }
 #tags .tc3 {}
 #tags .tc4 {}
 #tags .tc5 {}
+
+/* pagination styles*/
+.pagination { text-align: right; }
+.pagination a, .pagination em, .pagination span { border: 1px solid #ededed; display: inline-block; background:#678E04; padding: 2px 7px; color: #FFF; text-decoration: none;}
+.pagination a:hover { background: #0066CC; border-color: #ccc; }
+.pagination em { background: #0066cc;}
+.pagination span.disabled { background:#CCC;}
