@@ -8,11 +8,6 @@
   <%= yield :styles %>
   <%= javascript_include_tag :defaults, "jquery/jquery.timers", "tiny_mce/jquery.tinymce", "tiny_mce/tiny_mce", :cache => "cached/admin/application" %>
   <%= yield :scripts %>
-  <script type="text/javascript">
-    $(".massage").fadeOut(600).fadeIn(600).oneTime("5s", "hide", function() {
-      $(this).hide();
-    });
-  </script>
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -53,6 +48,11 @@
         <% if !alert.blank? %>
           <div class="massage ui-state-error ui-corner-all"><%= alert %></div>
         <% end -%>
+        <script type="text/javascript">
+          $(".massage").fadeOut(600).fadeIn(600).oneTime("5s", "hide", function() {
+            $(this).hide();
+          });
+        </script>
         <%= yield %>
       </div>
     </div>
