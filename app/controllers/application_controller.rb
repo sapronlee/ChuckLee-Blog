@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
     "default"
   end
   
+  # 填充 sidebar 数据
   def fill_sidebar_data
     @categories = Category.order("id desc")
     @recent_posts = Post.recent.limit(5)
