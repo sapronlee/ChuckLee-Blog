@@ -1,0 +1,35 @@
+<% if !@posts.blank? -%>
+  <% @posts.each do |p| %>
+    <div id="<%= "post_#{p.id}" %>" class="post">
+      <h2>
+        <a href="<%= blog_slug_post_path(p) %>" title="<%= p.title %>">
+          <%= p.title %>
+        </a>
+      </h2>
+      <div class="post_info clearfix">
+        <span class="post_date"><%= l(p.created_at, :format => :long) %></span>
+        <span class="post_comments"><a href="<%= "#{blog_slug_post_path(p)}#comments" %>" title="共 <%= p.comments_count %> 个评论"><%= "#{p.comments_count} Comments »" %></a></span>
+      </div>
+      <div class="post_body">
+        <%= raw p.summary %>
+      </div>
+      <div class="post_meta clearfix">
+        <% if !p.category_name.blank? -%>
+        <span class="post_categories">
+          <a href="<%= category_path(p.category_name) %>" title="<%= p.category_name %>">
+            <%= p.category_name %>
+          </a>
+        </span>
+        <% end -%>
+        <% if !p.cached_tag_list.blank? -%>
+        <span class="post_tags">
+          <%= blog_tags_links(p) %>
+        </span>
+        <% end -%>
+      </div>
+    </div>
+  <% end -%>
+<% else -%>
+  <p class="empty">你还没有添加文章</p>
+<% end -%>
+<% will_paginate @posts %>

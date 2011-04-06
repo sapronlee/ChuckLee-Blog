@@ -1,0 +1,10 @@
+body { font: 12px/1.5 'Lucida Grande', Verdana, Arial, "\5b8b\4f53", Sans-Serif; }
+a:link, a:visited { font-size: 1em; color: #0066CC; text-decoration: none; }
+a:hover { color: #678E04; text-decoration: underline; }
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+h1 { font-size: 2em;}
+h2 { font-size: 1.8em;}
+h3 { font-size: 1.6em;}
+h4 { font-size: 1.4em;}
+h5 { font-size: 1.2em;}
+h6 { font-size: 0.8em;}

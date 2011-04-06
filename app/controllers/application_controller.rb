@@ -1,13 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  theme :theme_resolver
   
   
   private
-  
-  def theme_resolver
-    "default"
-  end
   
   # 填充 sidebar 数据
   def fill_sidebar_data

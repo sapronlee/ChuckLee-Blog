@@ -3,8 +3,9 @@ class CategoriesController < ApplicationController
   before_filter :fill_sidebar_data, :only => [:show]
   
   def show
-    @category = Category.find_by_alias(params[:alias])
-    @posts = Post.where(:category_id => @category).paginate(:page => params[:page], :per_page => Setting.page_size, :include => [:category])    
+    # @category = Category.find_by_alias(params[:alias])
+    # @posts = Post.where(:category_id => @category).paginate(:page => params[:page], :per_page => Setting.page_size, :include => [:category])
+    @category = Category.includes([:posts, :tags]).where(:alias => params[:alias])
   end
   
   private
