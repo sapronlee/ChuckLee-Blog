@@ -12,8 +12,7 @@ Chuckblog::Application.routes.draw do
   # 后台
   namespace :admin do 
     root :to => 'home#index'   
-    resources :settings
-    resources :post_files
+    resources :settings, :post_files
     resources :categories do |c|
       collection do
         post :search
