@@ -51,6 +51,8 @@ GEM
     gem_plugin (0.2.3)
     gravatar_image_tag (1.0.0)
     i18n (0.5.0)
+    kaminari (0.10.4)
+      rails (>= 3.0.0)
     mail (2.2.14)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
@@ -110,6 +112,7 @@ DEPENDENCIES
   dynamic_form
   gravatar_image_tag
   jquery-rails!
+  kaminari
   mime-types
   mongrel (~> 1.2.0.pre)
   mysql2

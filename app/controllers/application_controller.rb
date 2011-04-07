@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def fill_sidebar_data
     @categories = Category.order("id desc")
     @recent_posts = Post.recent.limit(5)
-    @recent_comments = Comment.recent.limit(5)    
+    @recent_comments = Comment.recent.limit(5).includes(:commentable)
     @tags = Post.tag_counts_on(:tags)
   end
 end

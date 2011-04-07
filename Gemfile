@@ -16,5 +16,6 @@ gem 'acts-as-taggable-on'
 gem 'themes_for_rails'
 gem 'acts_as_commentable'
 gem 'gravatar_image_tag'
+gem 'kaminari'
 gem 'rails-footnotes', '>= 3.7', :group => :development
 

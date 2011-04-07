@@ -1,0 +1,8 @@
+<div id="recent_comments" class="sbox">
+  <h4>最新评论</h4>
+  <ul>
+    <% @recent_comments.each do |c| -%>
+      <li><a href="<%= "#{blog_slug_post_path(c.commentable)}#comment_#{c.id}" %>" title="<%= c.comment %>"><%= c.comment %></a></li>
+    <% end -%>
+  </ul>
+</div>

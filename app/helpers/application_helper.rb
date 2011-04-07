@@ -33,4 +33,12 @@ module ApplicationHelper
   def current_controller_name
     "#{params[:controller].gsub(/\//, "_")}"
   end
+  
+  def current_page?(controller = "", action = "")
+    if action.blank?
+      return params[:controller] == controller
+    else
+      return (params[:controller] == controller and params[:action] == action)
+    end
+  end
 end
