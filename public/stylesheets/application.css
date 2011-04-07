@@ -1,0 +1,55 @@
+/* standard styles */
+body { font: 12px/1.5 'Lucida Grande', Verdana, Arial, "\5b8b\4f53", Sans-Serif; color: #333; }
+a:link, a:visited { font-size: 1em; color: #0066CC; text-decoration: none; }
+a:hover { color: #678E04; text-decoration: underline; }
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+h1 { font-size: 2em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.6em; }
+h4 { font-size: 1.4em; }
+h5 { font-size: 1.2em; }
+h6 { font-size: 1em; }
+
+/* header styles */
+#header { background: #000000; height: 46px; line-height: 46px; }
+#header_wrapper {  }
+#header .logo { float: left; }
+#header .logo a { font-family: 'Anton', serif; color: #FFFFFF; text-shadow: 0px 0px 2px #ccc; text-transform: capitalize; 
+  text-decoration: none; }
+#header .logo a:hover { color: #0066CC; }
+#header .nav { float: right; margin-right: 10px; }
+#header .nav li { display: inline-block; }
+#header .nav li a { display: block; padding: 0 5px; font-weight: bold; }
+#header .nav li a.active { color: #678E04;}
+#header a:hover { text-decoration: none; }
+
+/* main styles */
+#main_wrapper { padding: 15px 0;}
+#content {}
+/* sidebar styles */
+#sidebar {padding-top: 10px;}
+#sidebar .sbox {}
+#sidebar .sbox h4 {  font-size: 16px; border-bottom: 1px solid #999; color: #666; }
+#sidebar .sbox ul { }
+#sidebar .sbox ul li { padding-left: 5px; list-style: square inside; color: #666;}
+
+
+/* post list styles */
+.post { margin-bottom: 10px; border-bottom: 1px dotted #CCC; padding-bottom: 10px;}
+.post a:hover { text-decoration: none; }
+.post h2 a { color: #678E04;}
+.post h2 a:hover { color: #0066CC; }
+.post .post_info { margin-bottom: 5px;}
+.post .post_meta {margin-top : 5px;}
+.post .post_date, .post .post_comments, .post .post_categories, .post .post_tags { background: #FFF url(/images/icons/post/date.png) no-repeat 0 2px; padding-left: 20px;
+  height: 18px; line-height: 18px; display: block;}
+.post .post_date { background-image: url(/images/icons/post/date.png); background-position: 0 1px; float: left; color: #999;}
+.post .post_comments { background-image: url(/images/icons/post/comment.png); float: right;}
+.post .post_categories { background-image: url(/images/icons/post/category.png); float: left;}  
+.post .post_tags { background-image: url(/images/icons/post/tag.png); float: left; margin-left: 20px;}
+.post .post_tags a { padding: 0 3px}
+
+/* footer styles */
+#footer {margin-bottom: 20px;}
+#footer .left { float: left; }
+#footer .right {float: right; }

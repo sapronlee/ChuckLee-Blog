@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   # 添加comments
   acts_as_commentable
   belongs_to :category, :counter_cache => true
-  scope :recent, :order => "id desc"
+  scope :recent, :order => "created_at desc"
   
   before_save :format_post  
   

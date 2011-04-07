@@ -23,4 +23,22 @@ module ApplicationHelper
     end
     raw result    
   end
+  
+  # 当前controller和action的名字组合
+  def current_controller_and_action_name
+    "#{current_controller_name}_#{params[:action]}"
+  end
+  
+  # 当前controller的名字
+  def current_controller_name
+    "#{params[:controller].gsub(/\//, "_")}"
+  end
+  
+  def current_page?(controller = "", action = "")
+    if action.blank?
+      return params[:controller] == controller
+    else
+      return (params[:controller] == controller and params[:action] == action)
+    end
+  end
 end
