@@ -1,5 +1,5 @@
-<% @posts.each_with_index do |p, i| -%>
-  <div id="<%= "post_#{p.id}" %>" class="post <%= i % 2 == 0 ? "odd" : "even" %>">
+<% @posts.each do |p| -%>
+  <div id="<%= "post_#{p.id}" %>" class="post <%= cycle("even", "odd") %>">
     <h2>
       <a href="<%= blog_slug_post_path(p) %>" title="<%= p.title %>"><%= p.title %></a>
     </h2>

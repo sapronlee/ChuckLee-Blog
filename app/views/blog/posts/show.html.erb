@@ -1,0 +1,36 @@
+<% title @post.title %>
+<div class="post">
+  <h2><a href="<%= blog_slug_post_path(@post) %>" title="<%= @post.title %>"><%= @post.title %></a></h2>
+  <div class="post_info clearfix">
+    <span class="post_date"><%= l(@post.created_at, :format => :long) %></span>    
+  </div>
+  <div class="post_body"><%= raw @post.body %></div>
+  <div class="post_meta clearfix">
+    <% if !@post.category_name.blank? -%>
+      <span class="post_categories">
+        <a href="<%= category_path(@post.category_name) %>" title="<%= @post.category_name %>"><%= @post.category_name %></a>
+      </span>
+    <% end -%>
+    <% if !@post.cached_tag_list.blank? -%>
+      <span class="post_tags"><%= blog_tags_links(@post) %></span>
+    <% end -%>
+  </div>
+</div>
+<div id="comments" class="comments box">
+  <% if !@post.comments.blank? -%>
+    <div class="comment_list">
+      <h3><span><%= @post.comments_count %></span> Responses to “<%= @post.title %>”</h3>
+      <ul>
+        <%= render :partial => "/comments/comment", :collection => @post.comments %>
+      </ul>
+    </div>
+  <% end -%>
+  <div class="comment_form">
+    <h3>Leave a Reply</h3>
+    <div id="messages" class="messages"></div>
+    <%= render "comments/form", :comment => @post.comments.new %>
+  </div>  
+</div>
+<div class="backtotop">
+  <a href="#header">Back to top</a>
+</div>

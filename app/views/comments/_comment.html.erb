@@ -5,7 +5,7 @@
       <div class="comment_meta">
         <cite>
           <% if !comment.page.blank? -%>
-            <a href="http://<%= comment.page %>"><%= comment.name %></a>
+            <a href="http://<%= comment.page %>" title="<%= comment.page %>"><%= comment.name %></a>
           <% else -%>
             <%= comment.name %>
           <% end -%>
@@ -15,7 +15,7 @@
       <div class="comment_date"><%= l(comment.created_at, :format => :long) %></div>
     </div>
     <div class="comment_body">
-      <%= simple_format comment.comment %>  
+      <%= simple_format comment.comment %>
     </div>   
   </div>
 </li>

@@ -6,6 +6,7 @@ class Post < ActiveRecord::Base
   acts_as_commentable
   belongs_to :category, :counter_cache => true
   scope :recent, :order => "created_at desc"
+  scope :category, :select => "posts.*, categories.alias as category_name"
   
   before_save :format_post  
   

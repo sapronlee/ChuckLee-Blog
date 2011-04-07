@@ -2,7 +2,32 @@
   <h4>最新评论</h4>
   <ul>
     <% @recent_comments.each do |c| -%>
-      <li><a href="<%= "#{blog_slug_post_path(c.commentable)}#comment_#{c.id}" %>" title="<%= c.comment %>"><%= c.comment %></a></li>
+      <li><a href="<%= "#{blog_slug_post_path(c.commentable)}#comment_#{c.id}" %>" title="<%= c.comment %>"><%= truncate(c.comment, :length => 20) %></a></li>
     <% end -%>
   </ul>
+</div>
+<div id="categories" class="sbox">
+  <h4>分类</h4>
+  <ul>
+    <% @categories.each do |c| -%>
+      <li><a href="<%= category_path(c.alias) %>" title="<%= c.name %>"><%= c.name %></a></li>
+    <% end -%>
+  </ul>
+</div>
+<div id="recent_posts" class="sbox">
+  <h4>最新文章</h4>
+  <ul>
+    <% @recent_posts.each do |p| -%>
+      <li><a href="<%= blog_slug_post_path(p) %>" title="<%= p.title %>"><%= p.title %></a></li>
+    <% end -%>
+  </ul>
+</div>
+<div id="tags" class="sbox">
+  <h4>标签云</h4>
+  <div id="tags">
+    <% tag_cloud(@tags, %w(tc1 tc2 tc3 tc4 tc5)) do |tag, css_class| %>
+      <a href="<%= tag_path(tag.name) %>" title="<%= tag.name %>" class="<%= css_class %>"><%= tag.name %></a>
+    <% end -%>
+    <a href="<%= tags_path %>" class="more" title="更多的标签">move »</a>
+  </div>
 </div>
