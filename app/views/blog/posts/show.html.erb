@@ -17,14 +17,14 @@
   </div>
 </div>
 <div id="comments" class="comments box">
-  <% if !@post.comments.blank? -%>
+
     <div class="comment_list">
       <h3><span><%= @post.comments_count %></span> Responses to “<%= @post.title %>”</h3>
       <ul>
         <%= render :partial => "/comments/comment", :collection => @post.comments %>
       </ul>
     </div>
-  <% end -%>
+
   <div class="comment_form">
     <h3>Leave a Reply</h3>
     <div id="messages" class="messages"></div>

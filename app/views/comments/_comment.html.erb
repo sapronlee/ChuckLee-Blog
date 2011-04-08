@@ -12,7 +12,10 @@
         </cite>
         <span>says:</span>
       </div>
-      <div class="comment_date"><%= l(comment.created_at, :format => :long) %></div>
+      <div class="comment_date">
+        <%= l(comment.created_at, :format => :long) %>
+        <%= link_to "删除", comment_path(comment), :remote => true, :method => :delete %>
+      </div>
     </div>
     <div class="comment_body">
       <%= simple_format comment.comment %>

@@ -36,7 +36,7 @@ Chuckblog::Application.routes.draw do
       :constraints => { :year => /\d{4}/, :month => /\d{2}/, :day => /\d{2}/, :slug => /[a-z0-9\-]+/ }
   end
   
-  resources :comments, :only => [:create]
+  resources :comments, :only => [:create, :destroy]
   resources :tags, :only => [:index]
   match "/tag/:name" => "tags#show", :as => :tag
   match "/category/:alias" => "categories#show", :as => :category

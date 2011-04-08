@@ -2,7 +2,7 @@ class Comment < ActiveRecord::Base
 
   include ActsAsCommentable::Comment
 
-  belongs_to :commentable, :polymorphic => true  
+  belongs_to :commentable, :polymorphic => true, :counter_cache => :comments_count
 
   # default_scope :order => 'created_at ASC'  
 
@@ -17,8 +17,8 @@ class Comment < ActiveRecord::Base
   validates_length_of :name, :maximum => 20
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :if => Proc.new { |e| !e.email.blank? }  
   
-  after_create :increment_counter
-  before_destroy :decrement_counter
+  # after_create :increment_counter
+  # before_destroy :decrement_counter
   
   def increment_counter    
     Post.increment_counter("comments_count", self.commentable_id) if Post.column_names.include?("comments_count")      
