@@ -14,7 +14,9 @@
       </div>
       <div class="comment_date">
         <%= l(comment.created_at, :format => :long) %>
-        <%= link_to "删除", comment_path(comment), :remote => true, :method => :delete %>
+        <% if user_signed_in? %>
+          <%= link_to "删除", comment_path(comment), :remote => true, :method => :delete %>
+        <% end -%>
       </div>
     </div>
     <div class="comment_body">

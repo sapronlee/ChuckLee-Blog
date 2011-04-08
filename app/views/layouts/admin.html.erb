@@ -14,7 +14,7 @@
   <div id="container">
     <div id="header_container">
       <div id="header" class="clearfix">
-        <h1><a href="<%= admin_root_path %>"><%= Setting.app_name %></a></h1>
+        <h1><a href="<%= root_path %>"><%= Setting.app_name %></a></h1>
         <div id="navigation">
           <ul class="clearfix">
             <li><a href="<%= admin_root_path %>"<%= ' class=current' if params[:controller] == "admin/home" %> id="home">首页</a></li>
@@ -26,6 +26,7 @@
         <div id="users">
           <span class="greeting">welcome！</span>
           <span class="name"><%= current_user.login %></span>
+          <a href="<%= root_path %>" class="homepage">返回首页</a>
           <a href="<%= destroy_user_session_path %>" class="logout">退出</a>
         </div>
       </div>

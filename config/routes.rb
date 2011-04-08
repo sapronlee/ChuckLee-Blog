@@ -33,7 +33,7 @@ Chuckblog::Application.routes.draw do
     root :to => "posts#index"
     resources :posts, :only => [:index]
     match "/:year/:month/:day/:id-:slug" => "posts#show", :as => :post, 
-      :constraints => { :year => /\d{4}/, :month => /\d{2}/, :day => /\d{2}/, :slug => /[a-z0-9\-]+/ }
+      :constraints => { :year => /\d{4}/, :month => /\d{2}/, :day => /\d{2}/, :slug => /[a-z0-9\-]+/ }  
   end
   
   resources :comments, :only => [:create, :destroy]

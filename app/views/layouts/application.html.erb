@@ -35,13 +35,23 @@
       <div id="footer">        
         <div id="footer_wrapper" class="container_12 clearfix">
           <div class="left">
-            Copyright © <%= Setting.site_name %> .Valid <a href="http://validator.w3.org/check?uri=referer" target="_blank">XHTML</a>.
-            <div>
-              Powered by <a href="<%= root_path %>">Chuck-Blog</a>, Designed by <a href="<%= root_path %>">ChuckLee</a>.
-            </div>
+            Copyright © <%= Setting.site_name %> .Valid <a href="http://validator.w3.org/check?uri=referer" target="_blank">XHTML</a>.            
           </div>
           <div class="right">
-            <a href="<%= admin_root_path %>">后台管理</a>
+            Powered by <a href="<%= root_path %>">Chuck-Blog</a>, Designed by <a href="<%= root_path %>">ChuckLee</a>.
+          </div>
+          <div class="bottom_nav">
+            <ul>
+              <li><a href="<%= root_path %>">首页</a></li>
+              <li><a href="<%= blog_root_path %>">博客</a></li>
+              <li><a href="#">相册</a></li>
+              <% if user_signed_in? %>
+                <li><a href="<%= destroy_user_session_path %>">退出</a></li>
+              <% else %>
+                <li><a href="<%= user_session_path %>">登录</a></li>
+              <% end -%>
+              <li><a href="<%= admin_root_path %>" target="_blank">后台管理</a></li>
+            </ul>
           </div>
         </div>
       </div>

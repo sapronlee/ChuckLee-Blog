@@ -71,10 +71,10 @@ a.button {
 
 /* header navigation styles */
 #navigation {
-  float: left;
+  float: left; margin-left: 20px;
 }
 #navigation ul {
-  position: absolute;bottom: 0;margin-left: 10px;
+  position: absolute;bottom: 0;
 }
 #navigation ul li {
   float: left;
@@ -105,13 +105,14 @@ a.button {
 #users span.name {
   color:#fff;text-shadow:0 1px 0 #000;
 }
-#users a.logout {
+#users a.logout, #users a.homepage {
   -webkit-border-radius:4px;border-radius:4px;-moz-border-radius:4px;background-color:#ffaa56;
   display:inline-block;padding:2px 10px 3px;margin-left:10px;text-decoration:none;color: #FFF;
 }
-#users a.logout:hover {
+#users a.logout:hover, #users a.homepage:hover {
   background-color:#fff;color: #333;
 }
+#users a.homepage { background: #7f00ff;}
 
 
 

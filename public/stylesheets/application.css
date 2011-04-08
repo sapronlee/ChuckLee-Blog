@@ -37,7 +37,7 @@ table tr td{ padding: 2px 10px; background: #ddd;}
 #header .nav ul { padding: 0; margin: 0;}
 #header .nav li { display: inline-block; }
 #header .nav li a { display: block; padding: 0 5px; font-weight: bold; }
-#header .nav li a.active { color: #678E04;}
+#header .nav li a.active { color: #FFF;}
 #header a:hover { text-decoration: none; }
 
 /* main styles */
@@ -72,10 +72,12 @@ table tr td{ padding: 2px 10px; background: #ddd;}
 .post .post_categories { background-image: url(/images/icons/post/category.png); float: left; }  
 .post .post_tags { background-image: url(/images/icons/post/tag.png); float: left; margin-left: 20px; }
 .post .post_tags a { padding: 0 3px; }
+.post .post_body p { line-height: 160%;}
 
 /* comments styles */
 .comments ul {padding: 0; margin: 0;}
 .comments ul li { background: none; margin: 0; padding: 10px 0;}
+.comments .hidden { display: none; }
 .comment .avatar { padding: 2px; border: 1px solid #DDD; height: 38px; width: 38px; float: left; }
 .comment .comment_content { margin-left: 60px; background: #F7F7F7; border-top: 1px solid #CCC; padding: 5px; min-height: 50px;}
 .comment .comment_info { height: 18px; }
@@ -84,6 +86,7 @@ table tr td{ padding: 2px 10px; background: #ddd;}
 .comment .comment_meta span { padding: 0 4px; }
 .comment .comment_date { float: right; font-size: 11px; font-style: italic; color: #BBB; text-align: right;}
 .comment .comment_body { padding: 2px 0; color: #282C2F;}
+
 
 .comment_form input.string { border: 1px solid #CCC; margin: 3px 0; padding: 3px; width: 170px;}
 .comment_form textarea.text { border: 1px solid #ccc; margin: 3px 0; width: 90%; height: 150px; font-size: 12px;}
@@ -106,6 +109,9 @@ table tr td{ padding: 2px 10px; background: #ddd;}
 #footer { margin-bottom: 20px; }
 #footer .left { float: left; }
 #footer .right { float: right; }
+#footer .bottom_nav { clear: both; }
+#footer ul { list-style: none; padding: 0; margin: 0; }
+#footer ul li { display: inline-block; margin: 0 4px; }
 
 
 /* login page */
