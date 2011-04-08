@@ -25,8 +25,8 @@
         </div>
         <div id="users">
           <span class="greeting">welcome！</span>
-          <span class="name">sapronlee</span>
-          <a href="#" class="logout">退出</a>
+          <span class="name"><%= current_user.login %></span>
+          <a href="<%= destroy_user_session_path %>" class="logout">退出</a>
         </div>
       </div>
     </div>

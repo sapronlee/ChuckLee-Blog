@@ -24,7 +24,7 @@
 </div>
 <div id="tags" class="sbox">
   <h4>标签云</h4>
-  <div id="tags">
+  <div id="tag_list">
     <% tag_cloud(@tags, %w(tc1 tc2 tc3 tc4 tc5)) do |tag, css_class| %>
       <a href="<%= tag_path(tag.name) %>" title="<%= tag.name %>" class="<%= css_class %>"><%= tag.name %></a>
     <% end -%>

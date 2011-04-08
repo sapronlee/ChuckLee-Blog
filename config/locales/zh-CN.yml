@@ -193,6 +193,10 @@ zh-CN:
         email: "邮箱"
         page: "主页"
         comment: "内容"
+      user:
+        login: "用户名或邮箱"
+        email: "邮箱"
+        password: "密码"
 
   activemodel:
     errors:
@@ -241,6 +245,8 @@ zh-CN:
         create: "上传"
       comment:
         create: "submit"
+      user:
+        create: "登录"
   views:
     pagination:
       previous: "上一页"

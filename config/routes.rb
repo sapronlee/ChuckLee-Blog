@@ -4,10 +4,11 @@ Chuckblog::Application.routes.draw do
   themes_for_rails
 
   # 管理用户
-  devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register' }
+  devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register' },
+    :controllers => { :sessions => "users/sessions" }
   
   # 首页
-  root :to => 'posts#index'
+  root :to => 'home#index'
   
   # 后台
   namespace :admin do 

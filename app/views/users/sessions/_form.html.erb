@@ -1,0 +1,11 @@
+<div id="login">
+  <h2>登录</h2>
+  <% if !alert.blank? %>
+    <div class="massage ui-state-error ui-corner-all"><%= alert %></div>
+  <% end -%>
+  <%= simple_form_for(@user, :url => user_session_path, :html => { :novalidate => true }) do |f| %>
+    <%= f.input :login, :required => false %>
+    <%= f.input :password, :required => false %>
+    <div class="actions"><%= f.button :submit %></div>
+  <% end -%>
+</div>

@@ -26,19 +26,22 @@
       </div>
       <div id="main">
         <div id="main_wrapper" class="container_12 clearfix">
-          <div id="content" class="grid_9"><%= yield %></div>
-          <div id="sidebar" class="grid_3">
-            <%= render "shared/sidebar" %>
-          </div>
+          <div id="content" class="<%= content_for?(:sidebar) ? "grid_9" : "gird_12" %>"><%= yield %></div>
+          <% if content_for?(:sidebar) -%>
+            <div id="sidebar" class="grid_3"><%= yield :sidebar %></div>
+          <% end -%>
         </div>
       </div>
       <div id="footer">        
         <div id="footer_wrapper" class="container_12 clearfix">
           <div class="left">
             Copyright © <%= Setting.site_name %> .Valid <a href="http://validator.w3.org/check?uri=referer" target="_blank">XHTML</a>.
+            <div>
+              Powered by <a href="<%= root_path %>">Chuck-Blog</a>, Designed by <a href="<%= root_path %>">ChuckLee</a>.
+            </div>
           </div>
           <div class="right">
-            Powered by <a href="<%= root_path %>">Chuck-Blog</a>, Designed by <a href="<%= root_path %>">ChuckLee</a>.
+            <a href="<%= admin_root_path %>">后台管理</a>
           </div>
         </div>
       </div>
