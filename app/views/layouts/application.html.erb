@@ -18,8 +18,7 @@
           <h1 class="logo"><a href="<%= root_path %>"><%= Setting.site_name %></a></h1>          
           <div class="nav clearfix">
             <ul>
-              <li><a href="<%= root_path %>">Home</a></li>
-              <li><a href="<%= blog_root_path %>" <%= "class='active'" if current_page?("blog/posts") %>>Blog</a></li>
+              <li><a href="<%= root_path %>" <%= "class='active'" if current_page?("blog/posts") %>>Blog</a></li>
             </ul>
           </div>
         </div>

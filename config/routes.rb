@@ -8,7 +8,7 @@ Chuckblog::Application.routes.draw do
     :controllers => { :sessions => "users/sessions" }
   
   # 首页
-  root :to => 'home#index'
+  root :to => 'blog/posts#index'
   
   # 后台
   namespace :admin do 
