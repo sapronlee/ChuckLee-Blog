@@ -1,11 +1,15 @@
+<% if @recent_comments.any? %>
 <div id="recent_comments" class="sbox">
   <h4>最新评论</h4>
   <ul>
     <% @recent_comments.each do |c| -%>
-      <li><a href="<%= "#{blog_slug_post_path(c.commentable)}#comment_#{c.id}" %>" title="<%= c.comment %>"><%= truncate(c.comment, :length => 20) %></a></li>
+      <li><a href="<%= "#{post_path_for_comment(c.post_id, c.post_slug, c.post_created_at)}#comment_#{c.id}" %>" title="<%= c.body %>"><%= truncate(c.body, :length => 20) %></a></li>
     <% end -%>
   </ul>
 </div>
+<% end -%>
+
+<% if !@categories.blank? %>
 <div id="categories" class="sbox">
   <h4>分类</h4>
   <ul>
@@ -14,6 +18,9 @@
     <% end -%>
   </ul>
 </div>
+<% end -%>
+
+<% if @recent_posts.any? %>
 <div id="recent_posts" class="sbox">
   <h4>最新文章</h4>
   <ul>
@@ -22,6 +29,7 @@
     <% end -%>
   </ul>
 </div>
+<% end -%>
 <div id="tags" class="sbox">
   <h4>标签云</h4>
   <div id="tag_list">

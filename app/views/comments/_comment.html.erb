@@ -1,13 +1,13 @@
 <li id="comment_<%= comment.id %>" class="comment clearfix">
-  <%= gravatar_image_tag(comment.email, :alt => comment.name, :class => "avatar") %>
+  <%= gravatar_image_tag(comment.email, :alt => comment.user_name, :class => "avatar") %>
   <div class="comment_content">
     <div class="comment_info clearfix">
       <div class="comment_meta">
         <cite>
-          <% if !comment.page.blank? -%>
-            <a href="http://<%= comment.page %>" title="<%= comment.page %>"><%= comment.name %></a>
+          <% if !comment.web_site.blank? -%>
+            <a href="http://<%= comment.web_site %>" title="<%= comment.web_site %>"><%= comment.user_name %></a>
           <% else -%>
-            <%= comment.name %>
+            <%= comment.user_name %>
           <% end -%>
         </cite>
         <span>says:</span>
@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="comment_body">
-      <%= simple_format comment.comment %>
+      <%= simple_format comment.body %>
     </div>   
   </div>
 </li>

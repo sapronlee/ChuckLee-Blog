@@ -20,13 +20,13 @@
   <div class="comment_list<%= " hidden" if @post.comments_count.zero? %>">
     <h3><span><%= @post.comments_count %></span> Responses to “<%= @post.title %>”</h3>
     <ul>
-      <%= render :partial => "/comments/comment", :collection => @post.comments %>
+      <%# render :partial => "/comments/comment", :collection => @post.comments %>
     </ul>
   </div>
   <div class="comment_form">
     <h3>Leave a Reply</h3>
     <div id="messages" class="messages"></div>
-    <%= render "comments/form", :comment => @post.comments.new %>
+    <%= render "comments/form", :comment => @post.comment_threads.build %>
   </div>  
 </div>
 <div class="backtotop">

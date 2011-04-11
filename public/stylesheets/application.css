@@ -14,7 +14,7 @@ ol, ul { margin: 12px 0; padding-left: 40px; }
 ol { list-style: decimal;}
 ul { list-style: disc; }
 ul li{ }
-img { max-width: 590px; height: auto; }
+img { padding: 4px; border: 1px solid #CCC; }
 strong, b { font-weight: bold;}
 i, cite, em, var, address { font-style: italic;}
 pre {margin: 8px;}
@@ -47,7 +47,7 @@ table tr td{ padding: 2px 10px; background: #ddd;}
 #sidebar {}
 #sidebar .sbox { margin-bottom: 20px;}
 #sidebar .sbox a { text-decoration: none;}
-#sidebar .sbox h4 { font-size: 16px; color: #666; }
+#sidebar .sbox h4 { font-size: 14px; color: #666; }
 #sidebar .sbox h4 a { float: right; font-size: 12px; }
 #sidebar .sbox ul { padding: 0; margin: 0;}
 #sidebar .sbox ul li { padding: 3px 0 4px 1px; list-style: square inside; color: #666; border-bottom: 1px dotted #999; }
@@ -72,7 +72,9 @@ table tr td{ padding: 2px 10px; background: #ddd;}
 .post .post_categories { background-image: url(/images/icons/post/category.png); float: left; }  
 .post .post_tags { background-image: url(/images/icons/post/tag.png); float: left; margin-left: 20px; }
 .post .post_tags a { padding: 0 3px; }
-.post .post_body p { line-height: 160%;}
+.post .post_body p { line-height: 160%; }
+.post .post_body a { color: #678E04;}
+.post .post_body a:hover { color: #0066CC;}
 
 /* comments styles */
 .comments ul {padding: 0; margin: 0;}
@@ -94,7 +96,8 @@ table tr td{ padding: 2px 10px; background: #ddd;}
 .comment_form label { position: absolute; left: 190px; top: 5px; color: #777;}
 .comment_form .actions {position: relative; }
 .comment_form .actions input { border: 1px solid #CCC; margin: 3px 0; padding: 3px 5px; background: #DDD;}
-.comment_form .actions .ajaxloading { position: absolute; width: 16px; height: 16px; top: 7px; left: 57px; display: none;}
+.comment_form .actions .ajaxloading { position: absolute; width: 16px; height: 16px; top: 3px; left: 57px; display: none; }
+.comment_form .actions .ajaxloading img { border: none;}
 
 .comment_form .messages { padding: 5px; border: 1px solid #ffdddd; display: none;margin: 5px 0; background: #fff9f9;}
 .comment_form .messages h4 {color: #bf4c4c; font-weight: bold;}

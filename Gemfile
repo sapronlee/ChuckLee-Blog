@@ -14,7 +14,7 @@ gem 'mime-types'
 gem 'dynamic_form'
 gem 'acts-as-taggable-on'
 gem 'themes_for_rails'
-gem 'acts_as_commentable'
+gem 'acts_as_commentable_with_threading'
 gem 'gravatar_image_tag'
 gem 'kaminari'
 gem 'rails-footnotes', '>= 3.7', :group => :development

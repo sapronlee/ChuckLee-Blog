@@ -8,6 +8,14 @@ module Blog::PostsHelper
                    :slug => p.slug)
   end
   
+  def post_path_for_comment(id, slug, created_at)
+    blog_post_path(:year => created_at.strftime("%Y"), 
+                   :month => created_at.strftime("%m"), 
+                   :day => created_at.strftime("%d"), 
+                   :id => id, 
+                   :slug => slug)
+  end
+  
   # post 的 tags 列表
   def blog_tags_links(p)
     tags_html = []

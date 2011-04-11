@@ -4,7 +4,9 @@ class Post < ActiveRecord::Base
   acts_as_taggable
   # 添加comments
   acts_as_commentable
+  
   belongs_to :category, :counter_cache => true
+  
   scope :recent, :order => "created_at desc"
   scope :category, :select => "posts.*, categories.alias as category_name"
   

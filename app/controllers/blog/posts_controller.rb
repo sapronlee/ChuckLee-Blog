@@ -6,6 +6,6 @@ class Blog::PostsController < Blog::ApplicationController
   end
   
   def show
-    @post = Post.joins(:category).category.includes(:comments).find(params[:id])
+    @post = Post.joins(:category).category.find(params[:id])
   end  
 end

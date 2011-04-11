@@ -3,6 +3,6 @@ db/*.sqlite3
 log/*.log
 tmp/**/*
 .redcar
-public/upload/*
+public/uploads/*
 public/javascripts/cached/*
 public/stylesheets/cached/*
