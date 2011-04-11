@@ -20,7 +20,7 @@
   <div class="comment_list<%= " hidden" if @post.comments_count.zero? %>">
     <h3><span><%= @post.comments_count %></span> Responses to “<%= @post.title %>”</h3>
     <ul>
-      <%# render :partial => "/comments/comment", :collection => @post.comments %>
+      <%= render :partial => "/comments/comment", :collection => @post.comment_threads %>
     </ul>
   </div>
   <div class="comment_form">

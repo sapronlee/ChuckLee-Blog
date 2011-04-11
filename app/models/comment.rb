@@ -11,7 +11,7 @@ class Comment < ActiveRecord::Base
   
   # NOTE: Comments belong to a user
   # belongs_to :user
-  belongs_to :commentable, :polymorphic => true
+  belongs_to :commentable, :polymorphic => true, :counter_cache => :comments_count
   
   # Helper class method that allows you to build a comment
   # by passing a commentable object, a user_id, and comment text
