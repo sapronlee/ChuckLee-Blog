@@ -1,14 +1,11 @@
 Chuckblog::Application.routes.draw do
   
   # themes
-  themes_for_rails
+  # themes_for_rails
 
   # 管理用户
   devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register' },
     :controllers => { :sessions => "users/sessions" }
-  
-  # 首页
-  root :to => 'blog/posts#index'
   
   # 后台
   namespace :admin do 
@@ -28,12 +25,12 @@ Chuckblog::Application.routes.draw do
     end
   end
   
+  # index page
+  root :to => "blog/posts#index"
+  
   # Blog routes
-  namespace :blog do
-    root :to => "posts#index"
-    resources :posts, :only => [:index]
-    match "/:year/:month/:day/:id-:slug" => "posts#show", :as => :post, 
-      :constraints => { :year => /\d{4}/, :month => /\d{2}/, :day => /\d{2}/, :slug => /[a-z0-9\-]+/ }  
+  scope :module => "blog" do
+    resources :posts, :path => "blog", :only => [:index, :show]
   end
   
   resources :comments, :only => [:create, :destroy]

@@ -36,9 +36,10 @@ module ApplicationHelper
   
   def current_page?(controller = "", action = "")
     if action.blank?
-      return params[:controller] == controller
+      return controller.split(",").map { |c| c.strip }.include?(controller_name)
     else
       return (params[:controller] == controller and params[:action] == action)
     end
   end
+    
 end

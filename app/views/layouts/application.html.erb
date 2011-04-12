@@ -15,10 +15,11 @@
     <div id="wrapper_2">
       <div id="header">
         <div id="header_wrapper" class="container_12 clearfix">
-          <h1 class="logo"><a href="<%= root_path %>"><%= Setting.site_name %></a></h1>          
+          <h1 class="logo"><a href="<%= root_path %>" title="<%= Setting.site_name %>"><%= Setting.site_name %></a></h1>          
           <div class="nav clearfix">
             <ul>
-              <li><a href="<%= root_path %>" <%= "class='active'" if current_page?("blog/posts") %>>Blog</a></li>
+              <li><a href="<%= posts_path %>" title="Blog" <%= "class='active'" if current_page?("posts, categories") %>>Blog</a></li>
+              <li><a href="<%= tags_path %>" title="Tags" <%= "class='active'" if current_page?("tags") %>>Tags</a></li>
             </ul>
           </div>
         </div>
@@ -41,15 +42,15 @@
           </div>
           <div class="bottom_nav">
             <ul>
-              <li><a href="<%= root_path %>">首页</a></li>
-              <li><a href="<%= blog_root_path %>">博客</a></li>
-              <li><a href="#">相册</a></li>
+              <li><a href="<%= posts_path %>" title="博客">博客</a></li>
+              <li><a href="<%= tags_path %>" title="标签">标签</a></li>
+              <li><a href="#" title="相册">相册</a></li>
               <% if user_signed_in? %>
-                <li><a href="<%= destroy_user_session_path %>">退出</a></li>
+                <li><a href="<%= destroy_user_session_path %>" title="退出">退出</a></li>
               <% else %>
-                <li><a href="<%= user_session_path %>">登录</a></li>
+                <li><a href="<%= user_session_path %>" title="登录">登录</a></li>
               <% end -%>
-              <li><a href="<%= admin_root_path %>" target="_blank">后台管理</a></li>
+              <li><a href="<%= admin_root_path %>" target="_blank" title="后台管理">后台管理</a></li>
             </ul>
           </div>
         </div>

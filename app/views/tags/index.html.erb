@@ -1,0 +1,12 @@
+<% title "标签云" %>
+<div class="tags sbox">
+  <h4>标签云</h4>
+  <div class="tag_list">
+    <% tag_cloud(@tags, %w(tc1 tc2 tc3 tc4 tc5)) do |tag, css_class| %>
+      <a href="<%= tag_path(tag.name) %>" title="<%= tag.name %>" class="<%= css_class %>"><%= tag.name %></a>
+    <% end -%>
+  </div>
+</div>
+<%= content_for :sidebar do -%>
+  <%= render "shared/sidebar" %>
+<% end -%>

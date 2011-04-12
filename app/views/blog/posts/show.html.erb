@@ -1,6 +1,6 @@
 <% title @post.title %>
 <div class="post">
-  <h2><a href="<%= blog_slug_post_path(@post) %>" title="<%= @post.title %>"><%= @post.title %></a></h2>
+  <h2><a href="<%= post_path(@post) %>" title="<%= @post.title %>"><%= @post.title %></a></h2>
   <div class="post_info clearfix">
     <span class="post_date"><%= l(@post.created_at, :format => :long) %></span>    
   </div>
