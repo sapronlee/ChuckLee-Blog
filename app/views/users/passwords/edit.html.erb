@@ -1,16 +1,13 @@
-<h2>Change your password</h2>
-
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
-
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
-
-  <p><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></p>
-
-  <p><%= f.submit "Change my password" %></p>
-<% end %>
-
-<%= render :partial => "devise/shared/links" %>
+<% title "重置密码" %>
+<div id="reset_password">
+  <h2>重置密码</h2>
+  <%= simple_form_for(@user, :url => user_password_path, :html => { :novalidate => true, :method => :put }) do |f| %>
+    <%= f.input :reset_password_token, :label => "密钥", :as => :string %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation, :required => true %>
+    <div class="actions">
+      <%= f.button :submit, "重置密码" %>
+      <a href="<%= new_user_session_path %>" class="forgot_password">登录</a>
+    </div>
+  <% end %>
+</div>

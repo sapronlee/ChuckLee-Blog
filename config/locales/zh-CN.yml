@@ -197,6 +197,7 @@ zh-CN:
         login: "用户名或邮箱"
         email: "邮箱"
         password: "密码"
+        password_confirmation: "确认密码"
 
   activemodel:
     errors:
@@ -245,8 +246,7 @@ zh-CN:
         create: "上传"
       comment:
         create: "submit"
-      user:
-        create: "登录"
+
   views:
     pagination:
       previous: "上一页"

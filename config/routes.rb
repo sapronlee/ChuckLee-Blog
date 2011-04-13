@@ -5,9 +5,12 @@ Chuckblog::Application.routes.draw do
 
   root :to => 'blog/posts#index'
   
-  # 管理用户
-  devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register' },
-    :controllers => { :sessions => "users/sessions" }
+  # 用户  
+  devise_for :users, :controllers => { :sessions => 'users/sessions', :passwords => 'users/passwords' }, :skip => [:sessions] do
+    get 'login' => 'users/sessions#new', :as => :new_user_session
+    post 'login' => 'users/sessions#create', :as => :user_session
+    get 'logout' => 'users/sessions#destroy', :as => :destroy_user_session
+  end
   
   # 后台
   namespace :admin do 

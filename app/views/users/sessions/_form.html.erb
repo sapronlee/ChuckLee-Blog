@@ -3,9 +3,15 @@
   <% if !alert.blank? %>
     <div class="massage ui-state-error ui-corner-all"><%= alert %></div>
   <% end -%>
+  <% if !notice.blank? %>
+    <div class="massage ui-state-highlight ui-corner-all"><%= notice %></div>
+  <% end -%>
   <%= simple_form_for(@user, :url => user_session_path, :html => { :novalidate => true }) do |f| %>
     <%= f.input :login, :required => false %>
     <%= f.input :password, :required => false %>
-    <div class="actions"><%= f.button :submit %></div>
+    <div class="actions">
+      <%= f.button :submit, "登录" %>
+      <a href="<%= new_user_password_path %>" class="forgot_password">忘记密码？</a>
+    </div>
   <% end -%>
 </div>

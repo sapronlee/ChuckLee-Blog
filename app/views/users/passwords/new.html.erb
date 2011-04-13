@@ -1,12 +1,11 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <p><%= f.label :email %><br />
-  <%= f.text_field :email %></p>
-
-  <p><%= f.submit "Send me reset password instructions" %></p>
-<% end %>
-
-<%= render :partial => "devise/shared/links" %>
+<% title "找回密码" %>
+<div id="forgot_password">
+  <h2>忘记密码？</h2>
+  <%= simple_form_for(@user, :url => user_password_path, :html => { :novalidate => true }) do |f| %>
+    <%= f.input :email %>
+    <div class="actions">
+      <%= f.button :submit, "发送邮件" %>
+      <a href="<%= new_user_session_path %>" class="forgot_password">登录</a>
+    </div>
+  <% end %>
+</div>

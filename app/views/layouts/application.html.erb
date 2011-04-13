@@ -48,7 +48,8 @@
               <% if user_signed_in? %>
                 <li><a href="<%= destroy_user_session_path %>" title="退出">退出</a></li>
               <% else %>
-                <li><a href="<%= user_session_path %>" title="登录">登录</a></li>
+                <li><a href="<%= new_user_session_path %>" title="登录">登录</a></li>
+                <li><a href="<%= new_user_password_path %>" title="忘记密码？">忘记密码？</a></li>
               <% end -%>
               <li><a href="<%= admin_root_path %>" target="_blank" title="后台管理">后台管理</a></li>
             </ul>

@@ -126,4 +126,31 @@ table tr td{ padding: 2px 10px; background: #ddd;}
 #login div.input, #login div.actions { padding: 3px 20px;}
 #login input.string, #login input.password { width: 335px; padding: 6px 2px;}
 #login .massage { margin: 10px auto 0 auto; width: 317px; padding: 10px;}
-#login input.button { padding: 5px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; background: #ccc; color: #333; vertical-align: middle; cursor: pointer; width: 60px; }
+#login input.button { padding: 5px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; background: #ccc; color: #333; vertical-align: middle; cursor: pointer; min-width: 60px; }
+#login .actions a.forgot_password { margin-left: 20px; }
+
+/* forgot password page */
+#forgot_password { width: 400px; margin: 100px auto; background: #f4f4f4; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; border: 1px solid #CCC; }
+#forgot_password h2 {background: #ccc; font-size: 20px; padding: 5px 0 5px 10px;}
+#forgot_password .simple_form { padding: 10px;}
+#forgot_password label {display: block;}
+#forgot_password abbr { color: #BF0000; }
+#forgot_password .error { color: #BF0000; }
+#forgot_password div.input, #forgot_password div.actions { padding: 3px 20px;}
+#forgot_password input.string, #forgot_password input.password { width: 335px; padding: 6px 2px;}
+#forgot_password .massage { margin: 10px auto 0 auto; width: 317px; padding: 10px;}
+#forgot_password input.button { padding: 5px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; background: #ccc; color: #333; vertical-align: middle; cursor: pointer; min-width: 60px; }
+#forgot_password .actions a.forgot_password { margin-left: 20px; }
+
+/* reset password page */
+#reset_password { width: 400px; margin: 100px auto; background: #f4f4f4; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; border: 1px solid #CCC; }
+#reset_password h2 {background: #ccc; font-size: 20px; padding: 5px 0 5px 10px;}
+#reset_password .simple_form { padding: 10px;}
+#reset_password label {display: block;}
+#reset_password abbr { color: #BF0000; }
+#reset_password .error { color: #BF0000; }
+#reset_password div.input, #reset_password div.actions { padding: 3px 20px;}
+#reset_password input.string, #reset_password input.password { width: 335px; padding: 6px 2px;}
+#reset_password .massage { margin: 10px auto 0 auto; width: 317px; padding: 10px;}
+#reset_password input.button { padding: 5px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; background: #ccc; color: #333; vertical-align: middle; cursor: pointer; min-width: 60px; }
+#reset_password .actions a.forgot_password { margin-left: 20px; }

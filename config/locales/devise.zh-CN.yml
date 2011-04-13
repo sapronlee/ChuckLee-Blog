@@ -1,7 +1,7 @@
 zh-CN:
   errors:
     messages:
-      not_found: "没有找到"
+      not_found: "没有找到指定的数据"
       already_confirmed: "已经确认"
       not_locked: "没有锁定"
   devise:
@@ -17,7 +17,7 @@ zh-CN:
       signed_in: '登录成功.'
       signed_out: '退出成功.'
     passwords:
-      send_instructions: '几分后，您将收到重置密码的电子邮件.'
+      send_instructions: '几分钟后，您将收到重置密码的电子邮件.'
       updated: '您的密码已修改成功，请重新登录.'
     confirmations:
       send_instructions: '几分后，您将收到帐号激活的电子邮件.'
