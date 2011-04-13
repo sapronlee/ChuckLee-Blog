@@ -1,4 +1,4 @@
-class TagsController < ApplicationController
+class Blog::TagsController < Blog::ApplicationController
   
   before_filter :fill_sidebar_data, :only => [:index, :show]
   

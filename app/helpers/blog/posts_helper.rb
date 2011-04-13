@@ -20,7 +20,7 @@ module Blog::PostsHelper
   def blog_tags_links(p)
     tags_html = []
     p.cached_tag_list.split(",").each do |t|
-      tags_html << "<a href=\"#{tag_path(t.strip)}\" title=\"#{t.strip}\">#{t.strip}</a>"
+      tags_html << "<a href=\"#{blog_tag_path(t.strip)}\" title=\"#{t.strip}\">#{t.strip}</a>"
     end
     raw tags_html.join(",")
   end

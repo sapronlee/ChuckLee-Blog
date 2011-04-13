@@ -1,6 +1,6 @@
 <% title @post.title %>
 <div class="post">
-  <h2><a href="<%= post_path(@post) %>" title="<%= @post.title %>"><%= @post.title %></a></h2>
+  <h2><a href="<%= blog_post_path(@post.id, @post.slug) %>" title="<%= @post.title %>"><%= @post.title %></a></h2>
   <div class="post_info clearfix">
     <span class="post_date"><%= l(@post.created_at, :format => :long) %></span>    
   </div>
@@ -8,7 +8,7 @@
   <div class="post_meta clearfix">
     <% if !@post.category_name.blank? -%>
       <span class="post_categories">
-        <a href="<%= category_path(@post.category_name) %>" title="<%= @post.category_name %>"><%= @post.category_name %></a>
+        <a href="<%= blog_category_path(@post.category_name) %>" title="<%= @post.category_name %>"><%= @post.category_name %></a>
       </span>
     <% end -%>
     <% if !@post.cached_tag_list.blank? -%>

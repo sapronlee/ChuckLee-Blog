@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+class Blog::CategoriesController < Blog::ApplicationController
   
   before_filter :fill_sidebar_data, :only => [:show]
   

@@ -18,8 +18,8 @@
           <h1 class="logo"><a href="<%= root_path %>" title="<%= Setting.site_name %>"><%= Setting.site_name %></a></h1>          
           <div class="nav clearfix">
             <ul>
-              <li><a href="<%= posts_path %>" title="Blog" <%= "class='active'" if current_page?("posts, categories") %>>Blog</a></li>
-              <li><a href="<%= tags_path %>" title="Tags" <%= "class='active'" if current_page?("tags") %>>Tags</a></li>
+              <li><a href="<%= blog_root_path %>" title="Blog" <%= "class='active'" if current_page?("posts, categories") %>>Blog</a></li>
+              <li><a href="<%= blog_tags_path %>" title="Tags" <%= "class='active'" if current_page?("tags") %>>Tags</a></li>
             </ul>
           </div>
         </div>
@@ -42,8 +42,8 @@
           </div>
           <div class="bottom_nav">
             <ul>
-              <li><a href="<%= posts_path %>" title="博客">博客</a></li>
-              <li><a href="<%= tags_path %>" title="标签">标签</a></li>
+              <li><a href="<%= blog_root_path %>" title="博客">博客</a></li>
+              <li><a href="<%= blog_tags_path %>" title="标签">标签</a></li>
               <li><a href="#" title="相册">相册</a></li>
               <% if user_signed_in? %>
                 <li><a href="<%= destroy_user_session_path %>" title="退出">退出</a></li>
