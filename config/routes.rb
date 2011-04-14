@@ -6,10 +6,15 @@ Chuckblog::Application.routes.draw do
   root :to => 'blog/posts#index'
   
   # 用户  
-  devise_for :users, :controllers => { :sessions => 'users/sessions', :passwords => 'users/passwords' }, :skip => [:sessions] do
+  devise_for :users, :controllers => { :sessions => 'users/sessions', :passwords => 'users/passwords' },
+    :skip => [:sessions, :passwords] do
     get 'login' => 'users/sessions#new', :as => :new_user_session
     post 'login' => 'users/sessions#create', :as => :user_session
     get 'logout' => 'users/sessions#destroy', :as => :destroy_user_session
+    get 'forgot_password' => 'users/passwords#new', :as => :new_user_password
+    post 'password' => 'users/passwords#create', :as => :user_password
+    get 'reset_password' => 'users/passwords#edit', :as => :edit_user_password
+    put 'password' => 'users/passwords#update', :as => :user_password
   end
   
   # 后台

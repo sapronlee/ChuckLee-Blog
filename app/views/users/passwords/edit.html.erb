@@ -2,7 +2,7 @@
 <div id="reset_password">
   <h2>重置密码</h2>
   <%= simple_form_for(@user, :url => user_password_path, :html => { :novalidate => true, :method => :put }) do |f| %>
-    <%= f.input :reset_password_token, :label => "密钥", :as => :string %>
+    <%= f.input :reset_password_token, :as => :hidden %>
     <%= f.input :password %>
     <%= f.input :password_confirmation, :required => true %>
     <div class="actions">
