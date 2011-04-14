@@ -87,6 +87,7 @@ a.button {
 #navigation ul li a#category {background-image: url(/images/icons/nav/category.png);}
 #navigation ul li a#post {background-image: url(/images/icons/nav/post.png);}
 #navigation ul li a#setting {background-image: url(/images/icons/nav/setting.png);}
+#navigation ul li a#registration {background-image: url(/images/icons/nav/user.png);}
 #navigation ul li a:hover {
   background-color:#8E8E8E;text-decoration:none;color:#FFF;
 }
