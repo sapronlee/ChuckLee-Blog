@@ -13,6 +13,6 @@ test:
   
 production:  
   # 配置图片的域名
-  upload_url: "http://127.0.0.1:3000/uploads"
+  upload_url: "http://www.chucklee.cc/uploads"
   # 上传途径
   upload_root: "/home/boli/work/ChuckLee-Blog/public/uploads"
