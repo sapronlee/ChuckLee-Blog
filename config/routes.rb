@@ -32,7 +32,10 @@ Chuckblog::Application.routes.draw do
         post :search
         delete :destroy_selected
       end
-    end    
+    end
+    resources :users do |u|
+      post 'search', :on => :collection
+    end
   end
 
   # 博客

@@ -2,7 +2,7 @@
   <div class="menu">
     <%= spaceless do -%>
       <a href="<%= edit_user_registration_path %>" class="button group left<%= ' checked' if ["edit", "update"].index(action_name) %>">修改资料</a>
-      <a href="<%= new_user_registration_path %>" class="button group <%= ' checked' if ["new", "create"].index(action_name) %>">创建新用户</a>
+      <a href="<%= new_admin_user_path %>" class="button group <%= ' checked' if ["new", "create"].index(action_name) %>">创建新用户</a>
       <%= link_to "删除当前用户", user_registration_path, :method => :delete, :class => "button group right" %>
     <% end -%>
   </div>

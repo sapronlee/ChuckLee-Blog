@@ -1,0 +1,73 @@
+<% title "用户列表" %>
+<%= render "base" %>
+<% content_for :sitemaps do -%>
+  <span>列表</span>
+<% end -%>
+<div id="users_list" class="clearfix">
+  <form id="users_form" action="" method="post">
+    <input type="hidden" name="_method" value="delete" />
+    <%= auth_token %>
+    <table class="wice_grid">
+      <thead>
+        <tr class="wice_grid_title_row">
+          <th class="tl">用户名</th>
+          <th class="tl">邮箱</th>
+          <th class="tl">最后登录时间</th>
+          <th class="tl">最后登录IP</th>
+          <th class="mun">登录数</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if !@users.blank? -%>
+          <% @users.each_with_index do |c, i| -%>
+            <tr class="<%= i % 2 == 0 ? "odd" : "even" %>">  
+              <td><%= c.login %></td>
+              <td><%= c.email %></td>
+              <td><%= c.last_sign_in_at.blank? ? "暂未记录" : l(c.last_sign_in_at, :format => :long) %></td>
+              <td><%= c.last_sign_in_ip.blank? ? "暂未记录" : c.last_sign_in_ip %></td>
+              <td class="mun"><%= c.sign_in_count %></td>
+              <td class="actions"><%= record_action_link(c, :ns => :admin) %></td>
+            </tr>
+          <% end -%>
+        <% else -%>
+          <tr>
+            <td colspan="6" class="empty">无任何数据</td>
+          </tr>
+        <% end -%>
+      </tbody>
+    </table>
+    <div id="footer_actions" class="clearfix">
+      <div class="actions"></div>
+      <%= will_paginate @users %>
+    </div>
+  </form>
+  <div id="dialog" title="提示信息">
+    <p>
+      <span class="ui-icon ui-icon-alert"></span>
+      <span class="text">你确定要删除该条数据吗？数据删除后不可恢复！</span>
+    </p>
+  </div>
+  <script type="text/javascript">
+    $("#dialog:ui-dialog").dialog("destroy");
+    $("#dialog").dialog({
+      autoOpen : false,
+      modal : true,
+      closeText : "关闭",
+      resizable : false,
+      draggable : false,
+      buttons : {
+        "确定" : function() {
+          if($("#users_form").attr("action")) {
+            $("#users_form").submit();
+          }
+          $(this).dialog("close");
+        },
+        "取消" : function() {
+          $("#users_form").attr("action", "");
+          $(this).dialog("close");
+        }
+      }
+    });
+  </script>
+</div>

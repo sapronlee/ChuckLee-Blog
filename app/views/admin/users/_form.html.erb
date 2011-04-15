@@ -1,0 +1,13 @@
+<%= simple_form_for [:admin, @user], :html => { :novalidate => true } do |f| -%>
+  <% if ["new", "create"].index(action_name) -%>
+    <%= f.input :login, :label => '用户名', :hint => '必须填写用户名', :input_html => { :size => 30 } %>
+  <% else -%>
+    <%= f.input :login, :label => '用户名', :hint => '不能改变用户名', :input_html => { :size => 30 }, :disabled => true %> 
+  <% end -%>
+  <%= f.input :email, :hint => '必须填写邮箱', :input_html => { :size => 30 } %>
+  <%= f.input :password, :hint => '如果你不修改密码请留空', :required => false %>
+  <%= f.input :password_confirmation, :hint => '两次密码必须一致' %>
+  <div class="actions">
+    <%= f.button :submit, "更新" %>
+  </div>
+<% end -%>

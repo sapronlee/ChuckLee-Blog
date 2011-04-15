@@ -132,7 +132,7 @@ a.button {
 #main .tools .search {
   float:right;width:30%;text-align:right;
 }
-#main .search .input {
+#main .search input.input {
   margin:0;border: 1px solid #DDD;padding:3px;vertical-align:-1px;
 }
 #main .search .button {
@@ -169,6 +169,7 @@ a.button {
 #footer_actions .actions, #footer_actions .pagination {
   width:50%;
   float:left;
+  min-height: 1px;
 }
 #footer_actions .actions .button {
   padding:4px 15px;

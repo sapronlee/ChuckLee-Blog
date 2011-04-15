@@ -20,6 +20,7 @@
             <li><a href="<%= admin_root_path %>"<%= ' class=current' if params[:controller] == "admin/home" %> id="home">首页</a></li>
             <li><a href="<%= admin_categories_path %>"<%= ' class=current' if params[:controller] == "admin/categories" %> id="category">分类</a></li>
             <li><a href="<%= admin_posts_path %>"<%= ' class=current' if params[:controller] == "admin/posts" %> id="post">文章</a></li>
+            <li><a href="<%= admin_users_path %>"<%= ' class=current' if params[:controller] == "admin/users" %> id="user">用户</a></li>
             <li><a href="<%= admin_settings_path %>"<%= ' class=current' if params[:controller] == "admin/settings" %> id="setting">设置</a></li>
           </ul>
         </div>
