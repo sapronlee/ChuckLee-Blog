@@ -6,8 +6,8 @@ Chuckblog::Application.routes.draw do
   root :to => 'blog/posts#index'
   
   # 用户  
-  devise_for :users, :controllers => { :sessions => 'users/sessions', :passwords => 'users/passwords' },
-    :skip => [:sessions, :passwords, :registrations] do
+  devise_for :users, :controllers => { :sessions => 'users/sessions', :passwords => 'users/passwords', :registrations => 'users/registrations' },
+    :skip => [:sessions, :passwords], :path => 'admin/account' do
     get 'login' => 'users/sessions#new', :as => :new_user_session
     post 'login' => 'users/sessions#create', :as => :user_session
     get 'logout' => 'users/sessions#destroy', :as => :destroy_user_session
@@ -32,10 +32,7 @@ Chuckblog::Application.routes.draw do
         post :search
         delete :destroy_selected
       end
-    end
-    devise_for :users, :controllers => { :registration => 'registrations' }, :skip => [:sessions, :passwords] do
-      get 'users' => 'registrations#index', :as => :user_registrations
-    end
+    end    
   end
 
   # 博客

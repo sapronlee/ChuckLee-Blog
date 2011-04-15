@@ -1,0 +1,16 @@
+<% title "创建新用户" %>
+<%= render "base" %>
+<% content_for :sitemaps do -%>
+  <span>创建新用户</span>
+<% end -%>
+<div class="clomn_type_one">
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :novalidate => true }) do |f| %>
+  <%= f.input :login, :label => '用户名', :hint => '必须填写用户名', :input_html => { :size => 30 } %>
+  <%= f.input :email, :hint => '必须填写邮箱', :input_html => { :size => 30 } %>
+  <%= f.input :password, :label => '密码' %>
+  <%= f.input :password_confirmation, :required => true %>
+  <div class="actions">
+    <%= f.button :submit, "提交" %>
+  </div>
+<% end -%>
+</div>

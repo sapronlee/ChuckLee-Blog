@@ -103,7 +103,7 @@ a.button {
 #users span.greeting {
   color: #ffc000;text-shadow: 0 1px 0 #000;
 }
-#users span.name {
+#users span.name a {
   color:#fff;text-shadow:0 1px 0 #000;
 }
 #users a.logout, #users a.homepage {
@@ -237,7 +237,7 @@ a.button {
   margin:0;
   padding:2px;
 }
-.simple_form input.string {
+.simple_form input.string, .simple_form input.password {
   border: 1px solid #DDD;
   border-left-color:#999;
   border-top-color:#999;
@@ -354,3 +354,5 @@ a.button {
 .prompt_frame li {
   
 }
+
+.clomn_type_one .simple_form span.hint { display: inline; margin-left: 10px; }
