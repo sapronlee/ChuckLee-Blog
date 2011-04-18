@@ -5,3 +5,29 @@
 <% content_for :styles do -%>
   <%= stylesheet_link_tag "admin/settings" %>
 <% end -%>
+<% content_for :scripts do -%>
+  <script type="text/javascript">
+    $(function() {
+      $("tr.noborder").hover(
+        function() {
+          $(this).find("td.hint").addClass("active");
+        },
+        function() {
+          $(this).find("td.hint").removeClass("active");
+        }
+      );
+      var is_dbl = false;
+      $("textarea.text").dblclick(function() {
+        if(!is_dbl) {
+          $(this).css("position", "absolute").width(920).height(150)
+          .parent().css("height", $(this).height() + 13);
+          is_dbl = true;
+        } else {
+          $(this).css("position", "").css("height", "").css("width", "")
+          .parent().css("height", "");
+          is_dbl = false;
+        }
+      });
+    });
+  </script>
+<% end -%>

@@ -230,6 +230,8 @@ a.button {
 }
 .simple_form textarea {
   margin:0;
+  resize: none;
+  overflow: auto;
 }
 .simple_form select {
   border: 1px solid #DDD;
@@ -271,12 +273,14 @@ a.button {
   display:block;
   margin-top:2px;
 }
-.simple_form span.hint {
-  color:#777;
+.simple_form .hint {
+  color:#ccc;
 }
+.simple_form .active { color: #333; }
 .simple_form .actions {
   margin-top: 10px;
 }
+.simple_form input:focus, .simple_form textarea:focus { outline: #bf0000 Solid 2px; border-color: #BF0000; background: #fff4f4; }
 #ad_options { padding: 7px; display: block; color: #FFF; -webkit-border-radius: 4px 4px 0 0;border-radius: 4px 4px 0 0;-moz-border-radius: 4px 4px 0 0; background: #BF0000;}
 #ad_options span.fh { padding-right: 5px;}
 #ad_options:hover { color: #333; text-decoration: none;}

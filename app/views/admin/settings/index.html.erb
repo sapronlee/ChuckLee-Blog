@@ -29,11 +29,32 @@
         <td class="hint">每页显示文章数，只能为数字，默认为10</td>
       </tr>
       <tr class="label">
-        <td colspan="2"><label for="page_size">网站第三方统计代码:</label></td>
+        <td colspan="2"><label for="statistics_code">网站第三方统计代码:</label></td>
       </tr>
       <tr class="noborder">
-        <td class="centent"><textarea id="page_size" class="text" name="settings[statistics_code]"><%= Setting.statistics_code %></textarea></td>
-        <td class="hint">页面底部可以显示第三方统计，如google、51la等，<br>如果没有请留空</td>
+        <td class="centent"><textarea id="statistics_code" class="text" name="settings[statistics_code]"><%= Setting.statistics_code %></textarea></td>
+        <td class="hint">页面底部可以显示第三方统计，如google、51la等<br>如果没有请留空 <br>双击输入框可扩大/缩小</td>
+      </tr>
+      <tr class="label">
+        <td colspan="2"><label for="key_words">网站关键字:</label></td>
+      </tr>
+      <tr class="noborder">
+        <td class="centent"><input type="text" id="key_words" class="string" name="settings[key_words]" value="<%= Setting.key_words %>"></td>
+        <td class="hint">网站的关键字，用","分割，用户SEO优化</td>
+      </tr>
+      <tr class="label">
+        <td colspan="2"><label for="description">网站描述:</label></td>
+      </tr>
+      <tr class="noborder">
+        <td class="centent"><textarea id="description" class="text" name="settings[description]"><%= Setting.description %></textarea></td>
+        <td class="hint">网站描述，用于SEO优化 <br>双击输入框可扩大/缩小</td>
+      </tr>
+      <tr class="label">
+        <td colspan="2"><label for="icp">网站备案信息代码:</label></td>
+      </tr>
+      <tr class="noborder">
+        <td class="centent"><input type="text" id="icp" class="string" name="settings[icp]" value="<%= Setting.icp %>"></td>
+        <td class="hint">如果网站已备案，在此输入你的 ICP 备案信息，它将显示在页面底部，如果没有请留空</td>
       </tr>
       <tr>
         <td colspan="2"><button class="button submit">保存设置</button></td>
