@@ -1,0 +1,11 @@
+.simple_form label { font-weight: bold; color: #666; margin: 0; }
+.simple_form table.tb { width: 100%; }
+.simple_form table.tb tr { border: 1px dotted #ccc; border-width: 1px 0 0 0; }
+.simple_form table.tb td { padding: 5px; }
+.simple_form table.tb tr.label td { padding-top: 8px; padding-bottom: 1px; }
+.simple_form table.tb td.centent { width: 320px; }
+.simple_form table.tb td.hint { color: #ccc;vertical-align: middle; line-height: 160%; }
+.simple_form table.tb td input.string,
+.simple_form table.tb td textarea.text { width: 300px; }
+.simple_form table.tb td textarea.text { padding: 4px; height: 100px; }
+.simple_form table.tb tr.noborder { border: none; }

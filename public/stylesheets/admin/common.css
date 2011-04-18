@@ -214,8 +214,9 @@ a.button {
 
 /* simple form styles */
 .simple_form {
-  font-size: 12px; 
+  color:#555; font:12px "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
 }
+.simple_form input, .simple_form textarea { color:#555; font:12px "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif; }
 .simple_form div.input {
   margin-bottom:10px;
 }
@@ -243,6 +244,7 @@ a.button {
   border-left-color:#999;
   border-top-color:#999;
   padding:4px;
+  line-height: 16px;
 }
 .simple_form textarea.text {
   border: 1px solid #DDD;

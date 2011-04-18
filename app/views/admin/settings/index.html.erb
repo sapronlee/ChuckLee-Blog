@@ -4,20 +4,40 @@
   <span>全局设置</span>
 <% end -%>
 <div id="admin_settings" class="simple_form">
-  <form accept-charset="UTF-8" action="" class="simple_form" method="post">
+  <form accept-charset="UTF-8" action="" class="simple_form" method="post" autocomplete="off">
     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-    <div class="input string site_name">
-      <label class="site_name" for="site_name">网站名称</label>
-      <input type="text" class="string site_name" id="site_name" name="settings[site_name]" value="<%= Setting.site_name %>">
-      <span class="hint">请添加网站名称</span>
-    </div>
-    <div class="input string page_size">
-      <label class="page_size" for="page_size">分页数</label>
-      <input type="text" class="string page_size mum" id="page_size" name="settings[page_size]" value="<%= Setting.page_size %>">
-      <span class="hint">请填写分页数，只能是数字</span>
-    </div>
-    <div class="actions pl83">
-      <button class="button submit">保存设置</button>
-    </div>
+    <table class="tb">
+      <tr class="label">
+        <td colspan="2"><label for="app_name">网站名称:</label></td>
+      </tr>
+      <tr class="noborder">
+        <td class="centent"><input type="text" id="app_name" class="string" name="settings[app_name]" value="<%= Setting.app_name %>"></td>
+        <td class="hint">网站名称，将显示在页面底部的联系方式处</td>
+      </tr>
+      <tr class="label">
+        <td colspan="2"><label for="site_name">站点名称:</label></td>
+      </tr>
+      <tr class="noborder">
+        <td class="centent"><input type="text" id="site_name" class="string" name="settings[site_name]" value="<%= Setting.site_name %>"></td>
+        <td class="hint">站点名称，将显示在浏览器窗口标题等位置</td>
+      </tr>
+      <tr class="label">
+        <td colspan="2"><label for="page_size">文章分页数:</label></td>
+      </tr>
+      <tr class="noborder">
+        <td class="centent"><input type="text" id="page_size" class="string" name="settings[page_size]" value="<%= Setting.page_size %>"></td>
+        <td class="hint">每页显示文章数，只能为数字，默认为10</td>
+      </tr>
+      <tr class="label">
+        <td colspan="2"><label for="page_size">网站第三方统计代码:</label></td>
+      </tr>
+      <tr class="noborder">
+        <td class="centent"><textarea id="page_size" class="text" name="settings[statistics_code]"><%= Setting.statistics_code %></textarea></td>
+        <td class="hint">页面底部可以显示第三方统计，如google、51la等，<br>如果没有请留空</td>
+      </tr>
+      <tr>
+        <td colspan="2"><button class="button submit">保存设置</button></td>
+      </tr>
+    </table>    
   </form>
 </div>
