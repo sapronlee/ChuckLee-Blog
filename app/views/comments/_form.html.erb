@@ -1,4 +1,4 @@
-<%= simple_form_for comment, :remote => true do |f| -%>
+<%= simple_form_for comment, :remote => true, :html => { :onkeydown => "hot_key()" } do |f| -%>
   <%= f.input :commentable_type, :as => :hidden %>
   <%= f.input :commentable_id, :as => :hidden %>
   <% if current_user -%>
@@ -27,15 +27,10 @@
   .live("ajax:complete", function() {
     $(this).find(".ajaxloading").hide();
   });
-  $("#comment_body").keydown(function(e) {
-    if(e.ctrlKey && e.which == 13) {
-      $.post(
-        $("#new_comment").attr("action"), 
-        $("#new_comment").serialize(),
-        null,
-        "script"
-      );
+  
+  function hot_key() {
+    if (event.ctrlKey && event.keyCode == 13) {
+      $("#new_comment").submit();
     }
-    return false;
-  });
+  }
 </script>

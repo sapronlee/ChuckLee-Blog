@@ -20,7 +20,7 @@
   <div class="comment_list<%= " hidden" if @post.comments_count.zero? %>">
     <h3><span><%= @post.comments_count %></span> Responses to “<%= @post.title %>”</h3>
     <ul>
-      <%= render :partial => "/comments/comment", :collection => @post.comment_threads %>
+      <%= render :partial => "/comments/comment", :collection => @post.root_comments %>
     </ul>
   </div>
   <div class="comment_form">
@@ -37,16 +37,14 @@
   </div> 
 </div>
 <script type="text/javascript">
-  var comment_form = $(".comment_form");
+  var form_html = $(".comment_form");
   function reply(id) {
-    var form_html = comment_form;
     form_html.find("h3 a").show().end().find("#comment_commentable_id")
     .after("<input class=\"hidden\" id=\"comment_parent_id\" name=\"comment[parent_id]\" type=\"hidden\" value=\"" + id + "\">");
-    $("#comment-" + id).find(".comment_body").after(form_html).end().find(".reply_comment").hide();
+    $("#comment-" + id).find(".comment_body:first").after(form_html).end().find(".reply_comment").hide();
     return false;
   }
   function reset_reply() {
-    var form_html = comment_form;
     $(".comment_list").after(form_html);
     form_html.find("h3 a").hide().end().find("#comment_parent_id").remove();
     $(".reply_comment").show();

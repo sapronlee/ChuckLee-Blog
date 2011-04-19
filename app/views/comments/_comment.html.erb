@@ -23,5 +23,10 @@
       <%= simple_format comment.body %>
     </div>
     <a class="reply_comment" href="<%= reply_comment_path(comment) %>" onclick="return reply(<%= comment.id %>);">回复</a>
+    <% if comment.has_children? -%>
+      <ul class="comments_children">
+        <%= render :partial => "/comments/comment", :collection => comment.children %>
+      </ul>
+    <% end -%>
   </div>
 </li>
