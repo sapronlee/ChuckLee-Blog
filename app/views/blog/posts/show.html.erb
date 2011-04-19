@@ -26,6 +26,13 @@
   <div class="comment_form">
     <h3>Leave a Reply</h3>
     <div id="messages" class="messages"></div>
+    <script type="text/javascript">
+      $("div.success").live("oneTime", function() {
+        $(this).fadeOut(600).fadeIn(600).oneTime("5s", "hide", function() {
+          $(this).hide();
+        });
+      });
+    </script>
     <%= render "comments/form", :comment => @post.comment_threads.build %>
   </div>  
 </div>

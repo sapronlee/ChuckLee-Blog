@@ -189,10 +189,10 @@ zh-CN:
         file_content_type: "附件类型"
         file_file_size: "附件大小"
       comment:
-        name: "名字"
+        user_name: "名字"
         email: "邮箱"
-        page: "主页"
-        comment: "内容"
+        web_site: "主页"
+        body: "内容"
       user:
         login: "用户名或邮箱"
         email: "邮箱"

@@ -6,7 +6,7 @@
   <%= f.input :web_site, :label => "Website", :input_html => { :size => 24 } %>
   <%= f.input :body, :required => false, :label => false %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "提交评论 (Ctrl+Enter)" %>
     <div class="ajaxloading"><%= image_tag("icons/ajax/ajaxloading.gif") %></div>
   </div>
 <% end -%>
@@ -17,5 +17,16 @@
   })
   .live("ajax:complete", function() {
     $(this).find(".ajaxloading").hide();
+  });
+  $("#comment_body").keydown(function(e) {
+    if(e.ctrlKey && e.which == 13) {
+      $.post(
+        $("#new_comment").attr("action"), 
+        $("#new_comment").serialize(),
+        null,
+        "script"
+      );
+      
+    }
   });
 </script>

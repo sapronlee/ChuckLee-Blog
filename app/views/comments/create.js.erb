@@ -7,7 +7,7 @@ $("#messages").empty();
   $("#messages").html("<h4>错误信息</h4>").find("h4").after(errors).end().removeClass("success").show();
 <% else %>
   $(".comment_list:hidden").removeClass("hidden");
-  $("#messages").html("<p><%= escape_javascript(flash[:notice]) %></p>").addClass("success").show();
+  $("#messages").html("<p><%= escape_javascript(flash[:notice]) %></p>").addClass("success").show().trigger("oneTime");
   $(".comment_list h3 span").html(parseInt($(".comment_list h3 span").text()) + 1);
   $(".comment_list ul").append("<%= escape_javascript(render(@comment)) %>");  
   $("#new_comment div.input input, #new_comment div.input textarea").val("");
