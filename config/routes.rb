@@ -57,6 +57,9 @@ Chuckblog::Application.routes.draw do
   end
   
   # 评论
-  resources :comments, :only => [:create, :destroy]
+  resources :comments, :only => [:create, :destroy] do |c|
+    get 'reply', :on => :member
+    post 'reply_create', :on => :collection
+  end
   
 end

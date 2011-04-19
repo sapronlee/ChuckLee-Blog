@@ -24,7 +24,7 @@
     </ul>
   </div>
   <div class="comment_form">
-    <h3>Leave a Reply</h3>
+    <h3>Leave a Reply<a href="#" onclick="return reset_reply();">取消回复</a></h3>
     <div id="messages" class="messages"></div>
     <script type="text/javascript">
       $("div.success").live("oneTime", function() {
@@ -34,8 +34,26 @@
       });
     </script>
     <%= render "comments/form", :comment => @post.comment_threads.build %>
-  </div>  
+  </div> 
 </div>
+<script type="text/javascript">
+  var comment_form = $(".comment_form");
+  function reply(id) {
+    var form_html = comment_form;
+    form_html.find("h3 a").show().end().find("#comment_commentable_id")
+    .after("<input class=\"hidden\" id=\"comment_parent_id\" name=\"comment[parent_id]\" type=\"hidden\" value=\"" + id + "\">");
+    $("#comment-" + id).find(".comment_body").after(form_html).end().find(".reply_comment").hide();
+    return false;
+  }
+  function reset_reply() {
+    var form_html = comment_form;
+    $(".comment_list").after(form_html);
+    form_html.find("h3 a").hide().end().find("#comment_parent_id").remove();
+    $(".reply_comment").show();
+    $("#messages").hide();
+    return false;
+  }
+</script>
 <div class="backtotop">
   <a href="#header">Back to top</a>
 </div>

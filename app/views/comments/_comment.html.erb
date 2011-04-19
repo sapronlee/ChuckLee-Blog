@@ -21,6 +21,7 @@
     </div>
     <div class="comment_body">
       <%= simple_format comment.body %>
-    </div>   
+    </div>
+    <a class="reply_comment" href="<%= reply_comment_path(comment) %>" onclick="return reply(<%= comment.id %>);">回复</a>
   </div>
 </li>

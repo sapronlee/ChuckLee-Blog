@@ -19,23 +19,3 @@
     <div class="ajaxloading"><%= image_tag("icons/ajax/ajaxloading.gif") %></div>
   </div>
 <% end -%>
-<script type="text/javascript">
-  $("#new_comment")
-  .live("ajax:beforeSend", function() {
-    $(this).find(".ajaxloading").show();
-  })
-  .live("ajax:complete", function() {
-    $(this).find(".ajaxloading").hide();
-  });
-  $("#comment_body").keydown(function(e) {
-    if(e.ctrlKey && e.which == 13) {
-      $.post(
-        $("#new_comment").attr("action"), 
-        $("#new_comment").serialize(),
-        null,
-        "script"
-      );
-    }
-    return false;
-  });
-</script>
