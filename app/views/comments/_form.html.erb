@@ -1,4 +1,6 @@
-<%= simple_form_for comment, :remote => true, :html => { :onkeydown => "hot_key()" } do |f| -%>
+<h3>评论<a href="#" class="cancel_reply">取消回复</a></h3>
+<div id="messages" class="messages"></div>
+<%= simple_form_for comment, :remote => true, :html => { :novalidate => true } do |f| -%>
   <%= f.input :commentable_type, :as => :hidden %>
   <%= f.input :commentable_id, :as => :hidden %>
   <% if current_user -%>
@@ -9,9 +11,9 @@
     <%= f.input :user_name, :as => :hidden, :input_html => { :value => current_user.login } %>
     <%= f.input :email, :as => :hidden, :input_html => { :value => current_user.email } %>
   <% else -%>
-    <%= f.input :user_name, :required => false, :label => "Name (required)", :input_html => { :size => 24 } %>
-    <%= f.input :email, :required => false, :as => :string, :label => "Mail (required)", :input_html => { :size => 24 } %>
-    <%= f.input :web_site, :label => "Website", :input_html => { :size => 24 } %>
+    <%= f.input :user_name, :required => false, :hint => "（必须填写）" %>
+    <%= f.input :email, :required => false, :hint => "（必须填写，我们会为你保密）" %>
+    <%= f.input :web_site, :hint => "（选填）" %>
   <% end -%>
   <%= f.input :body, :required => false, :label => false %>
   <div class="actions">
@@ -20,17 +22,15 @@
   </div>
 <% end -%>
 <script type="text/javascript">
-  $("#new_comment")
-  .live("ajax:beforeSend", function() {
-    $(this).find(".ajaxloading").show();
-  })
-  .live("ajax:complete", function() {
-    $(this).find(".ajaxloading").hide();
-  });
-  
-  function hot_key() {
-    if (event.ctrlKey && event.keyCode == 13) {
-      $("#new_comment").submit();
-    }
-  }
+  $(function() {
+    $("#new_comment")
+      .live("ajax:beforeSend", function() { $(this).find(".ajaxloading").show(); })
+      .live("ajax:complete", function() { $(this).find(".ajaxloading").hide(); });
+    $("div.success").live("oneTime", function() { $(this).fadeOut(600).fadeIn(600).slideUp("slow"); });
+    $("#comment_body").keydown(function(e) {
+      if(e.ctrlKey && e.which == '13') {
+        $(this).parent().submit();
+      }
+    });
+  });  
 </script>

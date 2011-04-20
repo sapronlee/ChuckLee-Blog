@@ -18,39 +18,28 @@
 </div>
 <div id="comments" class="comments box">
   <div class="comment_list<%= " hidden" if @post.comments_count.zero? %>">
-    <h3><span><%= @post.comments_count %></span> Responses to “<%= @post.title %>”</h3>
-    <ul>
-      <%= render :partial => "/comments/comment", :collection => @post.root_comments %>
-    </ul>
+    <h3><span><%= @post.comment_threads.size %></span> Responses to “<%= @post.title %>”</h3>
+    <ul><%= render :partial => "/comments/comment", :collection => @post.root_comments %></ul>
   </div>
   <div class="comment_form">
-    <h3>Leave a Reply<a href="#" onclick="return reset_reply();">取消回复</a></h3>
-    <div id="messages" class="messages"></div>
-    <script type="text/javascript">
-      $("div.success").live("oneTime", function() {
-        $(this).fadeOut(600).fadeIn(600).oneTime("5s", "hide", function() {
-          $(this).hide();
-        });
-      });
-    </script>
     <%= render "comments/form", :comment => @post.comment_threads.build %>
   </div> 
 </div>
 <script type="text/javascript">
-  var form_html = $(".comment_form");
-  function reply(id) {
-    form_html.find("h3 a").show().end().find("#comment_commentable_id")
-    .after("<input class=\"hidden\" id=\"comment_parent_id\" name=\"comment[parent_id]\" type=\"hidden\" value=\"" + id + "\">");
-    $("#comment-" + id).find(".comment_body:first").after(form_html).end().find(".reply_comment").hide();
-    return false;
-  }
-  function reset_reply() {
-    $(".comment_list").after(form_html);
-    form_html.find("h3 a").hide().end().find("#comment_parent_id").remove();
-    $(".reply_comment").show();
-    $("#messages").hide();
-    return false;
-  }
+  $(function() {
+    $(".comment_list a.reply_comment").live('click', function() {
+      $("a.cancel_reply").click();
+      $(".comment_form").find("h3 a").show().end().insertBefore($(this).toggle())
+      .find("input:hidden:last")
+      .after("<input class=\"hidden\" id=\"comment_parent_id\" name=\"comment[parent_id]\" type=\"hidden\" value=\"" + $(this).parent().parent().attr("id").match(/\d+/) + "\">");
+      return false;
+    });
+    $("a.cancel_reply").live('click', function() {
+      $(".comment_form").find("#comment_parent_id").remove().end().next("a.reply_comment").show().end().insertAfter($(".comment_list")).end().find("#messages").hide();
+      $(this).hide();
+      return false;
+    });
+  });  
 </script>
 <div class="backtotop">
   <a href="#header">Back to top</a>

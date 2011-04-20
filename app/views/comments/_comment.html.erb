@@ -7,26 +7,29 @@
           <% if !comment.web_site.blank? -%>
             <a href="http://<%= comment.web_site %>" title="<%= comment.web_site %>"><%= comment.user_name %></a>
           <% else -%>
-            <%= comment.user_name %>
+            <%= comment.user_name.strip %>
           <% end -%>
         </cite>
-        <span>says:</span>
+        <% if !comment.parent_id.blank? -%>
+          <span>回复:</span>
+          <span>@<%= comment.parent.user_name %></span>
+        <% else -%>
+          <span>评论:</span>
+        <% end -%>
       </div>
       <div class="comment_date">
-        <%= l(comment.created_at, :format => :long) %>
+        <span><%= l(comment.created_at, :format => :long) %></span>
         <% if user_signed_in? %>
-          <%= link_to "删除", comment_path(comment), :remote => true, :method => :delete %>
+          <%= link_to "[删除]", comment_path(comment), :remote => true, :method => :delete %>
         <% end -%>
       </div>
     </div>
     <div class="comment_body">
       <%= simple_format comment.body %>
     </div>
-    <a class="reply_comment" href="<%= reply_comment_path(comment) %>" onclick="return reply(<%= comment.id %>);">回复</a>
-    <% if comment.has_children? -%>
-      <ul class="comments_children">
-        <%= render :partial => "/comments/comment", :collection => comment.children %>
-      </ul>
-    <% end -%>
+    <a class="reply_comment" href="#">回复</a>
+    <ul class="comments_children">
+      <%= render :partial => "/comments/comment", :collection => comment.children %>
+    </ul>
   </div>
 </li>
