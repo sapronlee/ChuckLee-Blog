@@ -22,7 +22,6 @@ class Comment < ActiveRecord::Base
     c.commentable_type = obj.class.name 
     c.body = comment 
     c.user_name = user_name
-    c
   end
   
   #helper method to check if a comment has children

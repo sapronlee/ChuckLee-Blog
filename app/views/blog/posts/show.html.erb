@@ -18,7 +18,7 @@
 </div>
 <div id="comments" class="comments box">
   <div class="comment_list<%= " hidden" if @post.comments_count.zero? %>">
-    <h3><span><%= @post.comment_threads.size %></span> Responses to “<%= @post.title %>”</h3>
+    <h3><span><%= @post.comments_count %></span> Responses to “<%= @post.title %>”</h3>
     <ul><%= render :partial => "/comments/comment", :collection => @post.root_comments %></ul>
   </div>
   <div class="comment_form">

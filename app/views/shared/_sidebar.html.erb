@@ -25,7 +25,7 @@
   <h4>最新文章</h4>
   <ul>
     <% @recent_posts.each do |p| -%>
-      <li><a href="<%= blog_post_path(p.id, p.slug) %>" title="<%= p.title %>"><%= p.title %></a></li>
+      <li><a href="<%= blog_post_path(p.id, p.slug) %>" title="<%= p.title %>"><%= truncate(p.title, :length => 30) %></a></li>
     <% end -%>
   </ul>
 </div>

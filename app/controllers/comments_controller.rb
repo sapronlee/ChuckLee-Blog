@@ -10,6 +10,9 @@ class CommentsController < ApplicationController
   
   def destroy
     @comment = Comment.find(params[:id])
+    if @comment.has_children?
+      @comment.children.map { |c| c.destroy }
+    end
     @comment.destroy
     respond_with @comment, :layout => !request.xhr?
   end

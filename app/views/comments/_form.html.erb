@@ -17,7 +17,7 @@
   <% end -%>
   <%= f.input :body, :required => false, :label => false %>
   <div class="actions">
-    <%= f.submit "提交评论 (Ctrl+Enter)" %>
+    <%= f.submit "提交评论" %>
     <div class="ajaxloading"><%= image_tag("icons/ajax/ajaxloading.gif") %></div>
   </div>
 <% end -%>
@@ -25,12 +25,6 @@
   $(function() {
     $("#new_comment")
       .live("ajax:beforeSend", function() { $(this).find(".ajaxloading").show(); })
-      .live("ajax:complete", function() { $(this).find(".ajaxloading").hide(); });
-    $("div.success").live("oneTime", function() { $(this).fadeOut(600).fadeIn(600).slideUp("slow"); });
-    $("#comment_body").keydown(function(e) {
-      if(e.ctrlKey && e.which == '13') {
-        $(this).parent().submit();
-      }
-    });
+      .live("ajax:complete", function() { $(this).find(".ajaxloading").hide(); });      
   });  
 </script>

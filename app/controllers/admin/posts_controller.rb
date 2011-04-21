@@ -31,7 +31,7 @@ class Admin::PostsController < Admin::ApplicationController
   end
   
   def destroy
-    @post = Post.includes([:comments]).find(params[:id])
+    @post = Post.find(params[:id])
     if @post.destroy
       redirect_to(admin_posts_path, :notice => "操作成功！")
     else
