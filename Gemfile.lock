@@ -6,6 +6,12 @@ GIT
       rails (~> 3.0)
       thor (~> 0.14.4)
 
+GIT
+  remote: git://github.com/kete/tiny_mce.git
+  revision: cfd774e86d58b17168330779272a9e8f55c751c8
+  specs:
+    tiny_mce (0.1.7)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -127,5 +133,6 @@ DEPENDENCIES
   rails-settings-cached
   simple_form
   themes_for_rails
+  tiny_mce!
   wice_grid (= 3.0.0.pre2)
   will_paginate (~> 3.0.beta)

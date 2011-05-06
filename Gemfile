@@ -18,4 +18,5 @@ gem 'acts_as_commentable_with_threading'
 gem 'gravatar_image_tag'
 gem 'kaminari'
 gem 'rails-footnotes', '>= 3.7', :group => :development
+gem 'tiny_mce', :git => 'git://github.com/kete/tiny_mce.git'
 

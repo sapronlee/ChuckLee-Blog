@@ -273,7 +273,7 @@ a.button {
   display:block;
   margin-top:2px;
 }
-.simple_form .hint {
+.simple_form span.hint {
   color:#ccc;
 }
 .simple_form .active { color: #333; }

@@ -1,5 +1,8 @@
 # coding : utf-8
-class Admin::PostsController < Admin::ApplicationController  
+class Admin::PostsController < Admin::ApplicationController 
+  
+  uses_tiny_mce
+  
   def index
     @posts = Post.paginate :page => params[:page], :per_page => Setting.page_size
   end
